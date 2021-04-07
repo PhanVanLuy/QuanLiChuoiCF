@@ -18,7 +18,7 @@ namespace QuanLiChuoiCF.DAO
         private AccountDAO() { }
         public bool Login(string userName, string passWord)
         {
-            string query = "select * from dbo.account where Username =N'" + userName + "' and password=N'" + passWord + "'";
+            string query = "select * from dbo.account where ID =N'" + userName + "' and password=N'" + passWord + "'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }

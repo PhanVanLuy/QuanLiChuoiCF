@@ -15,11 +15,11 @@ namespace QuanLiChuoiCF.DAO
 
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
+            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance;}
             private set => DataProvider.instance = value;
         }
         private DataProvider() { }
-        private string connectionSTR = @"Data Source=PhanLuy;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
+        private string connectionSTR = "Data Source=PhanLuy;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] paramater = null)
         {
@@ -27,9 +27,23 @@ namespace QuanLiChuoiCF.DAO
             using (SqlConnection connection  =new SqlConnection(connectionSTR))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(query, connection);    
+                if(paramater != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if(item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, paramater[i]);
+                            i++;
+
+                        }
+                    }
+                }
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(data);
+                adapter.Fill(data); 
             }
             return data;
         }
@@ -46,7 +60,7 @@ namespace QuanLiChuoiCF.DAO
                 if (paramater != null)
                 {
                     string[] listPara = query.Split(' ');
-                    foreach (string item in listPara)
+                    foreach (string item in listPara)       
                     {
                         int i = 0;
                         if (item.Contains('@'))

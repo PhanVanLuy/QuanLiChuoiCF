@@ -83,6 +83,11 @@
     <Compile Include="GenerationaManager.Designer.cs">
       <DependentUpon>GenerationaManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLiChuoiCFDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fAccountProfile.resx">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +121,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuanLiChuoiCFDataSet.xsc">
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLiChuoiCFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLiChuoiCFDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLiChuoiCFDataSet.xss">
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
