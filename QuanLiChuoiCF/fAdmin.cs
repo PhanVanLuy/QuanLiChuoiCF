@@ -23,8 +23,9 @@ namespace QuanLiChuoiCF
         }
         void LoadAccountList()
         {
-            String query = "exec dbo.USP_GetAccountByUserName @userName= ";
-            dtgvTaiKhoan.DataSource =DataProvider.Instance.ExecuteQuery(query,new object[] { "Phan Văn Lũy" });
+            String query = "exec dbo.USP_GetAccountByUserName @userName";
+             dtgvTaiKhoan.DataSource =DataProvider.Instance.ExecuteQuery(query, new object[] { "NV01"});
+
 
         }
         void LoadCFlist()
