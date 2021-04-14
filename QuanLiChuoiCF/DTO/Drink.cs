@@ -9,7 +9,7 @@ namespace QuanLiChuoiCF.DTO
 {
     public  class Drink
     {
-        private Drink(string iD,string name, string price      )
+        private Drink(string iD,string name, string price )
         {
             this.ID = iD;
             this.Name = name;
@@ -17,7 +17,7 @@ namespace QuanLiChuoiCF.DTO
         }
       
       
-        public Drink(DataRow row )
+        public Drink(DataRow row )   
         {
             this.ID = row["IDofDrink"].ToString();
             this.Name = row["name"].ToString();

@@ -21,16 +21,16 @@ namespace QuanLiChuoiCF.DTO
         private DrinkDTO() { }
         public List<Drink> LoadBranchList()
         {
-            List<Drink> branchList = new List<Drink>();
+            List<Drink> drinkList = new List<Drink>();
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetDrinkList");
             foreach(DataRow item in data.Rows)
             {
-                Drink branch = new Drink(item);
-                branchList.Add(branch);
+                Drink drink = new Drink(item); 
+                drinkList.Add(drink);
 
 
             }
-            return branchList;
+            return drinkList;
         }
     }
 }
