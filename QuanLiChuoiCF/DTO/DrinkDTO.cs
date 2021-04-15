@@ -25,10 +25,8 @@ namespace QuanLiChuoiCF.DTO
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetDrinkList");
             foreach(DataRow item in data.Rows)
             {
-                Drink drink = new Drink(item); 
+                Drink drink = new Drink(item);
                 drinkList.Add(drink);
-
-
             }
             return drinkList;
         }

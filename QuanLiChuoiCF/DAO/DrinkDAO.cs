@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
+using System.Data;
 
 namespace QuanLiChuoiCF.DAO
 {
@@ -23,14 +25,47 @@ namespace QuanLiChuoiCF.DAO
             }
         } 
 
-            private DrinkDAO() { }
-            public List<Drink> LoadTableList()
+        private DrinkDAO() { }
+        public List<Drink> GetListDrinks()
+        {
+            List<Drink> DrinkList = new List<Drink>();
+            string query = "select * from dbo.Drink";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach(DataRow item in data.Rows)
             {
-                List<Drink> DrinkList = new List<Drink>();
-                return DrinkList;
+                Drink drink = new Drink(item);
+                DrinkList.Add(drink);
             }
 
+            return DrinkList;
         }
 
+        public bool InsertDrink(string id,string name,  float price)
+        {
+            string query = string.Format("insert dbo.Drink(IDOfDrink,Name,Price)values(N'{0}', N'{1}', {2})", id, name,price);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateDrink(string id, string name, float price)
+        {
+            string query = string.Format("update dbo.Drink SET name = N'{0}', price = {1} where IDOfDrink = N'{2}'", name, price, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteDrink(string id)
+        {
+            DetailOfBillDAO.Instance.DeleteBillInfoByDrinkID(id);
+            string query = "delete dbo.Drink where IDOfDrink = N'" + id + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
+
+}
 

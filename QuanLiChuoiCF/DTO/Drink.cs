@@ -23,12 +23,12 @@ namespace QuanLiChuoiCF.DTO
             this.Name = row["name"].ToString();
             this.Price =row["price"].ToString();
         }
+        public string ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
         public string Price { get => price; set => price = value; }
-        public string ID { get => iD; set => iD = value; }
-         private string iD;
-        private string name;
 
+        private string iD;
+        private string name;
         private string price;
     }
 }

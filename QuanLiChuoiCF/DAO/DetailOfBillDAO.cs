@@ -29,6 +29,11 @@ namespace QuanLiChuoiCF.DAO
             }
             return listDetailOfBill;
         }
+
+        public void DeleteBillInfoByDrinkID(string id)
+        {
+            DataProvider.Instance.ExecuteQuery("delete dbo.DetailOfBill where IDOfDrink = N'" + id +"'");
+        }
       
 }   
 }

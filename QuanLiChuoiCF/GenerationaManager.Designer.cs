@@ -38,7 +38,11 @@ namespace QuanLiChuoiCF
             this.lsvBill = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbTotalPrice = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -47,10 +51,6 @@ namespace QuanLiChuoiCF
             this.cbb_addDrink = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDrink = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txbTotalPrice = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -135,6 +135,16 @@ namespace QuanLiChuoiCF
             this.columnHeader2.Text = "Số lượng";
             this.columnHeader2.Width = 55;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 54;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 66;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
@@ -144,6 +154,27 @@ namespace QuanLiChuoiCF
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 29);
             this.panel3.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tổng tiền:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txbTotalPrice
+            // 
+            this.txbTotalPrice.Location = new System.Drawing.Point(76, 3);
+            this.txbTotalPrice.Name = "txbTotalPrice";
+            this.txbTotalPrice.ReadOnly = true;
+            this.txbTotalPrice.Size = new System.Drawing.Size(146, 20);
+            this.txbTotalPrice.TabIndex = 4;
+            this.txbTotalPrice.Text = "0";
+            this.txbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnThanhToan
             // 
@@ -197,6 +228,7 @@ namespace QuanLiChuoiCF
             this.btnThemMon.TabIndex = 2;
             this.btnThemMon.Text = "Thêm món";
             this.btnThemMon.UseVisualStyleBackColor = true;
+            this.btnThemMon.Click += new System.EventHandler(this.btn_AddDrink_click);
             // 
             // cbb_addDrink
             // 
@@ -223,37 +255,6 @@ namespace QuanLiChuoiCF
             this.flpDrink.Size = new System.Drawing.Size(472, 375);
             this.flpDrink.TabIndex = 0;
             this.flpDrink.Paint += new System.Windows.Forms.PaintEventHandler(this.flpBranch_Paint);
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 54;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 66;
-            // 
-            // txbTotalPrice
-            // 
-            this.txbTotalPrice.Location = new System.Drawing.Point(76, 3);
-            this.txbTotalPrice.Name = "txbTotalPrice";
-            this.txbTotalPrice.ReadOnly = true;
-            this.txbTotalPrice.Size = new System.Drawing.Size(146, 20);
-            this.txbTotalPrice.TabIndex = 4;
-            this.txbTotalPrice.Text = "0";
-            this.txbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tổng tiền:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fTableManager
             // 
