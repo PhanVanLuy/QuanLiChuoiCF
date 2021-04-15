@@ -19,7 +19,7 @@ namespace QuanLiChuoiCF.DAO
             private set => DataProvider.instance = value;
         }
         private DataProvider() { }
-        private string connectionSTR = "Data Source=PhanLuy;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
+        private string connectionSTR = "Data Source=LAPTOP-Q7DINM79\\MINHTHONG;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] paramater = null)
         {

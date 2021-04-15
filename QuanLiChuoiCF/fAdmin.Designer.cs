@@ -91,16 +91,16 @@ namespace QuanLiChuoiCF
             this.btnTim = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.nmGia = new System.Windows.Forms.NumericUpDown();
+            this.nmPrice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cbbDanhMucCF = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbDrinkName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txbID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnXem = new System.Windows.Forms.Button();
@@ -116,7 +116,7 @@ namespace QuanLiChuoiCF
             this.dtpkDateTo = new System.Windows.Forms.DateTimePicker();
             this.dtpkDatFrom = new System.Windows.Forms.DateTimePicker();
             this.btnThongKe = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabDrink = new System.Windows.Forms.TabControl();
             this.tbTaiKhoan.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -148,7 +148,7 @@ namespace QuanLiChuoiCF
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -159,7 +159,7 @@ namespace QuanLiChuoiCF
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabDrink.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbTaiKhoan
@@ -731,24 +731,29 @@ namespace QuanLiChuoiCF
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.nmGia);
+            this.panel12.Controls.Add(this.nmPrice);
             this.panel12.Controls.Add(this.label4);
             this.panel12.Location = new System.Drawing.Point(2, 174);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(249, 51);
             this.panel12.TabIndex = 4;
             // 
-            // nmGia
+            // nmPrice
             // 
-            this.nmGia.Location = new System.Drawing.Point(60, 9);
-            this.nmGia.Maximum = new decimal(new int[] {
+            this.nmPrice.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nmPrice.Location = new System.Drawing.Point(60, 9);
+            this.nmPrice.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
-            this.nmGia.Name = "nmGia";
-            this.nmGia.Size = new System.Drawing.Size(180, 20);
-            this.nmGia.TabIndex = 1;
+            this.nmPrice.Name = "nmPrice";
+            this.nmPrice.Size = new System.Drawing.Size(180, 20);
+            this.nmPrice.TabIndex = 1;
             // 
             // label4
             // 
@@ -789,20 +794,19 @@ namespace QuanLiChuoiCF
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox1);
+            this.panel10.Controls.Add(this.txbDrinkName);
             this.panel10.Controls.Add(this.label2);
             this.panel10.Location = new System.Drawing.Point(0, 60);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(249, 51);
             this.panel10.TabIndex = 2;
             // 
-            // textBox1
+            // txbDrinkName
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 1;
+            this.txbDrinkName.Location = new System.Drawing.Point(62, 14);
+            this.txbDrinkName.Name = "txbDrinkName";
+            this.txbDrinkName.Size = new System.Drawing.Size(180, 20);
+            this.txbDrinkName.TabIndex = 1;
             // 
             // label2
             // 
@@ -816,20 +820,20 @@ namespace QuanLiChuoiCF
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txtUsername);
+            this.panel9.Controls.Add(this.txbID);
             this.panel9.Controls.Add(this.label1);
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(249, 51);
             this.panel9.TabIndex = 1;
             // 
-            // txtUsername
+            // txbID
             // 
-            this.txtUsername.Location = new System.Drawing.Point(59, 14);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(183, 20);
-            this.txtUsername.TabIndex = 1;
+            this.txbID.Location = new System.Drawing.Point(59, 14);
+            this.txbID.Name = "txbID";
+            this.txbID.ReadOnly = true;
+            this.txbID.Size = new System.Drawing.Size(183, 20);
+            this.txbID.TabIndex = 1;
             // 
             // label1
             // 
@@ -860,6 +864,7 @@ namespace QuanLiChuoiCF
             this.btnXem.TabIndex = 3;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnShowClicked);
             // 
             // btnSua
             // 
@@ -869,6 +874,7 @@ namespace QuanLiChuoiCF
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnEditDrinkClick);
             // 
             // btnXoa
             // 
@@ -878,6 +884,7 @@ namespace QuanLiChuoiCF
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xoa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnDeleteDrinkClick);
             // 
             // btnThem
             // 
@@ -887,6 +894,7 @@ namespace QuanLiChuoiCF
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnAddDrinkClick);
             // 
             // panel20
             // 
@@ -964,25 +972,26 @@ namespace QuanLiChuoiCF
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // tabDrink
             // 
-            this.tabControl1.Controls.Add(this.tpDoanhThu);
-            this.tabControl1.Controls.Add(this.tpThucAn);
-            this.tabControl1.Controls.Add(this.tpDanhMuc);
-            this.tabControl1.Controls.Add(this.tpChiNhanh);
-            this.tabControl1.Controls.Add(this.tbTaiKhoan);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(649, 520);
-            this.tabControl1.TabIndex = 0;
+            this.tabDrink.Controls.Add(this.tpDoanhThu);
+            this.tabDrink.Controls.Add(this.tpThucAn);
+            this.tabDrink.Controls.Add(this.tpDanhMuc);
+            this.tabDrink.Controls.Add(this.tpChiNhanh);
+            this.tabDrink.Controls.Add(this.tbTaiKhoan);
+            this.tabDrink.Location = new System.Drawing.Point(12, 12);
+            this.tabDrink.Name = "tabDrink";
+            this.tabDrink.SelectedIndex = 0;
+            this.tabDrink.Size = new System.Drawing.Size(649, 520);
+            this.tabDrink.TabIndex = 0;
+            this.tabDrink.Click += new System.EventHandler(this.tabDrinkClick);
             // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 542);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabDrink);
             this.Name = "fAdmin";
             this.Text = "Admin";
             this.tbTaiKhoan.ResumeLayout(false);
@@ -1026,7 +1035,7 @@ namespace QuanLiChuoiCF
             this.panel8.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -1040,7 +1049,7 @@ namespace QuanLiChuoiCF
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabDrink.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1108,16 +1117,16 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.NumericUpDown nmGia;
+        private System.Windows.Forms.NumericUpDown nmPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox cbbDanhMucCF;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbDrinkName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnXem;
@@ -1133,7 +1142,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.DateTimePicker dtpkDateTo;
         private System.Windows.Forms.DateTimePicker dtpkDatFrom;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabDrink;
         private System.Windows.Forms.Button btnDatLaiTK;
     }
 }

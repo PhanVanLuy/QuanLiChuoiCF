@@ -11,6 +11,12 @@ namespace QuanLiChuoiCF
 {
     public partial class fTableManager : Form
     {
+        private static List<Drink> drinkList;
+        private static int totalPrice;
+
+        public static List<Drink> DrinkList { get => drinkList; set => drinkList = value; }
+        public static int TotalPrice { get => totalPrice; set => totalPrice = value; }
+
         public fTableManager()
         {
             InitializeComponent();
@@ -40,24 +46,27 @@ namespace QuanLiChuoiCF
         }
         void LoadDrink()
         {
-            List<Drink> drinkList = DrinkDTO.Instance.LoadBranchList();
-            foreach(Drink item in drinkList)
+            flpDrink.Controls.Clear();
+            cbb_addDrink.Items.Clear();
+            DrinkList = DrinkDTO.Instance.LoadBranchList();
+            foreach (Drink item in DrinkList)
             {
                 Button btn = new Button()
                 {
                     Width = DrinkDTO.TableWidth,
                     Height = DrinkDTO.TableHeigth
                 };
-                btn.Text = item.Name + Environment.NewLine+item.Price ;
+                btn.Text = item.Name + Environment.NewLine+ (int)float.Parse(item.Price, System.Globalization.CultureInfo.InvariantCulture);
                 btn.Click += btn_Click;
                 btn.Tag = item;
                 flpDrink.Controls.Add(btn);
                 flpDrink.FlowDirection = FlowDirection.LeftToRight;
-            }    
+                cbb_addDrink.Items.Add(item.Name);
+            }
 
         }
         #endregion
-        #region evnents
+        #region events
         void ShowBill(string iD)
         {
             //Tạm cho chi nhánh của nhân viên đăng nhập vào là chi nhánh quận 9
@@ -90,7 +99,40 @@ namespace QuanLiChuoiCF
         void btn_Click(object sender, EventArgs e)
         {
             string drinkID = ((sender as Button).Tag as Drink).ID;
-            ShowBill(drinkID);
+            foreach (Drink item in DrinkList)
+            {
+                if(item.ID == drinkID)
+                {
+                    cbb_addDrink.SelectedItem = item.Name;
+                    break;
+                }
+            }
+
+            //ShowBill(drinkID);
+        }
+        void btn_AddDrink_click(object sender, EventArgs e)
+        {
+            
+            string name = cbb_addDrink.Text;
+            int count = Convert.ToInt32(numericUpDown1.Value);
+            int price = 0, totalPriceRow;
+            foreach (Drink item in DrinkList)
+            {
+                if (item.Name == name)
+                {
+                    price = (int)float.Parse(item.Price, System.Globalization.CultureInfo.InvariantCulture);
+                    break;
+                }
+            }
+            totalPriceRow = price * count;
+            ListViewItem lsvItem = new ListViewItem(name);
+            lsvItem.SubItems.Add(count.ToString());
+            lsvItem.SubItems.Add(price.ToString());
+            lsvItem.SubItems.Add(totalPriceRow.ToString());
+            totalPrice += totalPriceRow;
+
+            lsvBill.Items.Add(lsvItem);
+            txbTotalPrice.Text = totalPrice.ToString();
         }
         private void fTableManager_Load(object sender, EventArgs e)
         {
@@ -105,6 +147,9 @@ namespace QuanLiChuoiCF
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();
+            f.InsertDrink += f_InsertDrink;
+            f.DeleteDrink += f_DeleteDrink;
+            f.UpdateDrink += f_UpdateDrink;
             f.ShowDialog();
 
         }
@@ -126,6 +171,22 @@ namespace QuanLiChuoiCF
         {
 
         }
+
+        void f_UpdateDrink(object sender, EventArgs e)
+        {
+            LoadDrink();
+        }
+
+        void f_DeleteDrink(object sender, EventArgs e)
+        {
+            LoadDrink();
+        }
+
+        void f_InsertDrink(object sender, EventArgs e)
+        {
+            LoadDrink();
+        }
+
         #endregion
 
         private void label1_Click(object sender, EventArgs e)
