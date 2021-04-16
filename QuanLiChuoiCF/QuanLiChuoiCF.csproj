@@ -50,14 +50,18 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BranchDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DetailOfBillDAO.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Branch.cs" />
     <Compile Include="DTO\DetailOfBill.cs" />
-    <Compile Include="DTO\DrinkDTO.cs" />
     <Compile Include="DTO\Drink.cs" />
+    <Compile Include="DTO\Employee.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>

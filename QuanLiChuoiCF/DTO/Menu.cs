@@ -15,7 +15,8 @@ namespace QuanLiChuoiCF.DTO
             this.Count = count;
             this.price = price;
             this.TotalPrice = totalPrice;
-        }public Menu(DataRow row)
+        }
+        public Menu(DataRow row)
         {
             this.DrinkName = row["Name"].ToString();
             int v = (int)row["count"];
@@ -25,7 +26,7 @@ namespace QuanLiChuoiCF.DTO
         }
 
 
-        public string DrinkName{ get => drinkName; set => drinkName = value; }
+        public string DrinkName { get => drinkName; set => drinkName = value; }
         public float Price { get => price; set => price = value; }
         public float TotalPrice { get => totalPrice; set => totalPrice = value; }
         public int Count { get => count; set => count = value; }

@@ -13,6 +13,8 @@ namespace QuanLiChuoiCF
 {
     public partial class fLogin : Form
     {
+        public static String userName;
+        public static String passWord;
         public fLogin()
         {
             InitializeComponent();
@@ -40,8 +42,8 @@ namespace QuanLiChuoiCF
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            String userName= txtUsername.Text;
-            String passWord = txtPassword.Text;
+            userName= txtUsername.Text;
+            passWord = txtPassword.Text;
 
             if(Login(userName, passWord))
             {

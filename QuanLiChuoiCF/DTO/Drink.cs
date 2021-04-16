@@ -19,7 +19,7 @@ namespace QuanLiChuoiCF.DTO
       
         public Drink(DataRow row )   
         {
-            this.ID = row["IDofDrink"].ToString();
+            this.ID = (row["IDofDrink"].ToString()).Trim();
             this.Name = row["name"].ToString();
             this.Price =row["price"].ToString();
         }

@@ -48,13 +48,13 @@ namespace QuanLiChuoiCF
         {
             flpDrink.Controls.Clear();
             cbb_addDrink.Items.Clear();
-            DrinkList = DrinkDTO.Instance.LoadBranchList();
+            DrinkList = DrinkDAO.Instance.GetListDrinks();
             foreach (Drink item in DrinkList)
             {
                 Button btn = new Button()
                 {
-                    Width = DrinkDTO.TableWidth,
-                    Height = DrinkDTO.TableHeigth
+                    Width = DrinkDAO.TableWidth,
+                    Height = DrinkDAO.TableHeight
                 };
                 btn.Text = item.Name + Environment.NewLine+ (int)float.Parse(item.Price, System.Globalization.CultureInfo.InvariantCulture);
                 btn.Click += btn_Click;
@@ -65,6 +65,7 @@ namespace QuanLiChuoiCF
             }
 
         }
+
         #endregion
         #region events
         void ShowBill(string iD)
@@ -107,15 +108,16 @@ namespace QuanLiChuoiCF
                     break;
                 }
             }
-
-            //ShowBill(drinkID);
         }
         void btn_AddDrink_click(object sender, EventArgs e)
         {
-            
             string name = cbb_addDrink.Text;
+            if (name == "") return;
             int count = Convert.ToInt32(numericUpDown1.Value);
+            numericUpDown1.Value = 1;
             int price = 0, totalPriceRow;
+
+            //get price from drinks list
             foreach (Drink item in DrinkList)
             {
                 if (item.Name == name)
@@ -124,6 +126,31 @@ namespace QuanLiChuoiCF
                     break;
                 }
             }
+            foreach(ListViewItem item in lsvBill.Items)
+            {
+                if (name == item.SubItems[0].Text)
+                {
+                    int last_count = int.Parse(item.SubItems[1].Text);
+
+                    if(count + last_count <= 0)
+                    {
+                        item.Remove();
+                        return;
+                    }
+
+                    totalPriceRow = (count + last_count) * price;
+                    totalPrice += count * price;
+
+                    item.SubItems[1].Text = (count+last_count).ToString();
+                    item.SubItems[2].Text = price.ToString();
+                    item.SubItems[3].Text = totalPriceRow.ToString();
+
+                    txbTotalPrice.Text = totalPrice.ToString();
+
+                    return;
+                }
+            }
+
             totalPriceRow = price * count;
             ListViewItem lsvItem = new ListViewItem(name);
             lsvItem.SubItems.Add(count.ToString());
@@ -135,11 +162,6 @@ namespace QuanLiChuoiCF
             txbTotalPrice.Text = totalPrice.ToString();
         }
         private void fTableManager_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -193,5 +215,43 @@ namespace QuanLiChuoiCF
         {
 
         }
+
+        private void cbb_addDrink_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteOrderClick(object sender, EventArgs e)
+        {
+            if(lsvBill.SelectedItems.Count > 0)
+            {
+                lsvBill.SelectedItems[0].Remove();
+            }
+        }
+
+        private void labelCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsvSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvBill.SelectedItems.Count > 0)
+            {
+                var item = lsvBill.SelectedItems[0];
+                cbb_addDrink.SelectedItem = item.SubItems[0].Text;
+                numericUpDown1.Value = int.Parse(item.SubItems[1].Text);
+            }
+        }
+
+        private void numericUpDown1Click(object sender, EventArgs e)
+        {
+            if (lsvBill.SelectedItems.Count > 0)
+            {
+                var item = lsvBill.SelectedItems[0];
+                item.SubItems[1].Text = numericUpDown1.Value.ToString();
+            }
+        }
+
     }
 }

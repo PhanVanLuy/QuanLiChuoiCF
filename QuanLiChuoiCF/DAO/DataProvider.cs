@@ -48,8 +48,6 @@ namespace QuanLiChuoiCF.DAO
             return data;
         }
 
-    
-
         public int ExecuteNonQuery(string query, object[] paramater = null)
         {
             int data = 0;

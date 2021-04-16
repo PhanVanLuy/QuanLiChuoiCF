@@ -46,8 +46,11 @@ namespace QuanLiChuoiCF
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnThemMon = new System.Windows.Forms.Button();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.labelDrinkName = new System.Windows.Forms.Label();
             this.cbb_addDrink = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDrink = new System.Windows.Forms.FlowLayoutPanel();
@@ -66,7 +69,7 @@ namespace QuanLiChuoiCF
             this.thôngTinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(811, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,7 +106,7 @@ namespace QuanLiChuoiCF
             // panel2
             // 
             this.panel2.Controls.Add(this.lsvBill);
-            this.panel2.Location = new System.Drawing.Point(490, 82);
+            this.panel2.Location = new System.Drawing.Point(497, 155);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 321);
             this.panel2.TabIndex = 2;
@@ -115,34 +118,36 @@ namespace QuanLiChuoiCF
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lsvBill.FullRowSelect = true;
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(0, 9);
+            this.lsvBill.Location = new System.Drawing.Point(3, 3);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(310, 304);
+            this.lsvBill.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
-            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.lsvSelectedIndexChanged);
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Text = "Drink Name";
             this.columnHeader1.Width = 130;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Text = "Count";
             this.columnHeader2.Width = 55;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Text = "Price";
             this.columnHeader3.Width = 54;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Text = "Total";
             this.columnHeader4.Width = 66;
             // 
             // panel3
@@ -150,7 +155,7 @@ namespace QuanLiChuoiCF
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txbTotalPrice);
             this.panel3.Controls.Add(this.btnThanhToan);
-            this.panel3.Location = new System.Drawing.Point(490, 401);
+            this.panel3.Location = new System.Drawing.Point(497, 474);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 29);
             this.panel3.TabIndex = 3;
@@ -189,61 +194,95 @@ namespace QuanLiChuoiCF
             // 
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(811, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip2.TabIndex = 4;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.btnThemMon);
+            this.panel4.Controls.Add(this.btnDeleteOrder);
+            this.panel4.Controls.Add(this.labelCount);
+            this.panel4.Controls.Add(this.numericUpDown1);
+            this.panel4.Controls.Add(this.labelDrinkName);
             this.panel4.Controls.Add(this.cbb_addDrink);
-            this.panel4.Location = new System.Drawing.Point(490, 52);
+            this.panel4.Location = new System.Drawing.Point(497, 55);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(310, 33);
+            this.panel4.Size = new System.Drawing.Size(313, 94);
             this.panel4.TabIndex = 5;
+            // 
+            // btnThemMon
+            // 
+            this.btnThemMon.Location = new System.Drawing.Point(225, 57);
+            this.btnThemMon.Name = "btnThemMon";
+            this.btnThemMon.Size = new System.Drawing.Size(82, 21);
+            this.btnThemMon.TabIndex = 2;
+            this.btnThemMon.Text = "Add Drink";
+            this.btnThemMon.UseVisualStyleBackColor = true;
+            this.btnThemMon.Click += new System.EventHandler(this.btn_AddDrink_click);
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Location = new System.Drawing.Point(6, 57);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(75, 21);
+            this.btnDeleteOrder.TabIndex = 7;
+            this.btnDeleteOrder.Text = "Delete";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrderClick);
+            // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(222, 5);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(38, 13);
+            this.labelCount.TabIndex = 9;
+            this.labelCount.Text = "Count:";
+            this.labelCount.Click += new System.EventHandler(this.labelCount_Click);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(268, 4);
+            this.numericUpDown1.Location = new System.Drawing.Point(225, 28);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(85, 20);
             this.numericUpDown1.TabIndex = 3;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numericUpDown1.Click += new System.EventHandler(this.numericUpDown1Click);
             // 
-            // btnThemMon
+            // labelDrinkName
             // 
-            this.btnThemMon.Location = new System.Drawing.Point(180, 3);
-            this.btnThemMon.Name = "btnThemMon";
-            this.btnThemMon.Size = new System.Drawing.Size(82, 21);
-            this.btnThemMon.TabIndex = 2;
-            this.btnThemMon.Text = "Thêm món";
-            this.btnThemMon.UseVisualStyleBackColor = true;
-            this.btnThemMon.Click += new System.EventHandler(this.btn_AddDrink_click);
+            this.labelDrinkName.AutoSize = true;
+            this.labelDrinkName.Location = new System.Drawing.Point(3, 5);
+            this.labelDrinkName.Name = "labelDrinkName";
+            this.labelDrinkName.Size = new System.Drawing.Size(66, 13);
+            this.labelDrinkName.TabIndex = 8;
+            this.labelDrinkName.Text = "Drink Name:";
             // 
             // cbb_addDrink
             // 
             this.cbb_addDrink.FormattingEnabled = true;
-            this.cbb_addDrink.Location = new System.Drawing.Point(3, 3);
+            this.cbb_addDrink.Location = new System.Drawing.Point(6, 28);
             this.cbb_addDrink.Name = "cbb_addDrink";
-            this.cbb_addDrink.Size = new System.Drawing.Size(171, 21);
+            this.cbb_addDrink.Size = new System.Drawing.Size(191, 21);
             this.cbb_addDrink.TabIndex = 0;
+            this.cbb_addDrink.SelectedIndexChanged += new System.EventHandler(this.cbb_addDrink_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.flpDrink);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 52);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(475, 378);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(446, 617);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // flpDrink
@@ -252,7 +291,7 @@ namespace QuanLiChuoiCF
             this.flpDrink.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flpDrink.Location = new System.Drawing.Point(3, 3);
             this.flpDrink.Name = "flpDrink";
-            this.flpDrink.Size = new System.Drawing.Size(472, 375);
+            this.flpDrink.Size = new System.Drawing.Size(438, 614);
             this.flpDrink.TabIndex = 0;
             this.flpDrink.Paint += new System.Windows.Forms.PaintEventHandler(this.flpBranch_Paint);
             // 
@@ -260,7 +299,7 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -277,6 +316,7 @@ namespace QuanLiChuoiCF
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -308,5 +348,8 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbTotalPrice;
+        private System.Windows.Forms.Button btnDeleteOrder;
+        private System.Windows.Forms.Label labelDrinkName;
+        private System.Windows.Forms.Label labelCount;
     }
 }
