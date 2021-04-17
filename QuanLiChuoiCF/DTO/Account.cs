@@ -16,6 +16,9 @@ namespace QuanLiChuoiCF.DTO
             this.password = password;
             this.type = type;
         }
+
+        public Account() { }
+
         public Account(DataRow row)
         {
             this.id = ((string)row["ID"]).Trim();

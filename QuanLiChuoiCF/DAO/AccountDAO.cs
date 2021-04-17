@@ -50,19 +50,25 @@ namespace QuanLiChuoiCF.DAO
 
         public bool AddAccount(string id, string displayName, string password, int type)
         {
-            string query = string.Format("insert dbo.Account(ID, displayName, password, type)values(N'{0}', N'{1}', N'{2}, {3}')", id, displayName, password, type);
+            string query = string.Format("insert dbo.Account(ID, DisplayName, Password, Type)values(N'{0}', N'{1}', N'{2}', {3})", id, displayName, password, type);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public bool UpdateAccount(string id, string displayName, string password, int type)
+        public bool UpdateAccount(string id, string displayName, int type)
         {
-            string query = string.Format("update dbo.Account set displayName = N'{0}', password = N'{1}', type = {2} where ID = N'{3}'", id, displayName, password, type);
+            string query = string.Format("update dbo.Account set DisplayName = N'{0}', Type = {2} where ID = N'{3}'", id, displayName, type);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
         public bool DeleteAccount(string id)
         {
             string query = string.Format("delete dbo.Account where ID = {0}", id);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+
+        public bool ChangePassword(string id, string password)
+        {
+            string query = string.Format("update dbo.Account set Password = N'{0}' where ID = N'{1}'", password, id);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 

@@ -18,44 +18,62 @@ namespace QuanLiChuoiCF
         BindingSource drinkList = new BindingSource();
         BindingSource branches = new BindingSource();
         BindingSource accounts = new BindingSource();
-        BindingSource employees = new BindingSource();
+        public static BindingSource employees = new BindingSource();
+        BindingSource goods = new BindingSource();
         string lastIDDrink;
         string lastIDBranch;
         string lastIDAccount;
-        string lastIDEmployees;
+        public static string lastIDEmployees;
+        string lastIDGood;
 
         public string LastID { get => lastIDDrink; set => lastIDDrink = value; }
 
         public fAdmin()
         {
             InitializeComponent();
-            Load();
+            LoadAndBinding();
         }
-        void Load()
+        void LoadAndBinding()
         {
             dtgvCF.DataSource = drinkList;
             dtgvBranches.DataSource = branches;
             dtgvAccount.DataSource = accounts;
             dtgvEmployees.DataSource = employees;
+            dtgvGoods.DataSource = goods;
 
-            LoadDrinkList();
-            LoadBranches();
-            LoadEmployees();
-            LoadAccounts();
+            Load();
 
             AddDrinkBinding();
             AddBranchBinding();
             AddEmployeeBinding();
             AddAccountBinding();
+            AddGoodBinding();
 
         }
 
-        void LoadDrinkList()
+        void Load()
+        {
+            LoadDrinks();
+            LoadBranches();
+            LoadEmployees();
+            LoadAccounts();
+            LoadGoods();
+        }
+
+        #region loadAndBinding
+        void LoadDrinks()
         {
             List<Drink> data = DrinkDAO.Instance.GetListDrinks();
             drinkList.DataSource = data;
             Drink[] arr = data.ToArray();
-            lastIDDrink = arr[arr.Length - 1].ID;
+            if (arr.Length > 0) 
+            { 
+                lastIDDrink = arr[arr.Length - 1].ID; 
+            }
+            else
+            {
+                lastIDDrink = "DU01";
+            }
         }
 
         void LoadBranches()
@@ -63,7 +81,14 @@ namespace QuanLiChuoiCF
             List<Branch> data = BranchDAO.Instance.GetBranches();
             branches.DataSource = data;
             Branch[] arr = data.ToArray();
-            lastIDBranch = arr[arr.Length - 1].Id;
+            if (arr.Length > 0)
+            {
+                lastIDBranch = arr[arr.Length - 1].Id;
+            }
+            else
+            {
+                lastIDBranch = "CN01";
+            }
         }
 
         void LoadEmployees()
@@ -71,7 +96,24 @@ namespace QuanLiChuoiCF
             List<Employee> data = EmployeeDAO.Instance.GetEmployees();
             employees.DataSource = data;
             Employee[] arr = data.ToArray();
-            lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
+            if(arr.Length>0)lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
+
+            cbb_Employee_Sexual.Items.Clear();
+            cbb_Employee_Shift.Items.Clear();
+            cbb_Employee_IDOfBranch.Items.Clear();
+            foreach(Branch item in branches)
+            {
+                cbb_Employee_IDOfBranch.Items.Add(item.Id);
+            }
+            cbb_Employee_Sexual.Items.Add("Female");
+            cbb_Employee_Sexual.Items.Add("Male");
+            cbb_Employee_Sexual.Items.Add("Other");
+            cbb_Employee_Shift.Items.Add("Day");
+            cbb_Employee_Shift.Items.Add("Morning");
+            cbb_Employee_Shift.Items.Add("Noon");
+            cbb_Employee_Shift.Items.Add("Afternoon");
+            cbb_Employee_Shift.Items.Add("Night");
+            cbb_Employee_Shift.Items.Add("Midnight");
         }
 
         void LoadAccounts()
@@ -79,7 +121,26 @@ namespace QuanLiChuoiCF
             List<Account> data = AccountDAO.Instance.GetAccounts();
             accounts.DataSource = data;
             Account[] arr = data.ToArray();
-            lastIDAccount = arr[arr.Length - 1].Id;
+            if(arr.Length>0)lastIDAccount = arr[arr.Length - 1].Id;
+
+            cbb_Account_AccountType.Items.Clear();
+            cbb_Account_ID.Items.Clear();
+            cbb_Account_AccountType.Items.Add("0");
+            cbb_Account_AccountType.Items.Add("1");
+            foreach(Employee employee in employees)
+            {
+                cbb_Account_ID.Items.Add(employee.IDOfEmployee);
+            }
+        }
+
+        void LoadGoods()
+        {
+            List<Good> data = GoodDAO.Instance.GetGoods();
+            goods.DataSource = data;
+            Good[] arr = data.ToArray();
+            if (arr.Length > 0) lastIDGood = arr[arr.Length - 1].IDOfMaterial;
+
+
         }
 
         void AddDrinkBinding()
@@ -114,10 +175,21 @@ namespace QuanLiChuoiCF
 
         void AddAccountBinding()
         {
-            txb_Account_ID.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            cbb_Account_ID.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txb_Account_UserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
-            cbb_Account_AccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Password", true, DataSourceUpdateMode.Never));
+            cbb_Account_AccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
         }
+
+        void AddGoodBinding()
+        {
+            txb_Good_ID.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "IDOfMaterial", true, DataSourceUpdateMode.Never));
+            txb_Good_Name.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txb_Good_Amount.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Amount", true, DataSourceUpdateMode.Never));
+            txb_Good_Unit.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Unit", true, DataSourceUpdateMode.Never));
+            txb_Good_Price.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Price", true, DataSourceUpdateMode.Never));
+        }
+
+        #endregion
 
         #region DrinkHandler
         private event EventHandler insertDrink;
@@ -146,10 +218,6 @@ namespace QuanLiChuoiCF
         #region eventsDrink
         private void btnAddDrinkClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to add this drink", "Add Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
-            {
-                return;
-            }
             int id_int = Int16.Parse(lastIDDrink.Substring(2)) + 1;
             string id;
             if (id_int < 10)
@@ -165,7 +233,7 @@ namespace QuanLiChuoiCF
             if (DrinkDAO.Instance.InsertDrink(id, name, price))
             {
                 MessageBox.Show("Drink Was Added Successfully");
-                LoadDrinkList();
+                LoadDrinks();
                 if (insertDrink != null)
                     insertDrink(this, new EventArgs());
             }
@@ -187,7 +255,7 @@ namespace QuanLiChuoiCF
             if (DrinkDAO.Instance.UpdateDrink(id, name, price))
             {
                 MessageBox.Show("Drink Was Updated Successfully");
-                LoadDrinkList();
+                LoadDrinks();
                 if (updateDrink != null)
                     updateDrink(this, new EventArgs());
             }
@@ -207,7 +275,7 @@ namespace QuanLiChuoiCF
             if (DrinkDAO.Instance.DeleteDrink(id))
             {
                 MessageBox.Show("Drink Was Deleted Successfully", "DELETE");
-                LoadDrinkList();
+                LoadDrinks();
                 if (deleteDrink != null)
                     deleteDrink(this, new EventArgs());
             }
@@ -216,22 +284,73 @@ namespace QuanLiChuoiCF
                 MessageBox.Show("Failed To Delete Drink");
             }
         }
+        private void btnShowClicked(object sender, EventArgs e)
+        {
+            LoadDrinks();
+        }
         #endregion
+
 
         #region accountEvents
         private void btnAddAccountClick(object sender, EventArgs e)
         {
-
+            fNewAccount f = new fNewAccount();
+            f.ShowDialog();
+            LoadAccounts();
         }
 
         private void btnDeleteAccountClick(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Are you sure you want to delete this Account", "Delete Account", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            string id = cbb_Account_ID.Text;
+            if (AccountDAO.Instance.DeleteAccount(id))
+            {
+                lb_Account_Notify.Text = "NOTIFY: Account was deleted Successfully";
+                LoadAccounts();
+            }
+            else
+            {
+                lb_Account_Notify.Text = "Failed to delete Account";
+            }
         }
 
         private void btnUpdateAccountClick(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to update this Account", "Update Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            string id = cbb_Account_ID.Text;
+            string displayName = txb_Account_UserName.Text;
+            int type = int.Parse(cbb_Account_AccountType.Text);
+            if (AccountDAO.Instance.UpdateAccount(id, displayName, type))
+            {
+                lb_Account_Notify.Text = "NOTIFY: Account was updated Successfully";
+                LoadAccounts();
+            }
+            else
+            {
+                lb_Account_Notify.Text = "Failed to update Account";
+            }
+        }
 
+
+        private void btn_Account_ChangePasswordClick(object sender, EventArgs e)
+        {
+            Account account = new Account();
+            foreach(Account item in accounts)
+            {
+                if(item.Id == cbb_Account_ID.Text)
+                {
+                    account = item;
+                    break;
+                }
+            }
+            fChangePassword f = new fChangePassword(account);
+            f.ShowDialog();
         }
 
         private void btnAccountNewClick(object sender, EventArgs e)
@@ -241,11 +360,12 @@ namespace QuanLiChuoiCF
 
         private void btnRefreshAccountsClick(object sender, EventArgs e)
         {
-
+            LoadAccounts();
         }
 
         #endregion
 
+        #region noUse
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -271,75 +391,104 @@ namespace QuanLiChuoiCF
 
         }
 
-        private void tabDrinkClick(object sender, EventArgs e)
-        {
-        }
-
-        private void btnShowClicked(object sender, EventArgs e)
-        {
-            LoadDrinkList();
-        }
-
-
-        private void dtgvCF_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnRefreshClicked(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
-        private void labelAccountType_Click(object sender, EventArgs e)
+        #region EmployeesEvent
+        private void btnAddEmployeeClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnNewClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bntAddEmployee(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeleteEmployee(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bntAddEmployeeClick(object sender, EventArgs e)
-        {
-
+            string firstName = txb_Employee_FirstName.Text.Trim();
+            string lastName = txb_Employee_LastName.Text.Trim();
+            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
+            string phoneNumber = txb_Employee_PhoneNumber.Text.Trim();
+            string sexual = cbb_Employee_Sexual.SelectedItem.ToString();
+            string address = txb_Employee_Address.Text.Trim();
+            DateTime dayIn = dtp_Employee_DayIn.Value;
+            string shift = cbb_Employee_Shift.SelectedItem.ToString();
+            int dayOff = (int)nud_Employee_DayOff.Value;
+            int bonus = (int)nud_Employee_Bonus.Value;
+            int salary = (int)nud_Employee_Salary.Value;
+            string iDOfBranch = cbb_Employee_IDOfBranch.SelectedItem.ToString();
+            if (EmployeeDAO.Instance.AddEmployee(firstName, lastName, id, phoneNumber, sexual, address,
+                dayIn, shift, dayOff, bonus, salary, iDOfBranch))
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Employee was added Successfully";
+                LoadEmployees();
+                newEmployee();
+            }
+            else
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Failed to added Employee";
+                newEmployee();
+            }
         }
 
         private void btnDeleteEmployeeClick(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Are you sure you want to delete this Employee", "Delete Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
+            if(EmployeeDAO.Instance.DeleteEmployee(id))
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Employee was deleted Successfully";
+                LoadEmployees();
+            }
+            else
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Failed to delete Employee";
+            }
         }
 
         private void btnUpdateEmployeeClick(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Are you sure you want to update this Employee", "Update Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            {
+                return;
+            }
+            string firstName = txb_Employee_FirstName.Text.Trim();
+            string lastName = txb_Employee_LastName.Text.Trim();
+            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
+            string phoneNumber = txb_Employee_PhoneNumber.Text.Trim();
+            string sexual = cbb_Employee_Sexual.SelectedItem.ToString();
+            string address = txb_Employee_Address.Text.Trim();
+            DateTime dayIn = dtp_Employee_DayIn.Value;
+            string shift = cbb_Employee_Shift.SelectedItem.ToString();
+            int dayOff = (int)nud_Employee_DayOff.Value;
+            int bonus = (int)nud_Employee_Bonus.Value;
+            int salary = (int)nud_Employee_Salary.Value;
+            string iDOfBranch = cbb_Employee_IDOfBranch.SelectedItem.ToString();
+            if (EmployeeDAO.Instance.UpdateEmployee(firstName, lastName, id, phoneNumber, sexual, address, dayIn, 
+                shift, dayOff, bonus, salary, iDOfBranch))
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Employee was updated Successfully";
+                LoadEmployees();
+            }
+            else
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Failed to update Employee";
+            }
         }
 
         private void btnRefreshEmployeesClick(object sender, EventArgs e)
         {
-
+            LoadEmployees();
         }
 
         private void btnNewEmployeeClick(object sender, EventArgs e)
         {
-
+            newEmployee();
         }
 
-        private void btnSearchEmployeessListClick(object sender, EventArgs e)
+        private void btnSearchEmployeesClick(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
         #region BranchEvents
         private void btnAddBranchClick(object sender, EventArgs e)
@@ -436,5 +585,37 @@ namespace QuanLiChuoiCF
             txb_branch_Manager.Text = "";
         }
 
+        private void newEmployee()
+        {
+            int lastIDEmployee_int = Int16.Parse(lastIDEmployees.Substring(2)) + 1;
+            string id;
+            if (lastIDEmployee_int < 10)
+            {
+                id = "NV0" + lastIDEmployee_int.ToString();
+            }
+            else
+            {
+                id = "NV" + lastIDEmployee_int.ToString();
+            }
+
+            txb_Employee_FirstName.Text = "";
+            txb_Employee_LastName.Text = "";
+            txb_Employee_IDOfEmPloyee.Text = id;
+            txb_Employee_PhoneNumber.Text = "";
+            cbb_Employee_Sexual.SelectedItem = cbb_Employee_Sexual.Items[0];
+            txb_Employee_Address.Text = "";
+            dtp_Employee_DayIn.Value = DateTime.Today;
+            nud_Employee_DayOff.Value = 10;
+            cbb_Employee_Shift.SelectedItem = cbb_Employee_Shift.Items[0];
+            nud_Employee_Bonus.Value = 100000;
+            nud_Employee_Salary.Value = 5000000;
+            cbb_Employee_IDOfBranch.SelectedItem = cbb_Employee_IDOfBranch.Items[0];
+
+        }
+
+        private void Load(object sender, EventArgs e)
+        {
+            Load();
+        }
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="DAO\DetailOfBillDAO.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\GoodDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="DTO\DetailOfBill.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\Good.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
@@ -75,6 +77,12 @@
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +94,12 @@
     </Compile>
     <Compile Include="fBranch.Designer.cs">
       <DependentUpon>fBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNewAccount.Designer.cs">
+      <DependentUpon>fNewAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,11 +120,17 @@
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fBranch.resx">
       <DependentUpon>fBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNewAccount.resx">
+      <DependentUpon>fNewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
