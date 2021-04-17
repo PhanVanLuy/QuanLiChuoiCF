@@ -40,6 +40,7 @@ namespace QuanLiChuoiCF
             this.txbConfirmPassword = new System.Windows.Forms.TextBox();
             this.cbbType = new System.Windows.Forms.ComboBox();
             this.cbbID = new System.Windows.Forms.ComboBox();
+            this.lbNotify = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
@@ -136,11 +137,21 @@ namespace QuanLiChuoiCF
             this.cbbID.Size = new System.Drawing.Size(121, 21);
             this.cbbID.TabIndex = 10;
             // 
+            // lbNotify
+            // 
+            this.lbNotify.AutoSize = true;
+            this.lbNotify.Location = new System.Drawing.Point(154, 194);
+            this.lbNotify.Name = "lbNotify";
+            this.lbNotify.Size = new System.Drawing.Size(35, 13);
+            this.lbNotify.TabIndex = 11;
+            this.lbNotify.Text = "label1";
+            // 
             // fNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 498);
+            this.Controls.Add(this.lbNotify);
             this.Controls.Add(this.cbbID);
             this.Controls.Add(this.cbbType);
             this.Controls.Add(this.txbConfirmPassword);
@@ -172,5 +183,6 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.TextBox txbConfirmPassword;
         private System.Windows.Forms.ComboBox cbbType;
         private System.Windows.Forms.ComboBox cbbID;
+        private System.Windows.Forms.Label lbNotify;
     }
 }

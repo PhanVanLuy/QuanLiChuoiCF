@@ -15,7 +15,7 @@ namespace QuanLiChuoiCF
 {
     public partial class fAdmin : Form
     {
-        BindingSource drinkList = new BindingSource();
+        BindingSource drinks = new BindingSource();
         BindingSource branches = new BindingSource();
         BindingSource accounts = new BindingSource();
         public static BindingSource employees = new BindingSource();
@@ -35,13 +35,17 @@ namespace QuanLiChuoiCF
         }
         void LoadAndBinding()
         {
-            dtgvCF.DataSource = drinkList;
+            dtgvCF.DataSource = drinks;
             dtgvBranches.DataSource = branches;
             dtgvAccount.DataSource = accounts;
             dtgvEmployees.DataSource = employees;
             dtgvGoods.DataSource = goods;
 
-            Load();
+            LoadDrinks();
+            LoadBranches();
+            LoadEmployees();
+            LoadAccounts();
+            LoadGoods();
 
             AddDrinkBinding();
             AddBranchBinding();
@@ -51,20 +55,11 @@ namespace QuanLiChuoiCF
 
         }
 
-        void Load()
-        {
-            LoadDrinks();
-            LoadBranches();
-            LoadEmployees();
-            LoadAccounts();
-            LoadGoods();
-        }
-
         #region loadAndBinding
         void LoadDrinks()
         {
             List<Drink> data = DrinkDAO.Instance.GetListDrinks();
-            drinkList.DataSource = data;
+            drinks.DataSource = data;
             Drink[] arr = data.ToArray();
             if (arr.Length > 0) 
             { 
@@ -98,22 +93,9 @@ namespace QuanLiChuoiCF
             Employee[] arr = data.ToArray();
             if(arr.Length>0)lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
 
-            cbb_Employee_Sexual.Items.Clear();
-            cbb_Employee_Shift.Items.Clear();
-            cbb_Employee_IDOfBranch.Items.Clear();
-            foreach(Branch item in branches)
-            {
-                cbb_Employee_IDOfBranch.Items.Add(item.Id);
-            }
-            cbb_Employee_Sexual.Items.Add("Female");
-            cbb_Employee_Sexual.Items.Add("Male");
-            cbb_Employee_Sexual.Items.Add("Other");
-            cbb_Employee_Shift.Items.Add("Day");
-            cbb_Employee_Shift.Items.Add("Morning");
-            cbb_Employee_Shift.Items.Add("Noon");
-            cbb_Employee_Shift.Items.Add("Afternoon");
-            cbb_Employee_Shift.Items.Add("Night");
-            cbb_Employee_Shift.Items.Add("Midnight");
+            UpdateCbbSexualInTabEmployee();
+            UpdateCbbShiftInTabEmployee();
+            UpdateCbbBranchInTabEmployee();
         }
 
         void LoadAccounts()
@@ -123,14 +105,8 @@ namespace QuanLiChuoiCF
             Account[] arr = data.ToArray();
             if(arr.Length>0)lastIDAccount = arr[arr.Length - 1].Id;
 
-            cbb_Account_AccountType.Items.Clear();
-            cbb_Account_ID.Items.Clear();
-            cbb_Account_AccountType.Items.Add("0");
-            cbb_Account_AccountType.Items.Add("1");
-            foreach(Employee employee in employees)
-            {
-                cbb_Account_ID.Items.Add(employee.IDOfEmployee);
-            }
+            UpdateCbbAccountTypeInTabEmployee();
+            UpdateCbbAccountIdInTabAccount();
         }
 
         void LoadGoods()
@@ -139,15 +115,13 @@ namespace QuanLiChuoiCF
             goods.DataSource = data;
             Good[] arr = data.ToArray();
             if (arr.Length > 0) lastIDGood = arr[arr.Length - 1].IDOfMaterial;
-
-
         }
 
         void AddDrinkBinding()
         {
-            txbID.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "ID", true, DataSourceUpdateMode.Never));
-            txbDrinkName.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Name", true, DataSourceUpdateMode.Never));
-            nmPrice.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            txb_Drink_ID.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txb_Drink_Name.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            nud_Drink_Price.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Price", true, DataSourceUpdateMode.Never));
         }
 
         void AddBranchBinding()
@@ -215,21 +189,58 @@ namespace QuanLiChuoiCF
         #endregion
 
         #region events
+        private void tpClick(object sender, EventArgs e)
+        {
+            switch (tab.SelectedTab.Text)
+            {
+                case "Money":
+                    break;
+                case "Drink":
+                    LoadDrinks();
+                    break;
+                case "Branch":
+                    LoadBranches();
+                    break;
+                case "Account":
+                    LoadAccounts();
+                    break;
+                case "Employee":
+                    LoadEmployees();
+                    break;
+                case "Good":
+                    LoadGoods();
+                    break;
+
+            }
+        }
+        
         #region eventsDrink
         private void btnAddDrinkClick(object sender, EventArgs e)
         {
-            int id_int = Int16.Parse(lastIDDrink.Substring(2)) + 1;
-            string id;
-            if (id_int < 10)
+            string id = txb_Drink_ID.Text;
+            foreach(Drink item in drinks)
             {
-                id = "DU0" + id_int.ToString();
+                if(id == item.ID)
+                {
+                    lb_Drink_Notify.Text = "NOTIFY: ID can't be duplicated";
+                    return;
+                }
             }
-            else
+
+            string name = txb_Drink_Name.Text.Trim();
+            if(name == "")
             {
-                id = "DU" + id_int.ToString();
+                lb_Drink_Notify.Text = "NOTIFY: Name can't be empty";
+                return;
             }
-            string name = txbDrinkName.Text.Trim();
-            int price = (int)nmPrice.Value;
+
+            int price = (int)nud_Drink_Price.Value;
+            if (price == 0)
+            {
+                lb_Drink_Notify.Text = "NOTIFY: Price can't be lower than 0";
+                return;
+            }
+
             if (DrinkDAO.Instance.InsertDrink(id, name, price))
             {
                 MessageBox.Show("Drink Was Added Successfully");
@@ -245,13 +256,24 @@ namespace QuanLiChuoiCF
 
         private void btnEditDrinkClick(object sender, EventArgs e)
         {
+            string id = txb_Drink_ID.Text;
+            string name = txb_Drink_Name.Text.Trim();
+            if (name == "")
+            {
+                lb_Drink_Notify.Text = "NOTIFY: Name can't be  empty";
+                return;
+            }
+
+            int price = (int)nud_Drink_Price.Value;
+            if (price == 0)
+            {
+                lb_Drink_Notify.Text = "NOTIFY: Price can't be lower than 0";
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to update this drink", "Update Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            string id = txbID.Text;
-            string name = txbDrinkName.Text;
-            int price = (int)nmPrice.Value;
             if (DrinkDAO.Instance.UpdateDrink(id, name, price))
             {
                 MessageBox.Show("Drink Was Updated Successfully");
@@ -271,7 +293,7 @@ namespace QuanLiChuoiCF
             {
                 return;
             }
-            string id = txbID.Text;
+            string id = txb_Drink_ID.Text;
             if (DrinkDAO.Instance.DeleteDrink(id))
             {
                 MessageBox.Show("Drink Was Deleted Successfully", "DELETE");
@@ -287,6 +309,23 @@ namespace QuanLiChuoiCF
         private void btnShowClicked(object sender, EventArgs e)
         {
             LoadDrinks();
+        }
+
+        private void btnNewDrinkClick(object sender, EventArgs e)
+        {
+            int lastIDrink_int = Int16.Parse(lastIDDrink.Substring(2)) + 1;
+            string id;
+            if (lastIDrink_int < 10)
+            {
+                id = "DU0" + lastIDrink_int.ToString();
+            }
+            else
+            {
+                id = "DU" + lastIDrink_int.ToString();
+            }
+            txb_Drink_ID.Text = id;
+            txb_Drink_Name.Text = "";
+            nud_Drink_Price.Value = 10000;
         }
         #endregion
 
@@ -308,7 +347,7 @@ namespace QuanLiChuoiCF
             string id = cbb_Account_ID.Text;
             if (AccountDAO.Instance.DeleteAccount(id))
             {
-                lb_Account_Notify.Text = "NOTIFY: Account was deleted Successfully";
+                lb_Account_Notify.Text = "Account was deleted Successfully";
                 LoadAccounts();
             }
             else
@@ -355,7 +394,9 @@ namespace QuanLiChuoiCF
 
         private void btnAccountNewClick(object sender, EventArgs e)
         {
-
+            cbb_Account_ID.SelectedItem = cbb_Account_ID.Items[0];
+            txb_Account_UserName.Text = "";
+            cbb_Account_AccountType.SelectedItem = cbb_Account_AccountType.Items[0];
         }
 
         private void btnRefreshAccountsClick(object sender, EventArgs e)
@@ -367,11 +408,6 @@ namespace QuanLiChuoiCF
 
         #region noUse
         private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbTaiKhoan_Click(object sender, EventArgs e)
         {
 
         }
@@ -498,21 +534,31 @@ namespace QuanLiChuoiCF
             {
                 if(branchId == item.Id)
                 {
-                    lbNotify.Text = "Can not added";
+                    lb_Branch_Notify.Text = "Can not added";
                     return;
                 }
             }
             string branchName = txb_branch_Name.Text.Trim();
+            if(branchName == "")
+            {
+                lb_Branch_Notify.Text = "Name can't be empty";
+                return;
+            }
             string manager = txb_branch_Manager.Text.Trim();
+            if(manager == "")
+            {
+                lb_Branch_Notify.Text = "Manager can't be empty";
+                return;
+            }
             if (BranchDAO.Instance.AddBranch(branchId, branchName, manager))
             {
-                lbNotify.Text = "Branch Was Added Successfully";
+                lb_Branch_Notify.Text = "Branch Was Added Successfully";
                 LoadBranches();
                 newBrand();
             }
             else
             {
-                lbNotify.Text = "Failed To Added Branch";
+                lb_Branch_Notify.Text = "Failed To Added Branch";
                 newBrand();
             }
         }
@@ -526,32 +572,42 @@ namespace QuanLiChuoiCF
             string branchID = txb_branch_ID.Text.Trim();
             if (BranchDAO.Instance.DeleteBranch(branchID))
             {
-                lbNotify.Text = "Branch Was Deleted Successfully";
+                lb_Branch_Notify.Text = "Branch Was Deleted Successfully";
                 LoadBranches();
             }
             else
             {
-                lbNotify.Text = "Failed To Delete Branch";
+                lb_Branch_Notify.Text = "Failed To Delete Branch";
             }
         }
 
         private void btnUpdateBranchClick(object sender, EventArgs e)
         {
+            string branchID = txb_branch_ID.Text.Trim();
+            string branchName = txb_branch_Name.Text.Trim();
+            string manager = txb_branch_Manager.Text.Trim();
+            if (branchName == "")
+            {
+                lb_Branch_Notify.Text = "Name can't be empty";
+                return;
+            }
+            if(manager == "")
+            {
+                lb_Branch_Notify.Text = "Manager can't be empty";
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to update this branch", "Update branch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            string branchID = txb_branch_ID.Text.Trim();
-            string branchName = txb_branch_Name.Text.Trim();
-            string manager = txb_branch_Manager.Text.Trim();
             if (BranchDAO.Instance.UpdateBranch(branchID, branchName, manager))
             {
-                lbNotify.Text = "Branch Was Updated Successfully";
+                lb_Branch_Notify.Text = "Branch Was Updated Successfully";
                 LoadBranches();
             }
             else
             {
-                lbNotify.Text = "Failed To Update Branch";
+                lb_Branch_Notify.Text = "Failed To Update Branch";
             }
         }
 
@@ -566,6 +622,10 @@ namespace QuanLiChuoiCF
         }
         #endregion
 
+        #region GoodEvent
+
+        #endregion
+
         #endregion
 
         private void newBrand()
@@ -578,6 +638,7 @@ namespace QuanLiChuoiCF
             }
             else
             {
+        
                 id = "CN" + lastIDBranch_int.ToString();
             }
             txb_branch_ID.Text = id;
@@ -613,9 +674,49 @@ namespace QuanLiChuoiCF
 
         }
 
-        private void Load(object sender, EventArgs e)
+        private void UpdateCbbBranchInTabEmployee()
         {
-            Load();
+            cbb_Employee_IDOfBranch.Items.Clear();
+            foreach (Branch item in branches)
+            {
+                cbb_Employee_IDOfBranch.Items.Add(item.Id);
+            }
         }
+
+        private void UpdateCbbSexualInTabEmployee()
+        {
+            cbb_Employee_Sexual.Items.Clear();
+            cbb_Employee_Sexual.Items.Add("Female");
+            cbb_Employee_Sexual.Items.Add("Male");
+            cbb_Employee_Sexual.Items.Add("Other");
+        }
+
+        private void UpdateCbbShiftInTabEmployee()
+        {
+            cbb_Employee_Shift.Items.Clear();
+            cbb_Employee_Shift.Items.Add("Day");
+            cbb_Employee_Shift.Items.Add("Morning");
+            cbb_Employee_Shift.Items.Add("Noon");
+            cbb_Employee_Shift.Items.Add("Afternoon");
+            cbb_Employee_Shift.Items.Add("Night");
+            cbb_Employee_Shift.Items.Add("Midnight");
+        }
+
+        private void UpdateCbbAccountTypeInTabEmployee()
+        {
+            cbb_Account_AccountType.Items.Clear();
+            cbb_Account_AccountType.Items.Add("0");
+            cbb_Account_AccountType.Items.Add("1");
+        }
+
+        private void UpdateCbbAccountIdInTabAccount()
+        {
+            cbb_Account_ID.Items.Clear();
+            foreach(Employee employee in employees)
+            {
+                cbb_Account_ID.Items.Add(employee.IDOfEmployee);
+            }
+        }
+
     }
 }

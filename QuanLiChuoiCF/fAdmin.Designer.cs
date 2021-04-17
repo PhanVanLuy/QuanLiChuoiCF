@@ -34,8 +34,11 @@ namespace QuanLiChuoiCF
             this.lb_Account_Notify = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
             this.cbb_Account_AccountType = new System.Windows.Forms.ComboBox();
+            this.cbb_Account_ID = new System.Windows.Forms.ComboBox();
             this.labelAccountType = new System.Windows.Forms.Label();
             this.txb_Account_UserName = new System.Windows.Forms.TextBox();
+            this.btn_Account_ChangePassword = new System.Windows.Forms.Button();
+            this.labelUserID = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.btn_Account_New = new System.Windows.Forms.Button();
@@ -53,39 +56,41 @@ namespace QuanLiChuoiCF
             this.panel13 = new System.Windows.Forms.Panel();
             this.dtgvBranches = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.lbNotify = new System.Windows.Forms.Label();
-            this.txb_branch_Manager = new System.Windows.Forms.TextBox();
-            this.lbManager = new System.Windows.Forms.Label();
-            this.txb_branch_Name = new System.Windows.Forms.TextBox();
-            this.lbBranchName = new System.Windows.Forms.Label();
             this.txb_branch_ID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAddBranch = new System.Windows.Forms.Button();
+            this.txb_branch_Name = new System.Windows.Forms.TextBox();
+            this.txb_branch_Manager = new System.Windows.Forms.TextBox();
+            this.lbBranchName = new System.Windows.Forms.Label();
+            this.lbManager = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.btnNewBranch = new System.Windows.Forms.Button();
             this.btnRefreshBranch = new System.Windows.Forms.Button();
             this.btnUpdateBranch = new System.Windows.Forms.Button();
             this.btnDeleteBranch = new System.Windows.Forms.Button();
+            this.btnAddBranch = new System.Windows.Forms.Button();
+            this.lb_Branch_Notify = new System.Windows.Forms.Label();
             this.tpDrink = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lb_Drink_Notify = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tbSearchCF = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.nmPrice = new System.Windows.Forms.NumericUpDown();
+            this.nud_Drink_Price = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.txbDrinkName = new System.Windows.Forms.TextBox();
+            this.txb_Drink_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txbID = new System.Windows.Forms.TextBox();
+            this.txb_Drink_ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnXem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btn_Drink_New = new System.Windows.Forms.Button();
+            this.btn_Drink_Refresh = new System.Windows.Forms.Button();
+            this.btn_Drink_Update = new System.Windows.Forms.Button();
+            this.btn_Drink_Delete = new System.Windows.Forms.Button();
+            this.btn_Drink_Add = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtgvCF = new System.Windows.Forms.DataGridView();
             this.tpDoanhThu = new System.Windows.Forms.TabPage();
@@ -134,9 +139,6 @@ namespace QuanLiChuoiCF
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.dtgvEmployees = new System.Windows.Forms.DataGridView();
-            this.labelUserID = new System.Windows.Forms.Label();
-            this.btn_Account_ChangePassword = new System.Windows.Forms.Button();
-            this.cbb_Account_ID = new System.Windows.Forms.ComboBox();
             this.tpGood = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -144,6 +146,10 @@ namespace QuanLiChuoiCF
             this.panel17 = new System.Windows.Forms.Panel();
             this.dtgvGoods = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.txb_Good_Price = new System.Windows.Forms.TextBox();
+            this.txb_Good_Unit = new System.Windows.Forms.TextBox();
+            this.lb_Good_Price = new System.Windows.Forms.Label();
+            this.lb_Good_Unit = new System.Windows.Forms.Label();
             this.txb_Good_ID = new System.Windows.Forms.TextBox();
             this.lb_Good_ID = new System.Windows.Forms.Label();
             this.txb_Good_Name = new System.Windows.Forms.TextBox();
@@ -157,10 +163,6 @@ namespace QuanLiChuoiCF
             this.btn_Good_Delete = new System.Windows.Forms.Button();
             this.btn_Good_Add = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.lb_Good_Unit = new System.Windows.Forms.Label();
-            this.lb_Good_Price = new System.Windows.Forms.Label();
-            this.txb_Good_Unit = new System.Windows.Forms.TextBox();
-            this.txb_Good_Price = new System.Windows.Forms.TextBox();
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -179,7 +181,7 @@ namespace QuanLiChuoiCF
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -217,7 +219,6 @@ namespace QuanLiChuoiCF
             this.tbAccount.TabIndex = 3;
             this.tbAccount.Text = "Account";
             this.tbAccount.UseVisualStyleBackColor = true;
-            this.tbAccount.Click += new System.EventHandler(this.tbTaiKhoan_Click);
             // 
             // panel1
             // 
@@ -226,9 +227,9 @@ namespace QuanLiChuoiCF
             this.panel1.Controls.Add(this.panel27);
             this.panel1.Controls.Add(this.panel32);
             this.panel1.Controls.Add(this.panel33);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1235, 633);
+            this.panel1.Size = new System.Drawing.Size(1235, 631);
             this.panel1.TabIndex = 1;
             // 
             // lb_Account_Notify
@@ -262,6 +263,14 @@ namespace QuanLiChuoiCF
             this.cbb_Account_AccountType.Size = new System.Drawing.Size(160, 21);
             this.cbb_Account_AccountType.TabIndex = 2;
             // 
+            // cbb_Account_ID
+            // 
+            this.cbb_Account_ID.FormattingEnabled = true;
+            this.cbb_Account_ID.Location = new System.Drawing.Point(90, 10);
+            this.cbb_Account_ID.Name = "cbb_Account_ID";
+            this.cbb_Account_ID.Size = new System.Drawing.Size(160, 21);
+            this.cbb_Account_ID.TabIndex = 0;
+            // 
             // labelAccountType
             // 
             this.labelAccountType.AutoSize = true;
@@ -279,6 +288,26 @@ namespace QuanLiChuoiCF
             this.txb_Account_UserName.ReadOnly = true;
             this.txb_Account_UserName.Size = new System.Drawing.Size(160, 20);
             this.txb_Account_UserName.TabIndex = 1;
+            // 
+            // btn_Account_ChangePassword
+            // 
+            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(330, 22);
+            this.btn_Account_ChangePassword.Name = "btn_Account_ChangePassword";
+            this.btn_Account_ChangePassword.Size = new System.Drawing.Size(103, 23);
+            this.btn_Account_ChangePassword.TabIndex = 3;
+            this.btn_Account_ChangePassword.Text = "ChangePassword";
+            this.btn_Account_ChangePassword.UseVisualStyleBackColor = true;
+            this.btn_Account_ChangePassword.Click += new System.EventHandler(this.btn_Account_ChangePasswordClick);
+            // 
+            // labelUserID
+            // 
+            this.labelUserID.AutoSize = true;
+            this.labelUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserID.Location = new System.Drawing.Point(6, 13);
+            this.labelUserID.Name = "labelUserID";
+            this.labelUserID.Size = new System.Drawing.Size(24, 13);
+            this.labelUserID.TabIndex = 0;
+            this.labelUserID.Text = "ID:";
             // 
             // labelUserName
             // 
@@ -390,7 +419,7 @@ namespace QuanLiChuoiCF
             this.panel14.Controls.Add(this.panel13);
             this.panel14.Controls.Add(this.panel16);
             this.panel14.Controls.Add(this.panel24);
-            this.panel14.Controls.Add(this.lbNotify);
+            this.panel14.Controls.Add(this.lb_Branch_Notify);
             this.panel14.Location = new System.Drawing.Point(0, 1);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1235, 633);
@@ -456,49 +485,6 @@ namespace QuanLiChuoiCF
             this.panel16.Size = new System.Drawing.Size(432, 142);
             this.panel16.TabIndex = 6;
             // 
-            // lbNotify
-            // 
-            this.lbNotify.AutoSize = true;
-            this.lbNotify.Location = new System.Drawing.Point(797, 61);
-            this.lbNotify.Name = "lbNotify";
-            this.lbNotify.Size = new System.Drawing.Size(38, 13);
-            this.lbNotify.TabIndex = 6;
-            this.lbNotify.Text = "notify: ";
-            // 
-            // txb_branch_Manager
-            // 
-            this.txb_branch_Manager.Location = new System.Drawing.Point(117, 106);
-            this.txb_branch_Manager.Name = "txb_branch_Manager";
-            this.txb_branch_Manager.Size = new System.Drawing.Size(300, 20);
-            this.txb_branch_Manager.TabIndex = 2;
-            // 
-            // lbManager
-            // 
-            this.lbManager.AutoSize = true;
-            this.lbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManager.Location = new System.Drawing.Point(23, 113);
-            this.lbManager.Name = "lbManager";
-            this.lbManager.Size = new System.Drawing.Size(60, 13);
-            this.lbManager.TabIndex = 0;
-            this.lbManager.Text = "Manager:";
-            // 
-            // txb_branch_Name
-            // 
-            this.txb_branch_Name.Location = new System.Drawing.Point(117, 62);
-            this.txb_branch_Name.Name = "txb_branch_Name";
-            this.txb_branch_Name.Size = new System.Drawing.Size(300, 20);
-            this.txb_branch_Name.TabIndex = 1;
-            // 
-            // lbBranchName
-            // 
-            this.lbBranchName.AutoSize = true;
-            this.lbBranchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBranchName.Location = new System.Drawing.Point(23, 67);
-            this.lbBranchName.Name = "lbBranchName";
-            this.lbBranchName.Size = new System.Drawing.Size(87, 13);
-            this.lbBranchName.TabIndex = 0;
-            this.lbBranchName.Text = "Branch Name:";
-            // 
             // txb_branch_ID
             // 
             this.txb_branch_ID.Location = new System.Drawing.Point(117, 19);
@@ -517,15 +503,39 @@ namespace QuanLiChuoiCF
             this.label7.TabIndex = 0;
             this.label7.Text = "ID:";
             // 
-            // btnAddBranch
+            // txb_branch_Name
             // 
-            this.btnAddBranch.Location = new System.Drawing.Point(8, 3);
-            this.btnAddBranch.Name = "btnAddBranch";
-            this.btnAddBranch.Size = new System.Drawing.Size(80, 30);
-            this.btnAddBranch.TabIndex = 0;
-            this.btnAddBranch.Text = "Add";
-            this.btnAddBranch.UseVisualStyleBackColor = true;
-            this.btnAddBranch.Click += new System.EventHandler(this.btnAddBranchClick);
+            this.txb_branch_Name.Location = new System.Drawing.Point(117, 62);
+            this.txb_branch_Name.Name = "txb_branch_Name";
+            this.txb_branch_Name.Size = new System.Drawing.Size(300, 20);
+            this.txb_branch_Name.TabIndex = 1;
+            // 
+            // txb_branch_Manager
+            // 
+            this.txb_branch_Manager.Location = new System.Drawing.Point(117, 106);
+            this.txb_branch_Manager.Name = "txb_branch_Manager";
+            this.txb_branch_Manager.Size = new System.Drawing.Size(300, 20);
+            this.txb_branch_Manager.TabIndex = 2;
+            // 
+            // lbBranchName
+            // 
+            this.lbBranchName.AutoSize = true;
+            this.lbBranchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBranchName.Location = new System.Drawing.Point(23, 67);
+            this.lbBranchName.Name = "lbBranchName";
+            this.lbBranchName.Size = new System.Drawing.Size(87, 13);
+            this.lbBranchName.TabIndex = 0;
+            this.lbBranchName.Text = "Branch Name:";
+            // 
+            // lbManager
+            // 
+            this.lbManager.AutoSize = true;
+            this.lbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManager.Location = new System.Drawing.Point(23, 113);
+            this.lbManager.Name = "lbManager";
+            this.lbManager.Size = new System.Drawing.Size(60, 13);
+            this.lbManager.TabIndex = 0;
+            this.lbManager.Text = "Manager:";
             // 
             // panel24
             // 
@@ -579,6 +589,25 @@ namespace QuanLiChuoiCF
             this.btnDeleteBranch.UseVisualStyleBackColor = true;
             this.btnDeleteBranch.Click += new System.EventHandler(this.btnDeleteBranchClick);
             // 
+            // btnAddBranch
+            // 
+            this.btnAddBranch.Location = new System.Drawing.Point(8, 3);
+            this.btnAddBranch.Name = "btnAddBranch";
+            this.btnAddBranch.Size = new System.Drawing.Size(80, 30);
+            this.btnAddBranch.TabIndex = 0;
+            this.btnAddBranch.Text = "Add";
+            this.btnAddBranch.UseVisualStyleBackColor = true;
+            this.btnAddBranch.Click += new System.EventHandler(this.btnAddBranchClick);
+            // 
+            // lb_Branch_Notify
+            // 
+            this.lb_Branch_Notify.AutoSize = true;
+            this.lb_Branch_Notify.Location = new System.Drawing.Point(797, 61);
+            this.lb_Branch_Notify.Name = "lb_Branch_Notify";
+            this.lb_Branch_Notify.Size = new System.Drawing.Size(38, 13);
+            this.lb_Branch_Notify.TabIndex = 6;
+            this.lb_Branch_Notify.Text = "notify: ";
+            // 
             // tpDrink
             // 
             this.tpDrink.BackColor = System.Drawing.Color.Transparent;
@@ -591,6 +620,7 @@ namespace QuanLiChuoiCF
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lb_Drink_Notify);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel6);
@@ -601,25 +631,34 @@ namespace QuanLiChuoiCF
             this.panel5.TabIndex = 0;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // lb_Drink_Notify
+            // 
+            this.lb_Drink_Notify.AutoSize = true;
+            this.lb_Drink_Notify.Location = new System.Drawing.Point(804, 63);
+            this.lb_Drink_Notify.Name = "lb_Drink_Notify";
+            this.lb_Drink_Notify.Size = new System.Drawing.Size(67, 13);
+            this.lb_Drink_Notify.TabIndex = 8;
+            this.lb_Drink_Notify.Text = "NOTIFY~~~";
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.tbSearchCF);
             this.panel7.Controls.Add(this.btnTim);
-            this.panel7.Location = new System.Drawing.Point(584, 10);
+            this.panel7.Location = new System.Drawing.Point(10, 10);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(630, 39);
+            this.panel7.Size = new System.Drawing.Size(447, 39);
             this.panel7.TabIndex = 7;
             // 
             // tbSearchCF
             // 
             this.tbSearchCF.Location = new System.Drawing.Point(10, 9);
             this.tbSearchCF.Name = "tbSearchCF";
-            this.tbSearchCF.Size = new System.Drawing.Size(210, 20);
+            this.tbSearchCF.Size = new System.Drawing.Size(288, 20);
             this.tbSearchCF.TabIndex = 5;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(233, 3);
+            this.btnTim.Location = new System.Drawing.Point(304, 3);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(79, 31);
             this.btnTim.TabIndex = 4;
@@ -631,36 +670,36 @@ namespace QuanLiChuoiCF
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(584, 144);
+            this.panel8.Location = new System.Drawing.Point(797, 94);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(264, 180);
+            this.panel8.Size = new System.Drawing.Size(417, 180);
             this.panel8.TabIndex = 6;
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.nmPrice);
+            this.panel12.Controls.Add(this.nud_Drink_Price);
             this.panel12.Controls.Add(this.label4);
             this.panel12.Location = new System.Drawing.Point(0, 117);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(249, 51);
-            this.panel12.TabIndex = 4;
+            this.panel12.TabIndex = 2;
             // 
-            // nmPrice
+            // nud_Drink_Price
             // 
-            this.nmPrice.Increment = new decimal(new int[] {
+            this.nud_Drink_Price.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.nmPrice.Location = new System.Drawing.Point(83, 15);
-            this.nmPrice.Maximum = new decimal(new int[] {
+            this.nud_Drink_Price.Location = new System.Drawing.Point(83, 15);
+            this.nud_Drink_Price.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
-            this.nmPrice.Name = "nmPrice";
-            this.nmPrice.Size = new System.Drawing.Size(162, 20);
-            this.nmPrice.TabIndex = 1;
+            this.nud_Drink_Price.Name = "nud_Drink_Price";
+            this.nud_Drink_Price.Size = new System.Drawing.Size(162, 20);
+            this.nud_Drink_Price.TabIndex = 1;
             // 
             // label4
             // 
@@ -674,19 +713,19 @@ namespace QuanLiChuoiCF
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.txbDrinkName);
+            this.panel10.Controls.Add(this.txb_Drink_Name);
             this.panel10.Controls.Add(this.label2);
             this.panel10.Location = new System.Drawing.Point(0, 60);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(249, 51);
-            this.panel10.TabIndex = 2;
+            this.panel10.TabIndex = 1;
             // 
-            // txbDrinkName
+            // txb_Drink_Name
             // 
-            this.txbDrinkName.Location = new System.Drawing.Point(83, 15);
-            this.txbDrinkName.Name = "txbDrinkName";
-            this.txbDrinkName.Size = new System.Drawing.Size(162, 20);
-            this.txbDrinkName.TabIndex = 1;
+            this.txb_Drink_Name.Location = new System.Drawing.Point(83, 15);
+            this.txb_Drink_Name.Name = "txb_Drink_Name";
+            this.txb_Drink_Name.Size = new System.Drawing.Size(162, 20);
+            this.txb_Drink_Name.TabIndex = 1;
             // 
             // label2
             // 
@@ -700,21 +739,21 @@ namespace QuanLiChuoiCF
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txbID);
+            this.panel9.Controls.Add(this.txb_Drink_ID);
             this.panel9.Controls.Add(this.label1);
             this.panel9.Location = new System.Drawing.Point(2, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(249, 51);
-            this.panel9.TabIndex = 1;
+            this.panel9.TabIndex = 0;
             // 
-            // txbID
+            // txb_Drink_ID
             // 
-            this.txbID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbID.Location = new System.Drawing.Point(80, 14);
-            this.txbID.Name = "txbID";
-            this.txbID.ReadOnly = true;
-            this.txbID.Size = new System.Drawing.Size(162, 20);
-            this.txbID.TabIndex = 1;
+            this.txb_Drink_ID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_Drink_ID.Location = new System.Drawing.Point(80, 14);
+            this.txb_Drink_ID.Name = "txb_Drink_ID";
+            this.txb_Drink_ID.ReadOnly = true;
+            this.txb_Drink_ID.Size = new System.Drawing.Size(162, 20);
+            this.txb_Drink_ID.TabIndex = 1;
             // 
             // label1
             // 
@@ -728,61 +767,72 @@ namespace QuanLiChuoiCF
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.btnXem);
-            this.panel6.Controls.Add(this.btnSua);
-            this.panel6.Controls.Add(this.btnXoa);
-            this.panel6.Controls.Add(this.btnThem);
-            this.panel6.Location = new System.Drawing.Point(584, 76);
+            this.panel6.Controls.Add(this.btn_Drink_New);
+            this.panel6.Controls.Add(this.btn_Drink_Refresh);
+            this.panel6.Controls.Add(this.btn_Drink_Update);
+            this.panel6.Controls.Add(this.btn_Drink_Delete);
+            this.panel6.Controls.Add(this.btn_Drink_Add);
+            this.panel6.Location = new System.Drawing.Point(797, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(630, 37);
-            this.panel6.TabIndex = 5;
+            this.panel6.Size = new System.Drawing.Size(417, 37);
+            this.panel6.TabIndex = 3;
             // 
-            // btnXem
+            // btn_Drink_New
             // 
-            this.btnXem.Location = new System.Drawing.Point(262, 3);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(79, 31);
-            this.btnXem.TabIndex = 3;
-            this.btnXem.Text = "Refresh";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnRefreshClicked);
+            this.btn_Drink_New.Location = new System.Drawing.Point(330, 3);
+            this.btn_Drink_New.Name = "btn_Drink_New";
+            this.btn_Drink_New.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_New.TabIndex = 4;
+            this.btn_Drink_New.Text = "New";
+            this.btn_Drink_New.UseVisualStyleBackColor = true;
+            this.btn_Drink_New.Click += new System.EventHandler(this.btnNewDrinkClick);
             // 
-            // btnSua
+            // btn_Drink_Refresh
             // 
-            this.btnSua.Location = new System.Drawing.Point(178, 3);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(79, 31);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Edit";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnEditDrinkClick);
+            this.btn_Drink_Refresh.Location = new System.Drawing.Point(250, 3);
+            this.btn_Drink_Refresh.Name = "btn_Drink_Refresh";
+            this.btn_Drink_Refresh.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Refresh.TabIndex = 3;
+            this.btn_Drink_Refresh.Text = "Refresh";
+            this.btn_Drink_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Drink_Refresh.Click += new System.EventHandler(this.btnRefreshClicked);
             // 
-            // btnXoa
+            // btn_Drink_Update
             // 
-            this.btnXoa.Location = new System.Drawing.Point(94, 3);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(79, 31);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Delete";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnDeleteDrinkClick);
+            this.btn_Drink_Update.Location = new System.Drawing.Point(170, 3);
+            this.btn_Drink_Update.Name = "btn_Drink_Update";
+            this.btn_Drink_Update.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Update.TabIndex = 2;
+            this.btn_Drink_Update.Text = "Update";
+            this.btn_Drink_Update.UseVisualStyleBackColor = true;
+            this.btn_Drink_Update.Click += new System.EventHandler(this.btnEditDrinkClick);
             // 
-            // btnThem
+            // btn_Drink_Delete
             // 
-            this.btnThem.Location = new System.Drawing.Point(12, 3);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(79, 31);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Add";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnAddDrinkClick);
+            this.btn_Drink_Delete.Location = new System.Drawing.Point(90, 3);
+            this.btn_Drink_Delete.Name = "btn_Drink_Delete";
+            this.btn_Drink_Delete.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Delete.TabIndex = 1;
+            this.btn_Drink_Delete.Text = "Delete";
+            this.btn_Drink_Delete.UseVisualStyleBackColor = true;
+            this.btn_Drink_Delete.Click += new System.EventHandler(this.btnDeleteDrinkClick);
+            // 
+            // btn_Drink_Add
+            // 
+            this.btn_Drink_Add.Location = new System.Drawing.Point(10, 3);
+            this.btn_Drink_Add.Name = "btn_Drink_Add";
+            this.btn_Drink_Add.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Add.TabIndex = 0;
+            this.btn_Drink_Add.Text = "Add";
+            this.btn_Drink_Add.UseVisualStyleBackColor = true;
+            this.btn_Drink_Add.Click += new System.EventHandler(this.btnAddDrinkClick);
             // 
             // panel20
             // 
             this.panel20.Controls.Add(this.dtgvCF);
-            this.panel20.Location = new System.Drawing.Point(3, 3);
+            this.panel20.Location = new System.Drawing.Point(3, 55);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(542, 584);
+            this.panel20.Size = new System.Drawing.Size(760, 560);
             this.panel20.TabIndex = 4;
             // 
             // dtgvCF
@@ -794,9 +844,9 @@ namespace QuanLiChuoiCF
             this.dtgvCF.BackgroundColor = System.Drawing.Color.White;
             this.dtgvCF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvCF.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtgvCF.Location = new System.Drawing.Point(1, 1);
+            this.dtgvCF.Location = new System.Drawing.Point(7, 3);
             this.dtgvCF.Name = "dtgvCF";
-            this.dtgvCF.Size = new System.Drawing.Size(538, 580);
+            this.dtgvCF.Size = new System.Drawing.Size(750, 550);
             this.dtgvCF.TabIndex = 1;
             // 
             // tpDoanhThu
@@ -872,7 +922,7 @@ namespace QuanLiChuoiCF
             this.tab.SelectedIndex = 0;
             this.tab.Size = new System.Drawing.Size(1249, 666);
             this.tab.TabIndex = 0;
-            this.tab.Click += new System.EventHandler(this.Load);
+            this.tab.Click += new System.EventHandler(this.tpClick);
             // 
             // tpEmployee
             // 
@@ -1274,34 +1324,6 @@ namespace QuanLiChuoiCF
             this.dtgvEmployees.Size = new System.Drawing.Size(750, 550);
             this.dtgvEmployees.TabIndex = 1;
             // 
-            // labelUserID
-            // 
-            this.labelUserID.AutoSize = true;
-            this.labelUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserID.Location = new System.Drawing.Point(6, 13);
-            this.labelUserID.Name = "labelUserID";
-            this.labelUserID.Size = new System.Drawing.Size(24, 13);
-            this.labelUserID.TabIndex = 0;
-            this.labelUserID.Text = "ID:";
-            // 
-            // btn_Account_ChangePassword
-            // 
-            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(330, 22);
-            this.btn_Account_ChangePassword.Name = "btn_Account_ChangePassword";
-            this.btn_Account_ChangePassword.Size = new System.Drawing.Size(103, 23);
-            this.btn_Account_ChangePassword.TabIndex = 3;
-            this.btn_Account_ChangePassword.Text = "ChangePassword";
-            this.btn_Account_ChangePassword.UseVisualStyleBackColor = true;
-            this.btn_Account_ChangePassword.Click += new System.EventHandler(this.btn_Account_ChangePasswordClick);
-            // 
-            // cbb_Account_ID
-            // 
-            this.cbb_Account_ID.FormattingEnabled = true;
-            this.cbb_Account_ID.Location = new System.Drawing.Point(90, 10);
-            this.cbb_Account_ID.Name = "cbb_Account_ID";
-            this.cbb_Account_ID.Size = new System.Drawing.Size(160, 21);
-            this.cbb_Account_ID.TabIndex = 0;
-            // 
             // tpGood
             // 
             this.tpGood.Controls.Add(this.panel15);
@@ -1379,6 +1401,40 @@ namespace QuanLiChuoiCF
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(432, 299);
             this.panel18.TabIndex = 0;
+            // 
+            // txb_Good_Price
+            // 
+            this.txb_Good_Price.Location = new System.Drawing.Point(120, 180);
+            this.txb_Good_Price.Name = "txb_Good_Price";
+            this.txb_Good_Price.Size = new System.Drawing.Size(300, 20);
+            this.txb_Good_Price.TabIndex = 4;
+            // 
+            // txb_Good_Unit
+            // 
+            this.txb_Good_Unit.Location = new System.Drawing.Point(120, 140);
+            this.txb_Good_Unit.Name = "txb_Good_Unit";
+            this.txb_Good_Unit.Size = new System.Drawing.Size(300, 20);
+            this.txb_Good_Unit.TabIndex = 3;
+            // 
+            // lb_Good_Price
+            // 
+            this.lb_Good_Price.AutoSize = true;
+            this.lb_Good_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_Good_Price.Location = new System.Drawing.Point(36, 183);
+            this.lb_Good_Price.Name = "lb_Good_Price";
+            this.lb_Good_Price.Size = new System.Drawing.Size(40, 13);
+            this.lb_Good_Price.TabIndex = 4;
+            this.lb_Good_Price.Text = "Price:";
+            // 
+            // lb_Good_Unit
+            // 
+            this.lb_Good_Unit.AutoSize = true;
+            this.lb_Good_Unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_Good_Unit.Location = new System.Drawing.Point(36, 143);
+            this.lb_Good_Unit.Name = "lb_Good_Unit";
+            this.lb_Good_Unit.Size = new System.Drawing.Size(34, 13);
+            this.lb_Good_Unit.TabIndex = 3;
+            this.lb_Good_Unit.Text = "Unit:";
             // 
             // txb_Good_ID
             // 
@@ -1498,40 +1554,6 @@ namespace QuanLiChuoiCF
             this.label8.TabIndex = 16;
             this.label8.Text = "notify: ";
             // 
-            // lb_Good_Unit
-            // 
-            this.lb_Good_Unit.AutoSize = true;
-            this.lb_Good_Unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_Good_Unit.Location = new System.Drawing.Point(36, 143);
-            this.lb_Good_Unit.Name = "lb_Good_Unit";
-            this.lb_Good_Unit.Size = new System.Drawing.Size(34, 13);
-            this.lb_Good_Unit.TabIndex = 3;
-            this.lb_Good_Unit.Text = "Unit:";
-            // 
-            // lb_Good_Price
-            // 
-            this.lb_Good_Price.AutoSize = true;
-            this.lb_Good_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_Good_Price.Location = new System.Drawing.Point(36, 183);
-            this.lb_Good_Price.Name = "lb_Good_Price";
-            this.lb_Good_Price.Size = new System.Drawing.Size(40, 13);
-            this.lb_Good_Price.TabIndex = 4;
-            this.lb_Good_Price.Text = "Price:";
-            // 
-            // txb_Good_Unit
-            // 
-            this.txb_Good_Unit.Location = new System.Drawing.Point(120, 140);
-            this.txb_Good_Unit.Name = "txb_Good_Unit";
-            this.txb_Good_Unit.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Unit.TabIndex = 3;
-            // 
-            // txb_Good_Price
-            // 
-            this.txb_Good_Price.Location = new System.Drawing.Point(120, 180);
-            this.txb_Good_Price.Name = "txb_Good_Price";
-            this.txb_Good_Price.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Price.TabIndex = 4;
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1560,12 +1582,13 @@ namespace QuanLiChuoiCF
             this.panel24.ResumeLayout(false);
             this.tpDrink.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -1638,19 +1661,19 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.NumericUpDown nmPrice;
+        private System.Windows.Forms.NumericUpDown nud_Drink_Price;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txbDrinkName;
+        private System.Windows.Forms.TextBox txb_Drink_Name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txb_Drink_ID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnXem;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btn_Drink_Refresh;
+        private System.Windows.Forms.Button btn_Drink_Update;
+        private System.Windows.Forms.Button btn_Drink_Delete;
+        private System.Windows.Forms.Button btn_Drink_Add;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.DataGridView dtgvCF;
         private System.Windows.Forms.TabPage tpDoanhThu;
@@ -1704,7 +1727,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Button btnNewBranch;
-        private System.Windows.Forms.Label lbNotify;
+        private System.Windows.Forms.Label lb_Branch_Notify;
         private System.Windows.Forms.Button btn_Account_New;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.DataGridView dtgvAccount;
@@ -1737,5 +1760,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button btn_Good_Delete;
         private System.Windows.Forms.Button btn_Good_Add;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btn_Drink_New;
+        private System.Windows.Forms.Label lb_Drink_Notify;
     }
 }

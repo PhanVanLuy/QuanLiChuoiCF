@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DTO
         {
             this.iDOfMaterial = rows["IDOfMaterial"].ToString();
             this.name = rows["Name"].ToString();
-            this.amount = (int)rows["Amount"];
+            this.amount = (Byte)rows["Amount"];
             this.unit = rows["Unit"].ToString();
             this.price = rows["Price"].ToString();
         }
