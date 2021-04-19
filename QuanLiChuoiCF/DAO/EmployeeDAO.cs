@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Employee> GetEmployees()
         {
             List<Employee> employees = new List<Employee>();
-            string query = "select * from dbo.Employee";
+            string query = "select * from dbo.Employee ORDER BY IDOfEmployee";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {

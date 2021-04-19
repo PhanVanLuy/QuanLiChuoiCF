@@ -22,8 +22,8 @@ namespace QuanLiChuoiCF.DTO
         public Account(DataRow row)
         {
             this.id = ((string)row["ID"]).Trim();
-            this.displayName = (string)row["DisplayName"];
-            this.password = (string)row["Password"];
+            this.displayName = ((string)row["DisplayName"]).Trim();
+            this.password = ((string)row["Password"]).Trim(); ;
             this.type = (int)row["Type"];
         }
 

@@ -31,7 +31,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Drink> GetListDrinks()
         {
             List<Drink> DrinkList = new List<Drink>();
-            string query = "select * from dbo.Drink";
+            string query = "select * from dbo.Drink ORDER BY IDOfDrink";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)

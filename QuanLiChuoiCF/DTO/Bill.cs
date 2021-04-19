@@ -9,37 +9,37 @@ namespace QuanLiChuoiCF.DTO
 {
     public class Bill
     {
-        public Bill(string id, DateTime? dateCheckIn,int status,string iDOfbranch)
+        public Bill(string idOfBill,string iDOfbranch, DateTime? dateCheckIn, int totalAmount)
         {
-            this.ID = id;
+            this.IDOfBill = idOfBill;
+            this.IDOfBranch = iDOfbranch;
             this.DateCheckIn = dateCheckIn;
-            this.IDOfbranch = iDOfbranch;
-            this.Status = status;
+            this.TotalAmount = totalAmount;
         }
         public Bill( DataRow row)
         {
-            this.ID = ((string)row["IDOfBill"]).Trim();
-            this.IDOfbranch = (string)row[" IDOfbranch"];
-            this.DateCheckIn = (DateTime?)row["DateCheckIn"];         
-            this.Status = (int)row["Status"];
+            this.IDOfBill = ((string)row["IDOfBill"]).Trim();
+            this.IDOfBranch = ((string)row[" IDOfbranch"]).Trim();
+            this.DateCheckIn = (DateTime?)row["DateCheckIn"];
+            this.TotalAmount = (int)float.Parse(row["TotalAmount"].ToString().Trim());
         }
 
         public Bill()
         {
-            this.ID = "HD00";
+            this.IDOfBill = "HD00";
             this.DateCheckIn =null;
-            this.IDOfbranch = "";
-            this.Status = 0;
+            this.IDOfBranch = "";
+            this.TotalAmount = 0;
         }
 
-        private int status;
+        private string iDOfBill;
+        private string iDOfBranch;
         private DateTime? dateCheckIn;
-        private string iD;
-        private string iDOfbranch;
+        private int totalAmount;
 
-        public string IDOfbranch { get => iDOfbranch; set => iDOfbranch = value; }
-        public int Status { get => status; set => status = value; }
+        public string IDOfBill { get => iDOfBill; set => iDOfBill = value; }
+        public string IDOfBranch { get => iDOfBranch; set => iDOfBranch = value; }
         public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
-        public string ID { get => iD; set => iD = value; }
+        public int TotalAmount { get => totalAmount; set => totalAmount = value; }
     }
 }
