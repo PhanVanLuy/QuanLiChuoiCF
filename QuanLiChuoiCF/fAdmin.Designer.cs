@@ -29,6 +29,7 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbAccount = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Account_Notify = new System.Windows.Forms.Label();
@@ -163,6 +164,63 @@ namespace QuanLiChuoiCF
             this.btn_Good_Delete = new System.Windows.Forms.Button();
             this.btn_Good_Add = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.tpBill = new System.Windows.Forms.TabPage();
+            this.tpSupplier = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.dtgv_Supplier_Mterial = new System.Windows.Forms.DataGridView();
+            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
+            this.iDOfMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
+            this.iDOfSupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDOfMaterialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -207,6 +265,25 @@ namespace QuanLiChuoiCF
             ((System.ComponentModel.ISupportInitialize)(this.dtgvGoods)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.tpBill.SuspendLayout();
+            this.tpSupplier.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel30.SuspendLayout();
+            this.panel31.SuspendLayout();
+            this.panel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel35.SuspendLayout();
+            this.panel36.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel28.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.panel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbAccount
@@ -920,6 +997,8 @@ namespace QuanLiChuoiCF
             this.tab.Controls.Add(this.tbAccount);
             this.tab.Controls.Add(this.tpEmployee);
             this.tab.Controls.Add(this.tpGood);
+            this.tab.Controls.Add(this.tpBill);
+            this.tab.Controls.Add(this.tpSupplier);
             this.tab.Location = new System.Drawing.Point(12, 12);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
@@ -1341,6 +1420,7 @@ namespace QuanLiChuoiCF
             this.tpGood.TabIndex = 5;
             this.tpGood.Text = "Good";
             this.tpGood.UseVisualStyleBackColor = true;
+            this.tpGood.Click += new System.EventHandler(this.tpGood_Click);
             // 
             // panel15
             // 
@@ -1558,6 +1638,515 @@ namespace QuanLiChuoiCF
             this.label8.TabIndex = 16;
             this.label8.Text = "notify: ";
             // 
+            // tpBill
+            // 
+            this.tpBill.Controls.Add(this.panel23);
+            this.tpBill.Location = new System.Drawing.Point(4, 22);
+            this.tpBill.Name = "tpBill";
+            this.tpBill.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBill.Size = new System.Drawing.Size(1241, 640);
+            this.tpBill.TabIndex = 6;
+            this.tpBill.Text = "Bill";
+            this.tpBill.UseVisualStyleBackColor = true;
+            // 
+            // tpSupplier
+            // 
+            this.tpSupplier.Controls.Add(this.panel30);
+            this.tpSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tpSupplier.Name = "tpSupplier";
+            this.tpSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tpSupplier.Size = new System.Drawing.Size(1241, 640);
+            this.tpSupplier.TabIndex = 7;
+            this.tpSupplier.Text = "Supplier";
+            this.tpSupplier.UseVisualStyleBackColor = true;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.panel25);
+            this.panel23.Controls.Add(this.panel26);
+            this.panel23.Controls.Add(this.panel28);
+            this.panel23.Controls.Add(this.panel29);
+            this.panel23.Controls.Add(this.label11);
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1238, 640);
+            this.panel23.TabIndex = 0;
+            // 
+            // panel30
+            // 
+            this.panel30.Controls.Add(this.panel37);
+            this.panel30.Controls.Add(this.panel31);
+            this.panel30.Controls.Add(this.panel34);
+            this.panel30.Controls.Add(this.panel35);
+            this.panel30.Controls.Add(this.panel36);
+            this.panel30.Location = new System.Drawing.Point(0, 0);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(1241, 637);
+            this.panel30.TabIndex = 0;
+            // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.textBox10);
+            this.panel31.Controls.Add(this.button8);
+            this.panel31.Location = new System.Drawing.Point(9, 16);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(436, 39);
+            this.panel31.TabIndex = 23;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(3, 9);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(342, 20);
+            this.textBox10.TabIndex = 5;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(351, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 31);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "Search";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.dataGridView3);
+            this.panel34.Location = new System.Drawing.Point(10, 56);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(767, 564);
+            this.panel34.TabIndex = 22;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDOfSupplierDataGridViewTextBoxColumn,
+            this.iDOfMaterialDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.addressDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.supplierBindingSource;
+            this.dataGridView3.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridView3.Location = new System.Drawing.Point(1, 5);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(763, 555);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.textBox13);
+            this.panel35.Controls.Add(this.label14);
+            this.panel35.Controls.Add(this.textBox14);
+            this.panel35.Controls.Add(this.textBox15);
+            this.panel35.Controls.Add(this.label15);
+            this.panel35.Controls.Add(this.label16);
+            this.panel35.Location = new System.Drawing.Point(800, 96);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(432, 139);
+            this.panel35.TabIndex = 19;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(121, 20);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(36, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "ID:";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(120, 60);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(300, 20);
+            this.textBox14.TabIndex = 1;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(120, 100);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(300, 20);
+            this.textBox15.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(36, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Name:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(36, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Address:";
+            // 
+            // panel36
+            // 
+            this.panel36.Controls.Add(this.button11);
+            this.panel36.Location = new System.Drawing.Point(939, 25);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(132, 37);
+            this.panel36.TabIndex = 20;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(26, 4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(80, 30);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Detail";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.textBox4);
+            this.panel25.Controls.Add(this.button2);
+            this.panel25.Location = new System.Drawing.Point(8, 18);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(436, 39);
+            this.panel25.TabIndex = 23;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(3, 9);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(342, 20);
+            this.textBox4.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(351, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 31);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.dataGridView2);
+            this.panel26.Location = new System.Drawing.Point(9, 58);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(767, 564);
+            this.panel26.TabIndex = 22;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridView2.Location = new System.Drawing.Point(1, 5);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(763, 555);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.textBox5);
+            this.panel28.Controls.Add(this.textBox6);
+            this.panel28.Controls.Add(this.label3);
+            this.panel28.Controls.Add(this.label5);
+            this.panel28.Controls.Add(this.textBox7);
+            this.panel28.Controls.Add(this.label6);
+            this.panel28.Controls.Add(this.textBox8);
+            this.panel28.Controls.Add(this.textBox9);
+            this.panel28.Controls.Add(this.label9);
+            this.panel28.Controls.Add(this.label10);
+            this.panel28.Location = new System.Drawing.Point(799, 98);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(432, 299);
+            this.panel28.TabIndex = 19;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(120, 180);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(300, 20);
+            this.textBox5.TabIndex = 4;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(120, 140);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(300, 20);
+            this.textBox6.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(36, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Price:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(36, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Unit:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(121, 20);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "ID:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(120, 60);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(300, 20);
+            this.textBox8.TabIndex = 1;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(120, 100);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(300, 20);
+            this.textBox9.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(36, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Name:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(36, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Amount:";
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.button3);
+            this.panel29.Controls.Add(this.button4);
+            this.panel29.Controls.Add(this.button5);
+            this.panel29.Controls.Add(this.button6);
+            this.panel29.Controls.Add(this.button7);
+            this.panel29.Location = new System.Drawing.Point(799, 18);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(432, 37);
+            this.panel29.TabIndex = 20;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(331, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(80, 30);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "New";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(250, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 30);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Refresh";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(170, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 30);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(90, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 30);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Delete";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(8, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(80, 30);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Add";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(804, 72);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "notify: ";
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.dtgv_Supplier_Mterial);
+            this.panel37.Location = new System.Drawing.Point(800, 265);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(432, 355);
+            this.panel37.TabIndex = 24;
+            // 
+            // dtgv_Supplier_Mterial
+            // 
+            this.dtgv_Supplier_Mterial.AllowUserToOrderColumns = true;
+            this.dtgv_Supplier_Mterial.AutoGenerateColumns = false;
+            this.dtgv_Supplier_Mterial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtgv_Supplier_Mterial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Mterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Supplier_Mterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDOfMaterialDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.unitDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dtgv_Supplier_Mterial.DataSource = this.goodsBindingSource;
+            this.dtgv_Supplier_Mterial.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Mterial.Location = new System.Drawing.Point(3, 4);
+            this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
+            this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
+            this.dtgv_Supplier_Mterial.TabIndex = 0;
+            this.dtgv_Supplier_Mterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Supplier_Mterial_CellContentClick);
+            // 
+            // quanLiChuoiCFDataSet
+            // 
+            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
+            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
+            // 
+            // goodsTableAdapter
+            // 
+            this.goodsTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDOfMaterialDataGridViewTextBoxColumn
+            // 
+            this.iDOfMaterialDataGridViewTextBoxColumn.DataPropertyName = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn.HeaderText = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn.Name = "iDOfMaterialDataGridViewTextBoxColumn";
+            this.iDOfMaterialDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
+            this.supplierBindingSource.DataSource = this.quanLiChuoiCFDataSet;
+            // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDOfSupplierDataGridViewTextBoxColumn
+            // 
+            this.iDOfSupplierDataGridViewTextBoxColumn.DataPropertyName = "IDOfSupplier";
+            this.iDOfSupplierDataGridViewTextBoxColumn.HeaderText = "IDOfSupplier";
+            this.iDOfSupplierDataGridViewTextBoxColumn.Name = "iDOfSupplierDataGridViewTextBoxColumn";
+            // 
+            // iDOfMaterialDataGridViewTextBoxColumn1
+            // 
+            this.iDOfMaterialDataGridViewTextBoxColumn1.DataPropertyName = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn1.HeaderText = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn1.Name = "iDOfMaterialDataGridViewTextBoxColumn1";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1566,6 +2155,7 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.tab);
             this.Name = "fAdmin";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tbAccount.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1626,6 +2216,30 @@ namespace QuanLiChuoiCF
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
+            this.tpBill.ResumeLayout(false);
+            this.tpSupplier.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            this.panel34.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
+            this.panel36.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.panel37.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1766,5 +2380,62 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_Drink_New;
         private System.Windows.Forms.Label lb_Drink_Notify;
+        private System.Windows.Forms.TabPage tpBill;
+        private System.Windows.Forms.TabPage tpSupplier;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.DataGridView dtgv_Supplier_Mterial;
+        private QuanLiChuoiCFDataSet quanLiChuoiCFDataSet;
+        private System.Windows.Forms.BindingSource goodsBindingSource;
+        private QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter goodsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDOfMaterialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
+        private QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDOfSupplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDOfMaterialDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
     }
 }
