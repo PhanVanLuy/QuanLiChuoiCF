@@ -39,7 +39,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Account> GetAccounts()
         {
             List<Account> accounts = new List<Account>();
-            string query = "select * from dbo.Account";
+            string query = "select * from dbo.Account ORDER BY ID;";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -56,13 +56,13 @@ namespace QuanLiChuoiCF.DAO
 
         public bool UpdateAccount(string id, string displayName, int type)
         {
-            string query = string.Format("update dbo.Account set DisplayName = N'{0}', Type = {2} where ID = N'{3}'", id, displayName, type);
+            string query = string.Format("update dbo.Account set DisplayName = N'{1}', Type = {2} where ID = N'{0}'", id, displayName, type);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
         public bool DeleteAccount(string id)
         {
-            string query = string.Format("delete dbo.Account where ID = {0}", id);
+            string query = string.Format("delete dbo.Account where ID = N'{0}'", id);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 

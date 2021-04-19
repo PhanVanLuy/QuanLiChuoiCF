@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         {
             List<Branch> branches = new List<Branch>();
 
-            string query = "select * from Branch";
+            string query = "select * from Branch ORDER BY IDOfBranch";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)
