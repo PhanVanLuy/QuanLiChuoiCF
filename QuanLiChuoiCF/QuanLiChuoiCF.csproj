@@ -55,16 +55,19 @@
     <Compile Include="DAO\DetailOfBillDAO.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
-    <Compile Include="DAO\GoodDAO.cs" />
-    <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\InfoOfMaterialDAO.cs" />
+    <Compile Include="DAO\WarehouseMaterial.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillExport.cs" />
     <Compile Include="DTO\Branch.cs" />
     <Compile Include="DTO\DetailOfBill.cs" />
+    <Compile Include="DTO\DetailOfBillExport.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Employee.cs" />
-    <Compile Include="DTO\Good.cs" />
-    <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\MaterialInWarehouse.cs" />
+    <Compile Include="DTO\InfoOfMaterial.cs" />
+    <Compile Include="DTO\Supplier.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>

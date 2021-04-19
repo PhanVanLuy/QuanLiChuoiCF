@@ -142,9 +142,9 @@ namespace QuanLiChuoiCF
             this.lbNotify.AutoSize = true;
             this.lbNotify.Location = new System.Drawing.Point(154, 194);
             this.lbNotify.Name = "lbNotify";
-            this.lbNotify.Size = new System.Drawing.Size(35, 13);
+            this.lbNotify.Size = new System.Drawing.Size(37, 13);
             this.lbNotify.TabIndex = 11;
-            this.lbNotify.Text = "label1";
+            this.lbNotify.Text = "Notify:";
             // 
             // fNewAccount
             // 

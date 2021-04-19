@@ -336,16 +336,20 @@ namespace QuanLiChuoiCF
             // 
             this.cbb_Account_AccountType.FormattingEnabled = true;
             this.cbb_Account_AccountType.Location = new System.Drawing.Point(90, 104);
+            this.cbb_Account_AccountType.MaxDropDownItems = 100;
             this.cbb_Account_AccountType.Name = "cbb_Account_AccountType";
             this.cbb_Account_AccountType.Size = new System.Drawing.Size(160, 21);
+            this.cbb_Account_AccountType.Sorted = true;
             this.cbb_Account_AccountType.TabIndex = 2;
             // 
             // cbb_Account_ID
             // 
             this.cbb_Account_ID.FormattingEnabled = true;
             this.cbb_Account_ID.Location = new System.Drawing.Point(90, 10);
+            this.cbb_Account_ID.MaxDropDownItems = 100;
             this.cbb_Account_ID.Name = "cbb_Account_ID";
             this.cbb_Account_ID.Size = new System.Drawing.Size(160, 21);
+            this.cbb_Account_ID.Sorted = true;
             this.cbb_Account_ID.TabIndex = 0;
             // 
             // labelAccountType
@@ -362,13 +366,12 @@ namespace QuanLiChuoiCF
             // 
             this.txb_Account_UserName.Location = new System.Drawing.Point(90, 57);
             this.txb_Account_UserName.Name = "txb_Account_UserName";
-            this.txb_Account_UserName.ReadOnly = true;
             this.txb_Account_UserName.Size = new System.Drawing.Size(160, 20);
             this.txb_Account_UserName.TabIndex = 1;
             // 
             // btn_Account_ChangePassword
             // 
-            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(330, 22);
+            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(90, 143);
             this.btn_Account_ChangePassword.Name = "btn_Account_ChangePassword";
             this.btn_Account_ChangePassword.Size = new System.Drawing.Size(103, 23);
             this.btn_Account_ChangePassword.TabIndex = 3;
@@ -1165,6 +1168,7 @@ namespace QuanLiChuoiCF
             this.cbb_Employee_IDOfBranch.Location = new System.Drawing.Point(100, 450);
             this.cbb_Employee_IDOfBranch.Name = "cbb_Employee_IDOfBranch";
             this.cbb_Employee_IDOfBranch.Size = new System.Drawing.Size(121, 21);
+            this.cbb_Employee_IDOfBranch.Sorted = true;
             this.cbb_Employee_IDOfBranch.TabIndex = 11;
             // 
             // cbb_Employee_Sexual
