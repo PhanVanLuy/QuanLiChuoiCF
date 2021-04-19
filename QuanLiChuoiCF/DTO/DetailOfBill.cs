@@ -28,6 +28,7 @@ namespace QuanLiChuoiCF.DTO
         private string iDOfBill;
         private string iDOfDrink;
         private int count;
+
         public int Count { get => count; set => count = value; }
         public string IDOfBill { get => iDOfBill; set => iDOfBill = value; }
         public string IDOfDrink { get => iDOfDrink; set => iDOfDrink = value; }
