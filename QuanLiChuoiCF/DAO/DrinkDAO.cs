@@ -43,7 +43,7 @@ namespace QuanLiChuoiCF.DAO
             return DrinkList;
         }
 
-        public bool InsertDrink(string id,string name,  float price)
+        public bool AddDrink(string id,string name,  float price)
         {
             string query = string.Format("insert dbo.Drink(IDOfDrink,Name,Price)values(N'{0}', N'{1}', {2})", id, name,price);
             int result = DataProvider.Instance.ExecuteNonQuery(query);

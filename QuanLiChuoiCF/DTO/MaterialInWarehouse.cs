@@ -7,36 +7,42 @@ using System.Threading.Tasks;
 
 namespace QuanLiChuoiCF.DTO
 {
-    class Good
+    public class MaterialInWarehouse
     {
-        public Good(string iDOfMaterial, string name, int amount, string unit, string price)
+        public MaterialInWarehouse() { }
+
+        public MaterialInWarehouse(string iDOfImportMaterial, string iDOfMaterial, int amount, int amountLeft, DateTime dateAdded, DateTime expiryDate)
         {
-            this.iDOfMaterial = iDOfMaterial;
-            this.name = name;
-            this.amount = amount;
-            this.unit = unit;
-            this.price = price;
+            this.iDOfImportMaterial = iDOfImportMaterial;
+            this.IDOfMaterial = iDOfMaterial;
+            this.Amount = amount;
+            this.AmountLeft = amountLeft;
+            this.DateAdded = dateAdded;
+            this.ExpiryDate = expiryDate;
         }
 
-        public Good(DataRow rows)
+        public MaterialInWarehouse(DataRow row)
         {
-            this.iDOfMaterial = rows["IDOfMaterial"].ToString();
-            this.name = rows["Name"].ToString();
-            this.amount = (Byte)rows["Amount"];
-            this.unit = rows["Unit"].ToString();
-            this.price = rows["Price"].ToString();
+            this.iDOfImportMaterial = row["IDOfImportMaterial"].ToString().Trim();
+            this.IDOfMaterial = row["IDOfMaterial"].ToString().Trim();
+            this.Amount = (int)row["Amount"];
+            this.AmountLeft = (int)row["AmountLeft"];
+            this.DateAdded = (DateTime)row["DateAdded"];
+            this.ExpiryDate = (DateTime)row["ExpiryDate"];
         }
 
+        private string iDOfImportMaterial;
         private string iDOfMaterial;
-        private string name;
         private int amount;
-        private string unit;
-        private string price;
+        private int amountLeft;
+        private DateTime dateAdded;
+        private DateTime expiryDate;
 
+        public string IDOfImportMaterial { get => iDOfImportMaterial; set => iDOfImportMaterial = value; }
         public string IDOfMaterial { get => iDOfMaterial; set => iDOfMaterial = value; }
-        public string Name { get => name; set => name = value; }
         public int Amount { get => amount; set => amount = value; }
-        public string Unit { get => unit; set => unit = value; }
-        public string Price { get => price; set => price = value; }
+        public int AmountLeft { get => amountLeft; set => amountLeft = value; }
+        public DateTime DateAdded { get => dateAdded; set => dateAdded = value; }
+        public DateTime ExpiryDate { get => expiryDate; set => expiryDate = value; }
     }
 }

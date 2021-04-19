@@ -9,7 +9,7 @@ namespace QuanLiChuoiCF.DTO
 {
     public  class Drink
     {
-        private Drink(string iD,string name, string price )
+        private Drink(string iD,string name, int price )
         {
             this.ID = iD;
             this.Name = name;
@@ -20,14 +20,14 @@ namespace QuanLiChuoiCF.DTO
         {
             this.ID = (row["IDofDrink"].ToString()).Trim();
             this.Name = row["name"].ToString().Trim();
-            this.Price =row["price"].ToString().Trim();
+            this.Price = (int)float.Parse(row["price"].ToString());
         }
         public string ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
-        public string Price { get => price; set => price = value; }
+        public int Price { get => price; set => price = value; }
 
         private string iD;
         private string name;
-        private string price;
+        private int price;
     }
 }

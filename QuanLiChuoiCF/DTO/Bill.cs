@@ -9,7 +9,7 @@ namespace QuanLiChuoiCF.DTO
 {
     public class Bill
     {
-        public Bill(string idOfBill,string iDOfbranch, DateTime? dateCheckIn, int totalAmount)
+        public Bill(string idOfBill,string iDOfbranch, DateTime dateCheckIn, int totalAmount)
         {
             this.IDOfBill = idOfBill;
             this.IDOfBranch = iDOfbranch;
@@ -20,26 +20,20 @@ namespace QuanLiChuoiCF.DTO
         {
             this.IDOfBill = ((string)row["IDOfBill"]).Trim();
             this.IDOfBranch = ((string)row[" IDOfbranch"]).Trim();
-            this.DateCheckIn = (DateTime?)row["DateCheckIn"];
+            this.DateCheckIn = (DateTime)row["DateCheckIn"];
             this.TotalAmount = (int)float.Parse(row["TotalAmount"].ToString().Trim());
         }
 
-        public Bill()
-        {
-            this.IDOfBill = "HD00";
-            this.DateCheckIn =null;
-            this.IDOfBranch = "";
-            this.TotalAmount = 0;
-        }
+        public Bill() { }
 
         private string iDOfBill;
         private string iDOfBranch;
-        private DateTime? dateCheckIn;
+        private DateTime dateCheckIn;
         private int totalAmount;
 
         public string IDOfBill { get => iDOfBill; set => iDOfBill = value; }
         public string IDOfBranch { get => iDOfBranch; set => iDOfBranch = value; }
-        public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
+        public DateTime DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
         public int TotalAmount { get => totalAmount; set => totalAmount = value; }
     }
 }

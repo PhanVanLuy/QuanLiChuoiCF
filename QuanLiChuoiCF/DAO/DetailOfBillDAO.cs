@@ -18,10 +18,10 @@ namespace QuanLiChuoiCF.DAO
         } 
         private DetailOfBillDAO() { }
         
-        public List<DetailOfBill> GetListDetailOfBill(string id)
+        public List<DetailOfBill> GetDetailOfBills(string id)
         {
             List<DetailOfBill> listDetailOfBill = new List<DetailOfBill>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select *from dbo.DetailOfBill where  idofbill='" + id + "'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select *from dbo.DetailOfBill where  idofbill='" + id + "' ORDER BY IDOfBill, IDOfDrink");
             foreach(DataRow item in data.Rows)
             {
                 DetailOfBill detail = new DetailOfBill(item);
@@ -30,10 +30,28 @@ namespace QuanLiChuoiCF.DAO
             return listDetailOfBill;
         }
 
-        public void DeleteBillInfoByDrinkID(string id)
+        //Nguy Hiem Khong Nen Dung
+        public bool DeleteBillInfoByDrinkID(string id)
         {
-            DataProvider.Instance.ExecuteQuery("delete dbo.DetailOfBill where IDOfDrink = N'" + id +"'");
+            return DataProvider.Instance.ExecuteNonQuery("delete dbo.DetailOfBill where IDOfDrink = N'" + id +"'")>0;
         }
-      
-}   
+
+        public bool AddDetailOfBill(string iDOfBill, string iDOfDrink, int count)
+        {
+            string query = string.Format("insert dbo.DetailOfBill(IDOfBill, IDOfDrink, Count) values ('{0}', '{1}', {2}", iDOfBill, iDOfDrink, count);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+
+        public bool UpdateDetailOfBill(string iDOfBill, string iDOfDrink, int count)
+        {
+            string query = string.Format("update dbo.DetailOfBill set IDOfDrink = '{1}', Count = {2}) where IDOfBill = '{0}'", iDOfBill, iDOfDrink, count);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+
+        public bool DeleteDetailOfBill(string iDOfBill, string iDOfDrink)
+        {
+            string query = string.Format("delete dbo.DetailOfBill where IDOfBill = '{0}' and IDOfDrink = '{1}'", iDOfBill, iDOfDrink);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+}
 }
