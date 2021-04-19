@@ -165,23 +165,7 @@ namespace QuanLiChuoiCF
             this.btn_Good_Add = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.tpBill = new System.Windows.Forms.TabPage();
-            this.tpSupplier = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel34 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.panel35 = new System.Windows.Forms.Panel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel36 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -205,22 +189,37 @@ namespace QuanLiChuoiCF
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.tpSupplier = new System.Windows.Forms.TabPage();
+            this.panel30 = new System.Windows.Forms.Panel();
             this.panel37 = new System.Windows.Forms.Panel();
             this.dtgv_Supplier_Mterial = new System.Windows.Forms.DataGridView();
-            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
-            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
             this.iDOfMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.dtgrSupplier = new System.Windows.Forms.DataGridView();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
             this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
-            this.iDOfSupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDOfMaterialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -266,24 +265,24 @@ namespace QuanLiChuoiCF
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
             this.tpBill.SuspendLayout();
-            this.tpSupplier.SuspendLayout();
             this.panel23.SuspendLayout();
-            this.panel30.SuspendLayout();
-            this.panel31.SuspendLayout();
-            this.panel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel35.SuspendLayout();
-            this.panel36.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
+            this.tpSupplier.SuspendLayout();
+            this.panel30.SuspendLayout();
             this.panel37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
+            this.panel31.SuspendLayout();
+            this.panel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            this.panel35.SuspendLayout();
+            this.panel36.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbAccount
@@ -1420,7 +1419,6 @@ namespace QuanLiChuoiCF
             this.tpGood.TabIndex = 5;
             this.tpGood.Text = "Good";
             this.tpGood.UseVisualStyleBackColor = true;
-            //this.tpGood.Click += new System.EventHandler(this.tpGood_Click);
             // 
             // panel15
             // 
@@ -1649,17 +1647,6 @@ namespace QuanLiChuoiCF
             this.tpBill.Text = "Bill";
             this.tpBill.UseVisualStyleBackColor = true;
             // 
-            // tpSupplier
-            // 
-            this.tpSupplier.Controls.Add(this.panel30);
-            this.tpSupplier.Location = new System.Drawing.Point(4, 22);
-            this.tpSupplier.Name = "tpSupplier";
-            this.tpSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSupplier.Size = new System.Drawing.Size(1241, 640);
-            this.tpSupplier.TabIndex = 7;
-            this.tpSupplier.Text = "Supplier";
-            this.tpSupplier.UseVisualStyleBackColor = true;
-            // 
             // panel23
             // 
             this.panel23.Controls.Add(this.panel25);
@@ -1671,154 +1658,6 @@ namespace QuanLiChuoiCF
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1238, 640);
             this.panel23.TabIndex = 0;
-            // 
-            // panel30
-            // 
-            this.panel30.Controls.Add(this.panel37);
-            this.panel30.Controls.Add(this.panel31);
-            this.panel30.Controls.Add(this.panel34);
-            this.panel30.Controls.Add(this.panel35);
-            this.panel30.Controls.Add(this.panel36);
-            this.panel30.Location = new System.Drawing.Point(0, 0);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(1241, 637);
-            this.panel30.TabIndex = 0;
-            // 
-            // panel31
-            // 
-            this.panel31.Controls.Add(this.textBox10);
-            this.panel31.Controls.Add(this.button8);
-            this.panel31.Location = new System.Drawing.Point(9, 16);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(436, 39);
-            this.panel31.TabIndex = 23;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(3, 9);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(342, 20);
-            this.textBox10.TabIndex = 5;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(351, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(79, 31);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Search";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // panel34
-            // 
-            this.panel34.Controls.Add(this.dataGridView3);
-            this.panel34.Location = new System.Drawing.Point(10, 56);
-            this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(767, 564);
-            this.panel34.TabIndex = 22;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDOfSupplierDataGridViewTextBoxColumn,
-            this.iDOfMaterialDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.addressDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.supplierBindingSource;
-            this.dataGridView3.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dataGridView3.Location = new System.Drawing.Point(1, 5);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(763, 555);
-            this.dataGridView3.TabIndex = 1;
-            // 
-            // panel35
-            // 
-            this.panel35.Controls.Add(this.textBox13);
-            this.panel35.Controls.Add(this.label14);
-            this.panel35.Controls.Add(this.textBox14);
-            this.panel35.Controls.Add(this.textBox15);
-            this.panel35.Controls.Add(this.label15);
-            this.panel35.Controls.Add(this.label16);
-            this.panel35.Location = new System.Drawing.Point(800, 96);
-            this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(432, 139);
-            this.panel35.TabIndex = 19;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(121, 20);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "ID:";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(120, 60);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(300, 20);
-            this.textBox14.TabIndex = 1;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(120, 100);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(300, 20);
-            this.textBox15.TabIndex = 2;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(36, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 13);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Name:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(36, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Address:";
-            // 
-            // panel36
-            // 
-            this.panel36.Controls.Add(this.button11);
-            this.panel36.Location = new System.Drawing.Point(939, 25);
-            this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(132, 37);
-            this.panel36.TabIndex = 20;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(26, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(80, 30);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Detail";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // panel25
             // 
@@ -2036,6 +1875,29 @@ namespace QuanLiChuoiCF
             this.label11.TabIndex = 21;
             this.label11.Text = "notify: ";
             // 
+            // tpSupplier
+            // 
+            this.tpSupplier.Controls.Add(this.panel30);
+            this.tpSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tpSupplier.Name = "tpSupplier";
+            this.tpSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tpSupplier.Size = new System.Drawing.Size(1241, 640);
+            this.tpSupplier.TabIndex = 7;
+            this.tpSupplier.Text = "Supplier";
+            this.tpSupplier.UseVisualStyleBackColor = true;
+            // 
+            // panel30
+            // 
+            this.panel30.Controls.Add(this.panel36);
+            this.panel30.Controls.Add(this.panel37);
+            this.panel30.Controls.Add(this.panel31);
+            this.panel30.Controls.Add(this.panel34);
+            this.panel30.Controls.Add(this.panel35);
+            this.panel30.Location = new System.Drawing.Point(0, 0);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(1241, 637);
+            this.panel30.TabIndex = 0;
+            // 
             // panel37
             // 
             this.panel37.Controls.Add(this.dtgv_Supplier_Mterial);
@@ -2063,21 +1925,6 @@ namespace QuanLiChuoiCF
             this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
             this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
             this.dtgv_Supplier_Mterial.TabIndex = 0;
-            //this.dtgv_Supplier_Mterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Supplier_Mterial_CellContentClick);
-            // 
-            // quanLiChuoiCFDataSet
-            // 
-            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
-            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // goodsBindingSource
-            // 
-            this.goodsBindingSource.DataMember = "Goods";
-            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
-            // 
-            // goodsTableAdapter
-            // 
-            this.goodsTableAdapter.ClearBeforeFill = true;
             // 
             // iDOfMaterialDataGridViewTextBoxColumn
             // 
@@ -2114,38 +1961,188 @@ namespace QuanLiChuoiCF
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.Width = 56;
             // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
+            // 
+            // quanLiChuoiCFDataSet
+            // 
+            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
+            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.textBox10);
+            this.panel31.Controls.Add(this.button8);
+            this.panel31.Location = new System.Drawing.Point(9, 16);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(436, 39);
+            this.panel31.TabIndex = 23;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(3, 9);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(342, 20);
+            this.textBox10.TabIndex = 5;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(351, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(79, 31);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "Search";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.dtgrSupplier);
+            this.panel34.Location = new System.Drawing.Point(10, 56);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(767, 564);
+            this.panel34.TabIndex = 22;
+            // 
+            // dtgrSupplier
+            // 
+            this.dtgrSupplier.AllowUserToResizeColumns = false;
+            this.dtgrSupplier.AllowUserToResizeRows = false;
+            this.dtgrSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgrSupplier.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgrSupplier.BackgroundColor = System.Drawing.Color.White;
+            this.dtgrSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgrSupplier.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtgrSupplier.Location = new System.Drawing.Point(1, 5);
+            this.dtgrSupplier.Name = "dtgrSupplier";
+            this.dtgrSupplier.Size = new System.Drawing.Size(763, 555);
+            this.dtgrSupplier.TabIndex = 1;
+            // 
             // supplierBindingSource
             // 
             this.supplierBindingSource.DataMember = "Supplier";
             this.supplierBindingSource.DataSource = this.quanLiChuoiCFDataSet;
             // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.textBox13);
+            this.panel35.Controls.Add(this.label14);
+            this.panel35.Controls.Add(this.textBox14);
+            this.panel35.Controls.Add(this.textBox15);
+            this.panel35.Controls.Add(this.label15);
+            this.panel35.Controls.Add(this.label16);
+            this.panel35.Location = new System.Drawing.Point(800, 96);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(432, 139);
+            this.panel35.TabIndex = 19;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(121, 20);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(36, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "ID:";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(120, 60);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(300, 20);
+            this.textBox14.TabIndex = 1;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(120, 100);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(300, 20);
+            this.textBox15.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(36, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Name:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(36, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Address:";
+            // 
+            // goodsTableAdapter
+            // 
+            this.goodsTableAdapter.ClearBeforeFill = true;
+            // 
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
-            // iDOfSupplierDataGridViewTextBoxColumn
+            // panel36
             // 
-            this.iDOfSupplierDataGridViewTextBoxColumn.DataPropertyName = "IDOfSupplier";
-            this.iDOfSupplierDataGridViewTextBoxColumn.HeaderText = "IDOfSupplier";
-            this.iDOfSupplierDataGridViewTextBoxColumn.Name = "iDOfSupplierDataGridViewTextBoxColumn";
+            this.panel36.Controls.Add(this.button9);
+            this.panel36.Controls.Add(this.button10);
+            this.panel36.Controls.Add(this.button11);
+            this.panel36.Controls.Add(this.button12);
+            this.panel36.Location = new System.Drawing.Point(800, 36);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(420, 37);
+            this.panel36.TabIndex = 21;
             // 
-            // iDOfMaterialDataGridViewTextBoxColumn1
+            // button9
             // 
-            this.iDOfMaterialDataGridViewTextBoxColumn1.DataPropertyName = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn1.HeaderText = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn1.Name = "iDOfMaterialDataGridViewTextBoxColumn1";
+            this.button9.Location = new System.Drawing.Point(281, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(80, 30);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "New";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // nameDataGridViewTextBoxColumn1
+            // button10
             // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.button10.Location = new System.Drawing.Point(200, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(80, 30);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "Refresh";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // addressDataGridViewTextBoxColumn
+            // button11
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.button11.Location = new System.Drawing.Point(120, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(80, 30);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Update";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(40, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(80, 30);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "Delete";
+            this.button12.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 
@@ -2155,7 +2152,6 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.tab);
             this.Name = "fAdmin";
             this.Text = "Admin";
-            //this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tbAccount.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2217,17 +2213,8 @@ namespace QuanLiChuoiCF
             this.panel18.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
-            this.tpSupplier.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            this.panel30.ResumeLayout(false);
-            this.panel31.ResumeLayout(false);
-            this.panel31.PerformLayout();
-            this.panel34.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel35.ResumeLayout(false);
-            this.panel35.PerformLayout();
-            this.panel36.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.panel26.ResumeLayout(false);
@@ -2235,11 +2222,20 @@ namespace QuanLiChuoiCF
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
+            this.tpSupplier.ResumeLayout(false);
+            this.panel30.ResumeLayout(false);
             this.panel37.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            this.panel34.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrSupplier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
+            this.panel36.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2388,7 +2384,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel34;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dtgrSupplier;
         private System.Windows.Forms.Panel panel35;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label14;
@@ -2396,8 +2392,6 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel36;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button2;
@@ -2433,9 +2427,10 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDOfSupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDOfMaterialDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }

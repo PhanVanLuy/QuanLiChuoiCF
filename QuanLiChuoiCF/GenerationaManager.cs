@@ -109,11 +109,9 @@ namespace QuanLiChuoiCF
 
                     totalPriceRow = (count + last_count) * price;
                     totalPrice += count * price;
-
                     item.SubItems[1].Text = (count+last_count).ToString();
                     item.SubItems[2].Text = price.ToString();
                     item.SubItems[3].Text = totalPriceRow.ToString();
-
                     txbTotalPrice.Text = totalPrice.ToString();
 
                     return;

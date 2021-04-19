@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLiChuoiCF
 {
-    partial class AddSupplier
+    partial class fAddSupplier
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,23 @@ namespace QuanLiChuoiCF
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txb_Name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txb_Address = new System.Windows.Forms.TextBox();
-            this.btn_AddSupplier = new System.Windows.Forms.Button();
+            this.txb_ID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txb_Address = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txb_Name = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_AddSupplier = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txb_ID);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txb_Address);
             this.panel1.Controls.Add(this.label2);
@@ -53,62 +57,24 @@ namespace QuanLiChuoiCF
             this.panel1.Size = new System.Drawing.Size(492, 188);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // txb_ID
             // 
-            this.panel2.Controls.Add(this.btn_AddSupplier);
-            this.panel2.Location = new System.Drawing.Point(1, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 44);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.txb_ID.Location = new System.Drawing.Point(105, 56);
+            this.txb_ID.Name = "txb_ID";
+            this.txb_ID.ReadOnly = true;
+            this.txb_ID.Size = new System.Drawing.Size(161, 20);
+            this.txb_ID.TabIndex = 0;
+            this.txb_ID.TabStop = false;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
-            // 
-            // txb_Name
-            // 
-            this.txb_Name.Location = new System.Drawing.Point(100, 65);
-            this.txb_Name.Name = "txb_Name";
-            this.txb_Name.Size = new System.Drawing.Size(339, 20);
-            this.txb_Name.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Address:";
-            // 
-            // txb_Address
-            // 
-            this.txb_Address.Location = new System.Drawing.Point(100, 116);
-            this.txb_Address.Name = "txb_Address";
-            this.txb_Address.Size = new System.Drawing.Size(339, 20);
-            this.txb_Address.TabIndex = 1;
-            // 
-            // btn_AddSupplier
-            // 
-            this.btn_AddSupplier.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_AddSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddSupplier.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_AddSupplier.Location = new System.Drawing.Point(154, 3);
-            this.btn_AddSupplier.Name = "btn_AddSupplier";
-            this.btn_AddSupplier.Size = new System.Drawing.Size(192, 38);
-            this.btn_AddSupplier.TabIndex = 0;
-            this.btn_AddSupplier.Text = "Add";
-            this.btn_AddSupplier.UseVisualStyleBackColor = false;
-            this.btn_AddSupplier.Click += new System.EventHandler(this.btn_AddSupplier_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(47, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "ID:";
             // 
             // label3
             // 
@@ -120,14 +86,71 @@ namespace QuanLiChuoiCF
             this.label3.TabIndex = 2;
             this.label3.Text = "FILL INFORMATION FOR SUPPLIER";
             // 
-            // AddSupplier
+            // txb_Address
+            // 
+            this.txb_Address.Location = new System.Drawing.Point(104, 140);
+            this.txb_Address.Name = "txb_Address";
+            this.txb_Address.Size = new System.Drawing.Size(339, 20);
+            this.txb_Address.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Address:";
+            // 
+            // txb_Name
+            // 
+            this.txb_Name.Location = new System.Drawing.Point(104, 98);
+            this.txb_Name.Name = "txb_Name";
+            this.txb_Name.Size = new System.Drawing.Size(339, 20);
+            this.txb_Name.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_AddSupplier);
+            this.panel2.Location = new System.Drawing.Point(1, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(492, 44);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btn_AddSupplier
+            // 
+            this.btn_AddSupplier.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_AddSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddSupplier.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_AddSupplier.Location = new System.Drawing.Point(154, 3);
+            this.btn_AddSupplier.Name = "btn_AddSupplier";
+            this.btn_AddSupplier.Size = new System.Drawing.Size(192, 38);
+            this.btn_AddSupplier.TabIndex = 2;
+            this.btn_AddSupplier.Text = "Add";
+            this.btn_AddSupplier.UseVisualStyleBackColor = false;
+            this.btn_AddSupplier.Click += new System.EventHandler(this.btn_AddSupplier_Click);
+            // 
+            // fAddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 289);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "AddSupplier";
+            this.Name = "fAddSupplier";
             this.Text = "Add Supplier";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -146,5 +169,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_AddSupplier;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txb_ID;
+        private System.Windows.Forms.Label label4;
     }
 }

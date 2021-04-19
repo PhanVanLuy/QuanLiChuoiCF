@@ -17,6 +17,8 @@ namespace QuanLiChuoiCF
     {
         BindingSource drinks = new BindingSource();
         BindingSource branches = new BindingSource();
+        BindingSource suppliers = new BindingSource();
+
         public static BindingSource accounts = new BindingSource();
         public static BindingSource employees = new BindingSource();
         BindingSource goods = new BindingSource();
@@ -35,6 +37,7 @@ namespace QuanLiChuoiCF
         }
         void LoadAndBinding()
         {
+            dtgrSupplier.DataSource = suppliers;
             dtgvCF.DataSource = drinks;
             dtgvBranches.DataSource = branches;
             dtgvAccount.DataSource = accounts;
@@ -56,6 +59,12 @@ namespace QuanLiChuoiCF
         }
 
         #region loadAndBinding
+        void LoadSupplier()
+        {
+            List<Supplier> data = SupplierDAO.Instance.GetSuppliers();
+            suppliers.DataSource = data;
+            
+        }
         void LoadDrinks()
         {
             List<Drink> data = DrinkDAO.Instance.GetListDrinks();
@@ -209,6 +218,9 @@ namespace QuanLiChuoiCF
                     break;
                 case "Good":
                     LoadGoods();
+                    break;
+                case "Supplier":
+                    LoadSupplier();
                     break;
 
             }
@@ -717,6 +729,12 @@ namespace QuanLiChuoiCF
             {
                 cbb_Account_ID.Items.Add(employee.IDOfEmployee);
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            fAddSupplier fAddSupplier = new fAddSupplier();
+            fAddSupplier.ShowDialog();
         }
     }
 }

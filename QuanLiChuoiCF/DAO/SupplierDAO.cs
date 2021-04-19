@@ -21,20 +21,28 @@ namespace QuanLiChuoiCF.DAO
         }
         public List<Supplier> GetSuppliers()
         {
-            List<Supplier> bills = new List<Supplier>();
+            List<Supplier> suppliers = new List<Supplier>();
             string query = "select * from dbo.Supplier ORDER BY IDOfSupplier";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                bills.Add(new Supplier(item));
+                suppliers.Add(new Supplier(item));
             }
 
-            return bills;
+            return suppliers;
         }
         public bool AddSupplier(string idOfSupplier, string Name,string Address)
         {
          
             string query = string.Format("insert dbo.Supplier(IDOfSupplier, Name, Address) values ('{0}', '{1}', '{2}')", idOfSupplier, Name, Address);
+            List<Supplier> suppliers = SupplierDAO.instance.GetSuppliers();
+            foreach(Supplier item in suppliers)
+            {
+                if (item.Name == Name)
+                    return false;
+            }
+            if (Name == "") return false;
+            if (Address == "") return false;
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
         public bool UpdateSupplier(string idOSupplier, string Name, string Address)
