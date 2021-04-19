@@ -50,13 +50,15 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillExportDAO.cs" />
     <Compile Include="DAO\BranchDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DetailOfBillDAO.cs" />
+    <Compile Include="DAO\DetailOfBillExportDAO.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\InfoOfMaterialDAO.cs" />
-    <Compile Include="DAO\WarehouseMaterial.cs" />
+    <Compile Include="DAO\WarehouseMaterialDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillExport.cs" />

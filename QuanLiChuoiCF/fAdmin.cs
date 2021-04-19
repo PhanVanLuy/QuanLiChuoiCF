@@ -111,7 +111,7 @@ namespace QuanLiChuoiCF
 
         void LoadGoods()
         {
-            List<MaterialInWarehouse> data = WarehouseMaterial.Instance.GetMaterials();
+            List<MaterialInWarehouse> data = WarehouseMaterialDAO.Instance.GetMaterials();
             goods.DataSource = data;
             MaterialInWarehouse[] arr = data.ToArray();
             if (arr.Length > 0) lastIDGood = arr[arr.Length - 1].IDOfMaterial;

@@ -1,19 +1,19 @@
 ﻿using QuanLiChuoiCF.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QuanLiChuoiCF.DAO
 {
-    class WarehouseMaterial
+    class WarehouseMaterialDAO
     {
-        private static WarehouseMaterial instance;
-        public static WarehouseMaterial Instance
+        private static WarehouseMaterialDAO instance;
+        public static WarehouseMaterialDAO Instance
         {
-            get { if (instance == null) instance = new WarehouseMaterial(); return instance; }
+            get { if (instance == null) instance = new WarehouseMaterialDAO(); return instance; }
             private set { instance = value; }
         }
 

@@ -44,7 +44,7 @@ namespace QuanLiChuoiCF.DAO
 
         public bool UpdateDetailOfBill(string iDOfBill, string iDOfDrink, int count)
         {
-            string query = string.Format("update dbo.DetailOfBill set IDOfDrink = '{1}', Count = {2}) where IDOfBill = '{0}'", iDOfBill, iDOfDrink, count);
+            string query = string.Format("update dbo.DetailOfBill set Count = {2}) where IDOfBill = '{0}' and IDOfDrink = '{1}'", iDOfBill, iDOfDrink, count);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
