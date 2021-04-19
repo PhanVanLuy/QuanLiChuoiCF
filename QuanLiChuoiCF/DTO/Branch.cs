@@ -11,15 +11,15 @@ namespace QuanLiChuoiCF.DTO
     {
         private Branch(string idBranch, string nameBranch, string manager)
         {
-            this.id = idBranch;
-            this.name = nameBranch;
-            this.manager = manager;
+            this.Id = idBranch;
+            this.Name = nameBranch;
+            this.Manager = manager;
         }
         public Branch(DataRow row)
         {
             this.Id = ((string)row["IDOfBranch"]).Trim();
-            this.name = (string)row["Name"];
-            this.manager = (string)row["Manager"];
+            this.Name = ((string)row["Name"]).Trim();
+            this.Manager = ((string)row["Manager"]).Trim();
         }
 
         private string id;

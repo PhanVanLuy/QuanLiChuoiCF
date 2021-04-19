@@ -9,26 +9,27 @@ namespace QuanLiChuoiCF.DTO
 {
     public class DetailOfBill
     {
-        public DetailOfBill( string iDOfBill, int iDOfDrink, int count, float totalPrice)
+        public DetailOfBill() { }
+
+        public DetailOfBill(string iDOfBill, string iDOfDrink, int count)
         {
             this.IDOfBill = iDOfBill;
-            this.IDOfDrink = IDOfDrink;
+            this.IDOfDrink = iDOfDrink;
             this.Count = count;
-            this.TotalPrice = totalPrice;
-        }public DetailOfBill(DataRow row)
-        {
-            this.IDOfBill = row["iDOfBill"].ToString();
-            this.IDOfDrink = row["IDOfDrink"].ToString();
-            this.Count = (int)row["count"];
-            this.TotalPrice =(float)Convert.ToDouble(row["TotalPrice"].ToString()); 
         }
-        private int count;
+        
+        public DetailOfBill(DataRow row)
+        {
+            this.IDOfBill = (row["iDOfBill"].ToString()).Trim();
+            this.IDOfDrink = (row["IDOfDrink"].ToString()).Trim();
+            this.Count = (int)row["count"];
+        }
+
         private string iDOfBill;
-        private string iDOfDrink; 
-        private float totalPrice; 
+        private string iDOfDrink;
+        private int count;
         public int Count { get => count; set => count = value; }
         public string IDOfBill { get => iDOfBill; set => iDOfBill = value; }
         public string IDOfDrink { get => iDOfDrink; set => iDOfDrink = value; }
-        public float TotalPrice { get => totalPrice; set => totalPrice = value; }
     }
 }

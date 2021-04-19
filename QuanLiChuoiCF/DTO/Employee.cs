@@ -9,6 +9,8 @@ namespace QuanLiChuoiCF.DTO
 {
     public class Employee
     {
+        public Employee() { }
+
         private Employee(string firstName, string lastName, string iDOfEmployee, string phoneNumber, string sexual
             , string address, DateTime dayIn, string shift, int dayOff, int bonus, int salary, string iDOfBranch)
         {
