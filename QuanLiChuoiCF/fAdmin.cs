@@ -58,7 +58,7 @@ namespace QuanLiChuoiCF
         #region loadAndBinding
         void LoadDrinks()
         {
-            List<Drink> data = DrinkDAO.Instance.GetListDrinks();
+            List<Drink> data = DrinkDAO.Instance.GetDrinks();
             drinks.DataSource = data;
             Drink[] arr = data.ToArray();
             if (arr.Length > 0) 

@@ -27,19 +27,19 @@ namespace QuanLiChuoiCF.DAO
         }
 
         private DrinkDAO() { }
-        public List<Drink> GetListDrinks()
+        public List<Drink> GetDrinks()
         {
-            List<Drink> DrinkList = new List<Drink>();
+            List<Drink> Drinks = new List<Drink>();
             string query = "select * from dbo.Drink ORDER BY IDOfDrink";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)
             {
                 Drink drink = new Drink(item);
-                DrinkList.Add(drink);
+                Drinks.Add(drink);
             }
 
-            return DrinkList;
+            return Drinks;
         }
 
         public bool AddDrink(string id,string name,  float price)

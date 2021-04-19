@@ -46,7 +46,7 @@ namespace QuanLiChuoiCF
         {
             flpDrink.Controls.Clear();
             cbb_addDrink.Items.Clear();
-            Drinks = DrinkDAO.Instance.GetListDrinks();
+            Drinks = DrinkDAO.Instance.GetDrinks();
             foreach (Drink item in Drinks)
             {
                 Button btn = new Button()
@@ -142,7 +142,6 @@ namespace QuanLiChuoiCF
             f.DeleteDrink += f_DeleteDrink;
             f.UpdateDrink += f_UpdateDrink;
             f.ShowDialog();
-
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
