@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace QuanLiChuoiCF.DAO
             private set => DataProvider.instance = value;
         }
         private DataProvider() { }
-        private string connectionSTR = "Data Source=LAPTOP-Q7DINM79\\MINHTHONG;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
+        private string connectionSTR = "Data Source=PHANLUY;Initial Catalog=QuanLiChuoiCF;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] paramater = null)
         {

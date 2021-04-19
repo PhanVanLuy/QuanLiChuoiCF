@@ -1420,7 +1420,7 @@ namespace QuanLiChuoiCF
             this.tpGood.TabIndex = 5;
             this.tpGood.Text = "Good";
             this.tpGood.UseVisualStyleBackColor = true;
-            this.tpGood.Click += new System.EventHandler(this.tpGood_Click);
+            //this.tpGood.Click += new System.EventHandler(this.tpGood_Click);
             // 
             // panel15
             // 
@@ -2063,7 +2063,7 @@ namespace QuanLiChuoiCF
             this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
             this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
             this.dtgv_Supplier_Mterial.TabIndex = 0;
-            this.dtgv_Supplier_Mterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Supplier_Mterial_CellContentClick);
+            //this.dtgv_Supplier_Mterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Supplier_Mterial_CellContentClick);
             // 
             // quanLiChuoiCFDataSet
             // 
@@ -2155,7 +2155,7 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.tab);
             this.Name = "fAdmin";
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.fAdmin_Load);
+            //this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tbAccount.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
