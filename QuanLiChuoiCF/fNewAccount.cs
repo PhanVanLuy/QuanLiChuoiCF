@@ -35,11 +35,19 @@ namespace QuanLiChuoiCF
 
         private void btnOkClick(object sender, EventArgs e)
         {
-            string id = cbbID.SelectedItem.ToString();
+            string id = cbbID.SelectedItem.ToString().Trim();
             if(id == "")
             {
                 lbNotify.Text = "ID can't be empty";
                 return;
+            }
+            foreach(Account item in fAdmin.accounts)
+            {
+                if(id == item.Id)
+                {
+                    lbNotify.Text = "ID was be used";
+                    return;
+                }
             }
             string userName = txbUserName.Text;
             if(userName == "")

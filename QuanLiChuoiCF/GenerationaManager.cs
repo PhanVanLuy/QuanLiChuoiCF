@@ -5,22 +5,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Menu = QuanLiChuoiCF.DTO.Menu;
 
 namespace QuanLiChuoiCF
 {
     public partial class fTableManager : Form
     {
-        private static List<Drink> drinkList;
+        private static List<Drink> drinks;
         private static int totalPrice;
 
-        public static List<Drink> DrinkList { get => drinkList; set => drinkList = value; }
+        public static List<Drink> Drinks { get => drinks; set => drinks = value; }
         public static int TotalPrice { get => totalPrice; set => totalPrice = value; }
 
         public fTableManager()
         {
             InitializeComponent();
-            //Bill bill = new Bill();
             LoadDrink();
         }
         #region Method
@@ -48,15 +46,15 @@ namespace QuanLiChuoiCF
         {
             flpDrink.Controls.Clear();
             cbb_addDrink.Items.Clear();
-            DrinkList = DrinkDAO.Instance.GetListDrinks();
-            foreach (Drink item in DrinkList)
+            Drinks = DrinkDAO.Instance.GetListDrinks();
+            foreach (Drink item in Drinks)
             {
                 Button btn = new Button()
                 {
                     Width = DrinkDAO.TableWidth,
                     Height = DrinkDAO.TableHeight
                 };
-                btn.Text = item.Name + Environment.NewLine+ (int)float.Parse(item.Price, System.Globalization.CultureInfo.InvariantCulture);
+                btn.Text = item.Name + Environment.NewLine+ item.Price;
                 btn.Click += btn_Click;
                 btn.Tag = item;
                 flpDrink.Controls.Add(btn);
@@ -68,39 +66,10 @@ namespace QuanLiChuoiCF
 
         #endregion
         #region events
-        void ShowBill(string iD)
-        {
-            //Tạm cho chi nhánh của nhân viên đăng nhập vào là chi nhánh quận 9
-            // sau có câu lệnh: 	select Branch.IDOfBranch from dbo.Branch, dbo.Employee, dbo.Account where Branch.IDOfBranch=Employee.IDOfBranch and Employee.IDOfEmloyee='NV01      '
-            // Để truy xuất đến chi nhánh mà nhân viên đã đăng nhập
-            string iDOfBranch = "CN09";
-            // lsvBill.Items.Clear();
-            //Bill new_Bill = new Bill();
-            //new_Bill.ID = getIDIncrea(new_Bill.ID);
-
-
-            /* Này dùng để hiện thị trên listview, tuy nhiên phần quản lý nhiều chi nhánh thì ko cần*/
-            float totalPrice=0;
-
-            List<Menu> listDrink = MenuDAO.Instance.GetListMenu(iD, iDOfBranch);
-            foreach (Menu item in listDrink)
-            {
-                ListViewItem lsvItem = new ListViewItem(item.DrinkName.ToString());
-                lsvItem.SubItems.Add(item.Count.ToString());
-                lsvItem.SubItems.Add(item.Price.ToString());
-                lsvItem.SubItems.Add(item.TotalPrice.ToString());
-                totalPrice += item.TotalPrice;
-
-                lsvBill.Items.Add(lsvItem);
-            }
-            txbTotalPrice.Text = totalPrice.ToString();
-
-
-        }
         void btn_Click(object sender, EventArgs e)
         {
             string drinkID = ((sender as Button).Tag as Drink).ID;
-            foreach (Drink item in DrinkList)
+            foreach (Drink item in Drinks)
             {
                 if(item.ID == drinkID)
                 {
@@ -118,11 +87,11 @@ namespace QuanLiChuoiCF
             int price = 0, totalPriceRow;
 
             //get price from drinks list
-            foreach (Drink item in DrinkList)
+            foreach (Drink item in Drinks)
             {
                 if (item.Name == name)
                 {
-                    price = (int)float.Parse(item.Price, System.Globalization.CultureInfo.InvariantCulture);
+                    price = item.Price;
                     break;
                 }
             }

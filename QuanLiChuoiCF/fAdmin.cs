@@ -17,7 +17,7 @@ namespace QuanLiChuoiCF
     {
         BindingSource drinks = new BindingSource();
         BindingSource branches = new BindingSource();
-        BindingSource accounts = new BindingSource();
+        public static BindingSource accounts = new BindingSource();
         public static BindingSource employees = new BindingSource();
         BindingSource goods = new BindingSource();
         string lastIDDrink;
@@ -111,9 +111,9 @@ namespace QuanLiChuoiCF
 
         void LoadGoods()
         {
-            List<Good> data = GoodDAO.Instance.GetGoods();
+            List<MaterialInWarehouse> data = WarehouseMaterial.Instance.GetMaterials();
             goods.DataSource = data;
-            Good[] arr = data.ToArray();
+            MaterialInWarehouse[] arr = data.ToArray();
             if (arr.Length > 0) lastIDGood = arr[arr.Length - 1].IDOfMaterial;
         }
 
@@ -241,7 +241,7 @@ namespace QuanLiChuoiCF
                 return;
             }
 
-            if (DrinkDAO.Instance.InsertDrink(id, name, price))
+            if (DrinkDAO.Instance.AddDrink(id, name, price))
             {
                 MessageBox.Show("Drink Was Added Successfully");
                 LoadDrinks();
@@ -390,6 +390,7 @@ namespace QuanLiChuoiCF
             }
             fChangePassword f = new fChangePassword(account);
             f.ShowDialog();
+            LoadAccounts();
         }
 
         private void btnAccountNewClick(object sender, EventArgs e)
@@ -717,6 +718,5 @@ namespace QuanLiChuoiCF
                 cbb_Account_ID.Items.Add(employee.IDOfEmployee);
             }
         }
-
     }
 }

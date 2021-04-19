@@ -29,66 +29,70 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbPassword = new System.Windows.Forms.Label();
-            this.txbNewPassword = new System.Windows.Forms.Label();
-            this.txbConfirmNewPassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.lbNewPassword = new System.Windows.Forms.Label();
+            this.lbConfirmNewPassword = new System.Windows.Forms.Label();
+            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.txbNewPassword = new System.Windows.Forms.TextBox();
+            this.txbConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.lbNotify = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(12, 33);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(56, 13);
+            this.lbPassword.TabIndex = 0;
+            this.lbPassword.Text = "Password:";
+            // 
+            // lbNewPassword
+            // 
+            this.lbNewPassword.AutoSize = true;
+            this.lbNewPassword.Location = new System.Drawing.Point(12, 72);
+            this.lbNewPassword.Name = "lbNewPassword";
+            this.lbNewPassword.Size = new System.Drawing.Size(81, 13);
+            this.lbNewPassword.TabIndex = 1;
+            this.lbNewPassword.Text = "New Password:";
+            // 
+            // lbConfirmNewPassword
+            // 
+            this.lbConfirmNewPassword.AutoSize = true;
+            this.lbConfirmNewPassword.Location = new System.Drawing.Point(12, 114);
+            this.lbConfirmNewPassword.Name = "lbConfirmNewPassword";
+            this.lbConfirmNewPassword.Size = new System.Drawing.Size(119, 13);
+            this.lbConfirmNewPassword.TabIndex = 2;
+            this.lbConfirmNewPassword.Text = "Confirm New Password:";
             // 
             // txbPassword
             // 
-            this.txbPassword.AutoSize = true;
-            this.txbPassword.Location = new System.Drawing.Point(12, 33);
+            this.txbPassword.Location = new System.Drawing.Point(139, 30);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(56, 13);
-            this.txbPassword.TabIndex = 0;
-            this.txbPassword.Text = "Password:";
+            this.txbPassword.Size = new System.Drawing.Size(211, 20);
+            this.txbPassword.TabIndex = 3;
+            this.txbPassword.UseSystemPasswordChar = true;
             // 
             // txbNewPassword
             // 
-            this.txbNewPassword.AutoSize = true;
-            this.txbNewPassword.Location = new System.Drawing.Point(12, 72);
+            this.txbNewPassword.Location = new System.Drawing.Point(139, 70);
             this.txbNewPassword.Name = "txbNewPassword";
-            this.txbNewPassword.Size = new System.Drawing.Size(81, 13);
-            this.txbNewPassword.TabIndex = 1;
-            this.txbNewPassword.Text = "New Password:";
+            this.txbNewPassword.Size = new System.Drawing.Size(211, 20);
+            this.txbNewPassword.TabIndex = 4;
+            this.txbNewPassword.UseSystemPasswordChar = true;
             // 
             // txbConfirmNewPassword
             // 
-            this.txbConfirmNewPassword.AutoSize = true;
-            this.txbConfirmNewPassword.Location = new System.Drawing.Point(12, 114);
+            this.txbConfirmNewPassword.Location = new System.Drawing.Point(139, 110);
             this.txbConfirmNewPassword.Name = "txbConfirmNewPassword";
-            this.txbConfirmNewPassword.Size = new System.Drawing.Size(119, 13);
-            this.txbConfirmNewPassword.TabIndex = 2;
-            this.txbConfirmNewPassword.Text = "Confirm New Password:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(139, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(139, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(139, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(211, 20);
-            this.textBox3.TabIndex = 5;
+            this.txbConfirmNewPassword.Size = new System.Drawing.Size(211, 20);
+            this.txbConfirmNewPassword.TabIndex = 5;
+            this.txbConfirmNewPassword.UseSystemPasswordChar = true;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(192, 148);
+            this.btnOK.Location = new System.Drawing.Point(139, 174);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
@@ -96,18 +100,28 @@ namespace QuanLiChuoiCF
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // lbNotify
+            // 
+            this.lbNotify.AutoSize = true;
+            this.lbNotify.Location = new System.Drawing.Point(136, 146);
+            this.lbNotify.Name = "lbNotify";
+            this.lbNotify.Size = new System.Drawing.Size(46, 13);
+            this.lbNotify.TabIndex = 7;
+            this.lbNotify.Text = "NOTIFY";
+            // 
             // fChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 194);
+            this.ClientSize = new System.Drawing.Size(362, 229);
+            this.Controls.Add(this.lbNotify);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txbConfirmNewPassword);
             this.Controls.Add(this.txbNewPassword);
             this.Controls.Add(this.txbPassword);
+            this.Controls.Add(this.lbConfirmNewPassword);
+            this.Controls.Add(this.lbNewPassword);
+            this.Controls.Add(this.lbPassword);
             this.Name = "fChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fChangePassword";
@@ -118,12 +132,13 @@ namespace QuanLiChuoiCF
 
         #endregion
 
-        private System.Windows.Forms.Label txbPassword;
-        private System.Windows.Forms.Label txbNewPassword;
-        private System.Windows.Forms.Label txbConfirmNewPassword;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label lbPassword;
+        private System.Windows.Forms.Label lbNewPassword;
+        private System.Windows.Forms.Label lbConfirmNewPassword;
+        private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.TextBox txbNewPassword;
+        private System.Windows.Forms.TextBox txbConfirmNewPassword;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label lbNotify;
     }
 }
