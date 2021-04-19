@@ -718,5 +718,20 @@ namespace QuanLiChuoiCF
             }
         }
 
+        private void tpGood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+        
+
+        }
+
+        private void dtgv_Supplier_Mterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
