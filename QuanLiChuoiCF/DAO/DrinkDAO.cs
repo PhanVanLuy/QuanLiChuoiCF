@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
 using System.Data;
 
 namespace QuanLiChuoiCF.DAO
 {
     class DrinkDAO
     {
+        public static int TableWidth =100;
+        public static int TableHeight =100;
+
         private static DrinkDAO instance;
         public static DrinkDAO Instance
         {
@@ -23,7 +25,7 @@ namespace QuanLiChuoiCF.DAO
             {
                 DrinkDAO.instance = value;
             }
-        } 
+        }
 
         private DrinkDAO() { }
         public List<Drink> GetListDrinks()

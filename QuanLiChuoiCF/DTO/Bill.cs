@@ -18,7 +18,7 @@ namespace QuanLiChuoiCF.DTO
         }
         public Bill( DataRow row)
         {
-            this.ID = (string)row["IDOfBill"];
+            this.ID = ((string)row["IDOfBill"]).Trim();
             this.IDOfbranch = (string)row[" IDOfbranch"];
             this.DateCheckIn = (DateTime?)row["DateCheckIn"];         
             this.Status = (int)row["Status"];

@@ -16,12 +16,11 @@ namespace QuanLiChuoiCF.DTO
             this.Price = price;
         }
       
-      
         public Drink(DataRow row )   
         {
-            this.ID = row["IDofDrink"].ToString();
-            this.Name = row["name"].ToString();
-            this.Price =row["price"].ToString();
+            this.ID = (row["IDofDrink"].ToString()).Trim();
+            this.Name = row["name"].ToString().Trim();
+            this.Price =row["price"].ToString().Trim();
         }
         public string ID { get => iD; set => iD = value; }
         public string Name { get => name; set => name = value; }
