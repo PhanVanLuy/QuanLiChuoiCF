@@ -22,26 +22,7 @@ namespace QuanLiChuoiCF
             LoadDrink();
         }
         #region Method
-        public string getIDIncrea(string ID)
-        {
-            string iD_Temp;
-            string numericID;
-            int num;
-            num = int.Parse(ID.Substring(2));
-            if (num < 9)
-            {
-                numericID = ID.Substring(3);
-                iD_Temp = ID.Substring(0, 3);
-            }
-            else
-            {
-                numericID = ID.Substring(2);
-                iD_Temp = ID.Substring(0, 2);
-            }
-            num++;
-            iD_Temp = String.Concat(iD_Temp, num);
-            return iD_Temp;
-        }
+       
         void LoadDrink()
         {
             flpDrink.Controls.Clear();

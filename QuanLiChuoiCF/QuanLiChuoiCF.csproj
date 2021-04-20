@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fAddSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAddSupplier.Designer.cs">
-      <DependentUpon>fAddSupplier.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillExportDAO.cs" />
@@ -126,9 +120,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fAddSupplier.resx">
-      <DependentUpon>fAddSupplier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fAccountProfile.resx">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </EmbeddedResource>

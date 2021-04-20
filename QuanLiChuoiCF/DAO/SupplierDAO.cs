@@ -41,13 +41,13 @@ namespace QuanLiChuoiCF.DAO
                 if (item.Name == Name)
                     return false;
             }
-            if (Name == "") return false;
+            if (Name == "") return  false;
             if (Address == "") return false;
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
         public bool UpdateSupplier(string idOSupplier, string Name, string Address)
         {
-            string query = string.Format("update dbo.Bill set Name = '{1}', Address = '{2}' where IDOfBill = '{0}'", idOSupplier, Name, Address);
+            string query = string.Format("update dbo.Supplier set Name = '{1}', Address = '{2}' where IDOfSupplier = '{0}'", idOSupplier, Name, Address);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
         public bool DeleteSupplier(string iDOfSuplier)

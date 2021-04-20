@@ -25,6 +25,7 @@ namespace QuanLiChuoiCF
         string lastIDDrink;
         string lastIDBranch;
         string lastIDAccount;
+        string lastIDSupplier;
         public static string lastIDEmployees;
         string lastIDGood;
 
@@ -35,9 +36,29 @@ namespace QuanLiChuoiCF
             InitializeComponent();
             LoadAndBinding();
         }
+        public string getIDIncrea(string ID)
+        {
+            string iD_Temp;
+            string numericID;
+            int num;
+            num = int.Parse(ID.Substring(2));
+            if (num < 9)
+            {
+                numericID = ID.Substring(3);
+                iD_Temp = ID.Substring(0, 3);
+            }
+            else
+            {
+                numericID = ID.Substring(2);
+                iD_Temp = ID.Substring(0, 2);
+            }
+            num++;
+            iD_Temp = String.Concat(iD_Temp, num);
+            return iD_Temp;
+        }
         void LoadAndBinding()
         {
-            dtgrSupplier.DataSource = suppliers;
+            dtgvSupplier.DataSource = suppliers;
             dtgvCF.DataSource = drinks;
             dtgvBranches.DataSource = branches;
             dtgvAccount.DataSource = accounts;
@@ -49,12 +70,14 @@ namespace QuanLiChuoiCF
             LoadEmployees();
             LoadAccounts();
             LoadGoods();
+            LoadSupplier();
 
             AddDrinkBinding();
             AddBranchBinding();
             AddEmployeeBinding();
             AddAccountBinding();
             AddGoodBinding();
+            AddSupplierBiding();
 
         }
 
@@ -63,16 +86,24 @@ namespace QuanLiChuoiCF
         {
             List<Supplier> data = SupplierDAO.Instance.GetSuppliers();
             suppliers.DataSource = data;
-            
+            Supplier[] arr = data.ToArray();
+            if (arr.Length > 0)
+            {
+                lastIDSupplier = arr[arr.Length - 1].IDOfSupplier;
+            }else
+            {
+                lastIDSupplier = "SP01";
+            }
+
         }
         void LoadDrinks()
         {
             List<Drink> data = DrinkDAO.Instance.GetListDrinks();
             drinks.DataSource = data;
             Drink[] arr = data.ToArray();
-            if (arr.Length > 0) 
-            { 
-                lastIDDrink = arr[arr.Length - 1].ID; 
+            if (arr.Length > 0)
+            {
+                lastIDDrink = arr[arr.Length - 1].ID;
             }
             else
             {
@@ -100,7 +131,7 @@ namespace QuanLiChuoiCF
             List<Employee> data = EmployeeDAO.Instance.GetEmployees();
             employees.DataSource = data;
             Employee[] arr = data.ToArray();
-            if(arr.Length>0)lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
+            if (arr.Length > 0) lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
 
             UpdateCbbSexualInTabEmployee();
             UpdateCbbShiftInTabEmployee();
@@ -112,12 +143,17 @@ namespace QuanLiChuoiCF
             List<Account> data = AccountDAO.Instance.GetAccounts();
             accounts.DataSource = data;
             Account[] arr = data.ToArray();
-            if(arr.Length>0)lastIDAccount = arr[arr.Length - 1].Id;
+            if (arr.Length > 0) lastIDAccount = arr[arr.Length - 1].Id;
 
             UpdateCbbAccountTypeInTabEmployee();
             UpdateCbbAccountIdInTabAccount();
         }
-
+        void AddSupplierBiding()
+        {
+            txt_Supplier_Address.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "Address", true, DataSourceUpdateMode.Never));
+            txt_Supplier_ID.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "IDOfSupplier", true, DataSourceUpdateMode.Never));
+            txt_Supplier_Name.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "Name", true, DataSourceUpdateMode.Never));
+        }
         void LoadGoods()
         {
             List<MaterialInWarehouse> data = WarehouseMaterialDAO.Instance.GetMaterials();
@@ -225,14 +261,14 @@ namespace QuanLiChuoiCF
 
             }
         }
-        
+
         #region eventsDrink
         private void btnAddDrinkClick(object sender, EventArgs e)
         {
             string id = txb_Drink_ID.Text;
-            foreach(Drink item in drinks)
+            foreach (Drink item in drinks)
             {
-                if(id == item.ID)
+                if (id == item.ID)
                 {
                     lb_Drink_Notify.Text = "NOTIFY: ID can't be duplicated";
                     return;
@@ -240,7 +276,7 @@ namespace QuanLiChuoiCF
             }
 
             string name = txb_Drink_Name.Text.Trim();
-            if(name == "")
+            if (name == "")
             {
                 lb_Drink_Notify.Text = "NOTIFY: Name can't be empty";
                 return;
@@ -301,7 +337,7 @@ namespace QuanLiChuoiCF
 
         private void btnDeleteDrinkClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this drink", "Delete Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this drink", "Delete Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
@@ -392,9 +428,9 @@ namespace QuanLiChuoiCF
         private void btn_Account_ChangePasswordClick(object sender, EventArgs e)
         {
             Account account = new Account();
-            foreach(Account item in accounts)
+            foreach (Account item in accounts)
             {
-                if(item.Id == cbb_Account_ID.Text)
+                if (item.Id == cbb_Account_ID.Text)
                 {
                     account = item;
                     break;
@@ -424,7 +460,7 @@ namespace QuanLiChuoiCF
         {
 
         }
-        
+
         private void tpDanhMuc_Click(object sender, EventArgs e)
         {
 
@@ -482,7 +518,7 @@ namespace QuanLiChuoiCF
                 return;
             }
             string id = txb_Employee_IDOfEmPloyee.Text.Trim();
-            if(EmployeeDAO.Instance.DeleteEmployee(id))
+            if (EmployeeDAO.Instance.DeleteEmployee(id))
             {
                 lb_Employee_Notify.Text = "NOTIFY: Employee was deleted Successfully";
                 LoadEmployees();
@@ -511,7 +547,7 @@ namespace QuanLiChuoiCF
             int bonus = (int)nud_Employee_Bonus.Value;
             int salary = (int)nud_Employee_Salary.Value;
             string iDOfBranch = cbb_Employee_IDOfBranch.SelectedItem.ToString();
-            if (EmployeeDAO.Instance.UpdateEmployee(firstName, lastName, id, phoneNumber, sexual, address, dayIn, 
+            if (EmployeeDAO.Instance.UpdateEmployee(firstName, lastName, id, phoneNumber, sexual, address, dayIn,
                 shift, dayOff, bonus, salary, iDOfBranch))
             {
                 lb_Employee_Notify.Text = "NOTIFY: Employee was updated Successfully";
@@ -543,22 +579,22 @@ namespace QuanLiChuoiCF
         private void btnAddBranchClick(object sender, EventArgs e)
         {
             string branchId = txb_branch_ID.Text.Trim();
-            foreach(Branch item in branches)
+            foreach (Branch item in branches)
             {
-                if(branchId == item.Id)
+                if (branchId == item.Id)
                 {
                     lb_Branch_Notify.Text = "Can not added";
                     return;
                 }
             }
             string branchName = txb_branch_Name.Text.Trim();
-            if(branchName == "")
+            if (branchName == "")
             {
                 lb_Branch_Notify.Text = "Name can't be empty";
                 return;
             }
             string manager = txb_branch_Manager.Text.Trim();
-            if(manager == "")
+            if (manager == "")
             {
                 lb_Branch_Notify.Text = "Manager can't be empty";
                 return;
@@ -578,7 +614,7 @@ namespace QuanLiChuoiCF
 
         private void btnDeleteBranchClick(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to delete this branch", "Delete Branch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this branch", "Delete Branch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
@@ -604,7 +640,7 @@ namespace QuanLiChuoiCF
                 lb_Branch_Notify.Text = "Name can't be empty";
                 return;
             }
-            if(manager == "")
+            if (manager == "")
             {
                 lb_Branch_Notify.Text = "Manager can't be empty";
                 return;
@@ -651,7 +687,7 @@ namespace QuanLiChuoiCF
             }
             else
             {
-        
+
                 id = "CN" + lastIDBranch_int.ToString();
             }
             txb_branch_ID.Text = id;
@@ -725,7 +761,7 @@ namespace QuanLiChuoiCF
         private void UpdateCbbAccountIdInTabAccount()
         {
             cbb_Account_ID.Items.Clear();
-            foreach(Employee employee in employees)
+            foreach (Employee employee in employees)
             {
                 cbb_Account_ID.Items.Add(employee.IDOfEmployee);
             }
@@ -733,8 +769,89 @@ namespace QuanLiChuoiCF
 
         private void button9_Click(object sender, EventArgs e)
         {
-            fAddSupplier fAddSupplier = new fAddSupplier();
-            fAddSupplier.ShowDialog();
+            string Address = txt_Supplier_Address.Text;
+            string Name = txt_Supplier_Name.Text;
+            if (Name == "")
+            {
+                MessageBox.Show("Name cann't be empty!");
+                txt_Supplier_Name.Focus();
+                return;
+            }
+            if (Address == "")
+            {
+                MessageBox.Show("Address cann't be empty!");
+                txt_Supplier_Address.Focus();
+                return;
+            }
+            if ((MessageBox.Show("Are you sure you want to add this supplier", "Add supplier", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                if (SupplierDAO.Instance.AddSupplier(lastIDSupplier, Name, Address))
+                {
+                    MessageBox.Show("Supplier Was Added successfully!");
+                    LoadSupplier();
+                }
+                else
+                {
+                    MessageBox.Show("Failed To Add Supplier");
+                }
+                return;
+            }
+        }
+
+        private void btn_Supplier_New(object sender, EventArgs e)
+        {
+            lastIDSupplier = getIDIncrea(lastIDSupplier);
+            txt_Supplier_ID.Text = lastIDSupplier;
+            txt_Supplier_Address.Text ="";
+            txt_Supplier_Name.Text = "";
+            txt_Supplier_Name.Focus();
+
+        }
+
+        private void btn_Supplier_Delete_Click(object sender, EventArgs e)
+        {
+            string iD = txt_Supplier_ID.Text.Trim();
+            if (MessageBox.Show("Are you sure you want to delete this branch", "Delete Branch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                
+                if(SupplierDAO.Instance.DeleteSupplier(iD))
+                {
+                    MessageBox.Show("Supplier Was Deleted Successfully!");
+                    LoadSupplier();
+                }
+                else
+                {
+                    MessageBox.Show("Fail To Delete Supplier!");
+                    return;
+                }
+            }
+
+        }
+
+        private void btn_Supplier_Update_Click(object sender, EventArgs e)
+        {
+            string Name = txt_Supplier_Name.Text.Trim();
+            string Address = txt_Supplier_Address.Text.Trim();
+            string iD = txt_Supplier_ID.Text.Trim();
+            foreach(Supplier item in suppliers)
+            {
+                if(item.IDOfSupplier==iD)
+                {
+                    if(item.Address==Address && item.Name==Name)
+                    {
+                        MessageBox.Show("Nothing Change To Update!!");
+                        return;
+                    }
+                }    
+            }
+            if(SupplierDAO.Instance.UpdateSupplier(iD,Name,Address))
+            {
+                MessageBox.Show("Supplier Was Updated Successfully!!");
+                LoadSupplier();
+                return;
+            }    
+
+
         }
     }
 }
