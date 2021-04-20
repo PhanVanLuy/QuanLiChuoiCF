@@ -63,7 +63,7 @@
     <Compile Include="DAO\DetailOfBillExportDAO.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
-    <Compile Include="DAO\InfoOfMaterialDAO.cs" />
+    <Compile Include="DAO\InforOfMaterialDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DAO\WarehouseMaterialDAO.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\Employee.cs" />
     <Compile Include="DTO\MaterialInWarehouse.cs" />
-    <Compile Include="DTO\InfoOfMaterial.cs" />
+    <Compile Include="DTO\InforOfMaterial.cs" />
     <Compile Include="DTO\Supplier.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>

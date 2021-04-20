@@ -7,11 +7,11 @@ using System.Data;
 
 namespace QuanLiChuoiCF.DTO
 {
-    class InfoOfMaterial
+    class InforOfMaterial
     {
-        public InfoOfMaterial() { }
+        public InforOfMaterial() { }
 
-        private InfoOfMaterial(string iDOfMaterial, string name, string unit, int price)
+        private InforOfMaterial(string iDOfMaterial, string name, string unit, int price)
         {
             this.IDOfMaterial = iDOfMaterial;
             this.Name = name;
@@ -21,7 +21,7 @@ namespace QuanLiChuoiCF.DTO
 
         }
 
-        public InfoOfMaterial(DataRow row)
+        public InforOfMaterial(DataRow row)
         {
             this.IDOfMaterial = row["IDOfMaterial"].ToString().Trim();
             this.Name = row["Name"].ToString().Trim();

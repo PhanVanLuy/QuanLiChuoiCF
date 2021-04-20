@@ -70,30 +70,6 @@ namespace QuanLiChuoiCF
             this.btnDeleteBranch = new System.Windows.Forms.Button();
             this.btnAddBranch = new System.Windows.Forms.Button();
             this.lb_Branch_Notify = new System.Windows.Forms.Label();
-            this.tpDrink = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lb_Drink_Notify = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.tbSearchCF = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.nud_Drink_Price = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.txb_Drink_Name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.txb_Drink_ID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_Drink_New = new System.Windows.Forms.Button();
-            this.btn_Drink_Refresh = new System.Windows.Forms.Button();
-            this.btn_Drink_Update = new System.Windows.Forms.Button();
-            this.btn_Drink_Delete = new System.Windows.Forms.Button();
-            this.btn_Drink_Add = new System.Windows.Forms.Button();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.dtgvCF = new System.Windows.Forms.DataGridView();
             this.tpDoanhThu = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -140,39 +116,70 @@ namespace QuanLiChuoiCF
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.dtgvEmployees = new System.Windows.Forms.DataGridView();
-            this.tpGood = new System.Windows.Forms.TabPage();
+            this.tpInfoOfMaterial = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_InfoOfMaterial_Search = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.dtgvGoods = new System.Windows.Forms.DataGridView();
+            this.dtgvInfoOfMaterial = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.txb_Good_Price = new System.Windows.Forms.TextBox();
-            this.txb_Good_Unit = new System.Windows.Forms.TextBox();
-            this.lb_Good_Price = new System.Windows.Forms.Label();
-            this.lb_Good_Unit = new System.Windows.Forms.Label();
-            this.txb_Good_ID = new System.Windows.Forms.TextBox();
-            this.lb_Good_ID = new System.Windows.Forms.Label();
-            this.txb_Good_Name = new System.Windows.Forms.TextBox();
-            this.txb_Good_Amount = new System.Windows.Forms.TextBox();
-            this.lb_Good_Name = new System.Windows.Forms.Label();
-            this.lb_Good_Amount = new System.Windows.Forms.Label();
+            this.cbb_InforOfMaterial_Supplier = new System.Windows.Forms.ComboBox();
+            this.nud_InforOfMaterial_Price = new System.Windows.Forms.NumericUpDown();
+            this.lb_InfoOfMaterial_Supplier = new System.Windows.Forms.Label();
+            this.txb_InforOfMaterial_Unit = new System.Windows.Forms.TextBox();
+            this.lb_InfoOfMaterial_Price = new System.Windows.Forms.Label();
+            this.lb_InfoOfMaterial_Unit = new System.Windows.Forms.Label();
+            this.txb_InforOfMaterial_ID = new System.Windows.Forms.TextBox();
+            this.lb_InfoOfMaterial_ID = new System.Windows.Forms.Label();
+            this.txb_InforOfMaterial_Name = new System.Windows.Forms.TextBox();
+            this.lb_InfoOfMaterial_Name = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.btn_Good_New = new System.Windows.Forms.Button();
-            this.btn_Good_Refresh = new System.Windows.Forms.Button();
-            this.btn_Good_Update = new System.Windows.Forms.Button();
-            this.btn_Good_Delete = new System.Windows.Forms.Button();
-            this.btn_Good_Add = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btn_InfoOfMaterial_New = new System.Windows.Forms.Button();
+            this.btn_InfoOfMaterial_Refresh = new System.Windows.Forms.Button();
+            this.btn_InfoOfMaterial_Update = new System.Windows.Forms.Button();
+            this.btn_InfoOfMaterial_Delete = new System.Windows.Forms.Button();
+            this.lb_InforOfMaterial_Notify = new System.Windows.Forms.Label();
             this.tpBill = new System.Windows.Forms.TabPage();
-            this.tpSupplier = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.dtgvBill = new System.Windows.Forms.DataGridView();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.lb_Bill_TotalAmount = new System.Windows.Forms.Label();
+            this.txb_Bill_IDofBill = new System.Windows.Forms.TextBox();
+            this.lb_Bill_IDofBill = new System.Windows.Forms.Label();
+            this.lb_Bill_IDofBranch = new System.Windows.Forms.Label();
+            this.lb_Bill_DateCheckIn = new System.Windows.Forms.Label();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.btn_New = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.lb_Bill_Notify = new System.Windows.Forms.Label();
+            this.tpSupplier = new System.Windows.Forms.TabPage();
             this.panel30 = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.dtgv_Supplier_Mterial = new System.Windows.Forms.DataGridView();
+            this.iDOfMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
             this.panel31 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.panel34 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.iDOfSupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDOfMaterialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel35 = new System.Windows.Forms.Panel();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -182,45 +189,32 @@ namespace QuanLiChuoiCF
             this.label16 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel37 = new System.Windows.Forms.Panel();
-            this.dtgv_Supplier_Mterial = new System.Windows.Forms.DataGridView();
-            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
-            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
-            this.iDOfMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
-            this.iDOfSupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDOfMaterialDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_InfoOfMaterial_Add = new System.Windows.Forms.Button();
+            this.tpDrink = new System.Windows.Forms.TabPage();
+            this.lb_Drink_Notify = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.tbSearchCF = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.nud_Drink_Price = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txb_Drink_Name = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txb_Drink_ID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btn_Drink_New = new System.Windows.Forms.Button();
+            this.btn_Drink_Refresh = new System.Windows.Forms.Button();
+            this.btn_Drink_Update = new System.Windows.Forms.Button();
+            this.btn_Drink_Delete = new System.Windows.Forms.Button();
+            this.btn_Drink_Add = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.dtgvCF = new System.Windows.Forms.DataGridView();
+            this.dtp_Bill_DateCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.nud_Bill_TotalAmount = new System.Windows.Forms.NumericUpDown();
+            this.cbb_Bill_IDofBranch = new System.Windows.Forms.ComboBox();
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -234,17 +228,6 @@ namespace QuanLiChuoiCF
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBranches)).BeginInit();
             this.panel16.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.tpDrink.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).BeginInit();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCF)).BeginInit();
             this.tpDoanhThu.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -259,31 +242,40 @@ namespace QuanLiChuoiCF
             this.panel19.SuspendLayout();
             this.panel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployees)).BeginInit();
-            this.tpGood.SuspendLayout();
+            this.tpInfoOfMaterial.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInfoOfMaterial)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_InforOfMaterial_Price)).BeginInit();
             this.panel22.SuspendLayout();
             this.tpBill.SuspendLayout();
-            this.tpSupplier.SuspendLayout();
             this.panel23.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
+            this.panel28.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.tpSupplier.SuspendLayout();
             this.panel30.SuspendLayout();
+            this.panel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
             this.panel31.SuspendLayout();
             this.panel34.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.panel35.SuspendLayout();
             this.panel36.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel28.SuspendLayout();
-            this.panel29.SuspendLayout();
-            this.panel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            this.tpDrink.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Bill_TotalAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // tbAccount
@@ -335,20 +327,20 @@ namespace QuanLiChuoiCF
             // cbb_Account_AccountType
             // 
             this.cbb_Account_AccountType.FormattingEnabled = true;
-            this.cbb_Account_AccountType.Location = new System.Drawing.Point(90, 104);
+            this.cbb_Account_AccountType.Location = new System.Drawing.Point(110, 96);
             this.cbb_Account_AccountType.MaxDropDownItems = 100;
             this.cbb_Account_AccountType.Name = "cbb_Account_AccountType";
-            this.cbb_Account_AccountType.Size = new System.Drawing.Size(160, 21);
+            this.cbb_Account_AccountType.Size = new System.Drawing.Size(320, 21);
             this.cbb_Account_AccountType.Sorted = true;
             this.cbb_Account_AccountType.TabIndex = 2;
             // 
             // cbb_Account_ID
             // 
             this.cbb_Account_ID.FormattingEnabled = true;
-            this.cbb_Account_ID.Location = new System.Drawing.Point(90, 10);
+            this.cbb_Account_ID.Location = new System.Drawing.Point(110, 12);
             this.cbb_Account_ID.MaxDropDownItems = 100;
             this.cbb_Account_ID.Name = "cbb_Account_ID";
-            this.cbb_Account_ID.Size = new System.Drawing.Size(160, 21);
+            this.cbb_Account_ID.Size = new System.Drawing.Size(320, 21);
             this.cbb_Account_ID.Sorted = true;
             this.cbb_Account_ID.TabIndex = 0;
             // 
@@ -356,7 +348,7 @@ namespace QuanLiChuoiCF
             // 
             this.labelAccountType.AutoSize = true;
             this.labelAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountType.Location = new System.Drawing.Point(4, 109);
+            this.labelAccountType.Location = new System.Drawing.Point(27, 104);
             this.labelAccountType.Name = "labelAccountType";
             this.labelAccountType.Size = new System.Drawing.Size(82, 13);
             this.labelAccountType.TabIndex = 0;
@@ -364,14 +356,14 @@ namespace QuanLiChuoiCF
             // 
             // txb_Account_UserName
             // 
-            this.txb_Account_UserName.Location = new System.Drawing.Point(90, 57);
+            this.txb_Account_UserName.Location = new System.Drawing.Point(110, 53);
             this.txb_Account_UserName.Name = "txb_Account_UserName";
-            this.txb_Account_UserName.Size = new System.Drawing.Size(160, 20);
+            this.txb_Account_UserName.Size = new System.Drawing.Size(320, 20);
             this.txb_Account_UserName.TabIndex = 1;
             // 
             // btn_Account_ChangePassword
             // 
-            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(90, 143);
+            this.btn_Account_ChangePassword.Location = new System.Drawing.Point(110, 137);
             this.btn_Account_ChangePassword.Name = "btn_Account_ChangePassword";
             this.btn_Account_ChangePassword.Size = new System.Drawing.Size(103, 23);
             this.btn_Account_ChangePassword.TabIndex = 3;
@@ -383,7 +375,7 @@ namespace QuanLiChuoiCF
             // 
             this.labelUserID.AutoSize = true;
             this.labelUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserID.Location = new System.Drawing.Point(6, 13);
+            this.labelUserID.Location = new System.Drawing.Point(27, 20);
             this.labelUserID.Name = "labelUserID";
             this.labelUserID.Size = new System.Drawing.Size(24, 13);
             this.labelUserID.TabIndex = 0;
@@ -393,7 +385,7 @@ namespace QuanLiChuoiCF
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(5, 61);
+            this.labelUserName.Location = new System.Drawing.Point(27, 60);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(65, 13);
             this.labelUserName.TabIndex = 0;
@@ -406,9 +398,9 @@ namespace QuanLiChuoiCF
             this.panel32.Controls.Add(this.btn_Account_Update);
             this.panel32.Controls.Add(this.btn_Account_Add);
             this.panel32.Controls.Add(this.btn_Account_Delete);
-            this.panel32.Location = new System.Drawing.Point(780, 10);
+            this.panel32.Location = new System.Drawing.Point(800, 10);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(450, 40);
+            this.panel32.Size = new System.Drawing.Size(430, 40);
             this.panel32.TabIndex = 5;
             // 
             // btn_Account_New
@@ -423,7 +415,7 @@ namespace QuanLiChuoiCF
             // 
             // btn_Account_Refresh
             // 
-            this.btn_Account_Refresh.Location = new System.Drawing.Point(250, 5);
+            this.btn_Account_Refresh.Location = new System.Drawing.Point(330, 5);
             this.btn_Account_Refresh.Name = "btn_Account_Refresh";
             this.btn_Account_Refresh.Size = new System.Drawing.Size(80, 30);
             this.btn_Account_Refresh.TabIndex = 3;
@@ -443,7 +435,7 @@ namespace QuanLiChuoiCF
             // 
             // btn_Account_Add
             // 
-            this.btn_Account_Add.Location = new System.Drawing.Point(330, 5);
+            this.btn_Account_Add.Location = new System.Drawing.Point(90, 5);
             this.btn_Account_Add.Name = "btn_Account_Add";
             this.btn_Account_Add.Size = new System.Drawing.Size(80, 30);
             this.btn_Account_Add.TabIndex = 4;
@@ -453,7 +445,7 @@ namespace QuanLiChuoiCF
             // 
             // btn_Account_Delete
             // 
-            this.btn_Account_Delete.Location = new System.Drawing.Point(90, 5);
+            this.btn_Account_Delete.Location = new System.Drawing.Point(250, 5);
             this.btn_Account_Delete.Name = "btn_Account_Delete";
             this.btn_Account_Delete.Size = new System.Drawing.Size(80, 30);
             this.btn_Account_Delete.TabIndex = 1;
@@ -562,22 +554,22 @@ namespace QuanLiChuoiCF
             this.panel16.Controls.Add(this.lbManager);
             this.panel16.Location = new System.Drawing.Point(800, 89);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(432, 142);
+            this.panel16.Size = new System.Drawing.Size(432, 148);
             this.panel16.TabIndex = 6;
             // 
             // txb_branch_ID
             // 
-            this.txb_branch_ID.Location = new System.Drawing.Point(117, 19);
+            this.txb_branch_ID.Location = new System.Drawing.Point(90, 20);
             this.txb_branch_ID.Name = "txb_branch_ID";
             this.txb_branch_ID.ReadOnly = true;
-            this.txb_branch_ID.Size = new System.Drawing.Size(100, 20);
+            this.txb_branch_ID.Size = new System.Drawing.Size(160, 20);
             this.txb_branch_ID.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 22);
+            this.label7.Location = new System.Drawing.Point(7, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 0;
@@ -585,23 +577,23 @@ namespace QuanLiChuoiCF
             // 
             // txb_branch_Name
             // 
-            this.txb_branch_Name.Location = new System.Drawing.Point(117, 62);
+            this.txb_branch_Name.Location = new System.Drawing.Point(90, 63);
             this.txb_branch_Name.Name = "txb_branch_Name";
-            this.txb_branch_Name.Size = new System.Drawing.Size(300, 20);
+            this.txb_branch_Name.Size = new System.Drawing.Size(320, 20);
             this.txb_branch_Name.TabIndex = 1;
             // 
             // txb_branch_Manager
             // 
-            this.txb_branch_Manager.Location = new System.Drawing.Point(117, 106);
+            this.txb_branch_Manager.Location = new System.Drawing.Point(90, 105);
             this.txb_branch_Manager.Name = "txb_branch_Manager";
-            this.txb_branch_Manager.Size = new System.Drawing.Size(300, 20);
+            this.txb_branch_Manager.Size = new System.Drawing.Size(320, 20);
             this.txb_branch_Manager.TabIndex = 2;
             // 
             // lbBranchName
             // 
             this.lbBranchName.AutoSize = true;
             this.lbBranchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBranchName.Location = new System.Drawing.Point(23, 67);
+            this.lbBranchName.Location = new System.Drawing.Point(7, 70);
             this.lbBranchName.Name = "lbBranchName";
             this.lbBranchName.Size = new System.Drawing.Size(87, 13);
             this.lbBranchName.TabIndex = 0;
@@ -611,7 +603,7 @@ namespace QuanLiChuoiCF
             // 
             this.lbManager.AutoSize = true;
             this.lbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManager.Location = new System.Drawing.Point(23, 113);
+            this.lbManager.Location = new System.Drawing.Point(7, 112);
             this.lbManager.Name = "lbManager";
             this.lbManager.Size = new System.Drawing.Size(60, 13);
             this.lbManager.TabIndex = 0;
@@ -620,18 +612,18 @@ namespace QuanLiChuoiCF
             // panel24
             // 
             this.panel24.Controls.Add(this.btnNewBranch);
+            this.panel24.Controls.Add(this.btnDeleteBranch);
             this.panel24.Controls.Add(this.btnRefreshBranch);
             this.panel24.Controls.Add(this.btnUpdateBranch);
-            this.panel24.Controls.Add(this.btnDeleteBranch);
             this.panel24.Controls.Add(this.btnAddBranch);
             this.panel24.Location = new System.Drawing.Point(800, 10);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(432, 37);
+            this.panel24.Size = new System.Drawing.Size(430, 40);
             this.panel24.TabIndex = 5;
             // 
             // btnNewBranch
             // 
-            this.btnNewBranch.Location = new System.Drawing.Point(331, 3);
+            this.btnNewBranch.Location = new System.Drawing.Point(10, 5);
             this.btnNewBranch.Name = "btnNewBranch";
             this.btnNewBranch.Size = new System.Drawing.Size(80, 30);
             this.btnNewBranch.TabIndex = 4;
@@ -641,7 +633,7 @@ namespace QuanLiChuoiCF
             // 
             // btnRefreshBranch
             // 
-            this.btnRefreshBranch.Location = new System.Drawing.Point(250, 3);
+            this.btnRefreshBranch.Location = new System.Drawing.Point(330, 5);
             this.btnRefreshBranch.Name = "btnRefreshBranch";
             this.btnRefreshBranch.Size = new System.Drawing.Size(80, 30);
             this.btnRefreshBranch.TabIndex = 3;
@@ -651,7 +643,7 @@ namespace QuanLiChuoiCF
             // 
             // btnUpdateBranch
             // 
-            this.btnUpdateBranch.Location = new System.Drawing.Point(170, 3);
+            this.btnUpdateBranch.Location = new System.Drawing.Point(170, 5);
             this.btnUpdateBranch.Name = "btnUpdateBranch";
             this.btnUpdateBranch.Size = new System.Drawing.Size(80, 30);
             this.btnUpdateBranch.TabIndex = 2;
@@ -661,7 +653,7 @@ namespace QuanLiChuoiCF
             // 
             // btnDeleteBranch
             // 
-            this.btnDeleteBranch.Location = new System.Drawing.Point(90, 3);
+            this.btnDeleteBranch.Location = new System.Drawing.Point(250, 5);
             this.btnDeleteBranch.Name = "btnDeleteBranch";
             this.btnDeleteBranch.Size = new System.Drawing.Size(80, 30);
             this.btnDeleteBranch.TabIndex = 1;
@@ -671,7 +663,7 @@ namespace QuanLiChuoiCF
             // 
             // btnAddBranch
             // 
-            this.btnAddBranch.Location = new System.Drawing.Point(8, 3);
+            this.btnAddBranch.Location = new System.Drawing.Point(90, 5);
             this.btnAddBranch.Name = "btnAddBranch";
             this.btnAddBranch.Size = new System.Drawing.Size(80, 30);
             this.btnAddBranch.TabIndex = 0;
@@ -687,247 +679,6 @@ namespace QuanLiChuoiCF
             this.lb_Branch_Notify.Size = new System.Drawing.Size(38, 13);
             this.lb_Branch_Notify.TabIndex = 6;
             this.lb_Branch_Notify.Text = "notify: ";
-            // 
-            // tpDrink
-            // 
-            this.tpDrink.BackColor = System.Drawing.Color.Transparent;
-            this.tpDrink.Controls.Add(this.panel5);
-            this.tpDrink.Location = new System.Drawing.Point(4, 22);
-            this.tpDrink.Name = "tpDrink";
-            this.tpDrink.Size = new System.Drawing.Size(1241, 640);
-            this.tpDrink.TabIndex = 0;
-            this.tpDrink.Text = "Drink";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lb_Drink_Notify);
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panel20);
-            this.panel5.Location = new System.Drawing.Point(3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1233, 633);
-            this.panel5.TabIndex = 0;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
-            // 
-            // lb_Drink_Notify
-            // 
-            this.lb_Drink_Notify.AutoSize = true;
-            this.lb_Drink_Notify.Location = new System.Drawing.Point(804, 63);
-            this.lb_Drink_Notify.Name = "lb_Drink_Notify";
-            this.lb_Drink_Notify.Size = new System.Drawing.Size(67, 13);
-            this.lb_Drink_Notify.TabIndex = 8;
-            this.lb_Drink_Notify.Text = "NOTIFY~~~";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.tbSearchCF);
-            this.panel7.Controls.Add(this.btnTim);
-            this.panel7.Location = new System.Drawing.Point(10, 10);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(447, 39);
-            this.panel7.TabIndex = 7;
-            // 
-            // tbSearchCF
-            // 
-            this.tbSearchCF.Location = new System.Drawing.Point(10, 9);
-            this.tbSearchCF.Name = "tbSearchCF";
-            this.tbSearchCF.Size = new System.Drawing.Size(288, 20);
-            this.tbSearchCF.TabIndex = 5;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(304, 3);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(79, 31);
-            this.btnTim.TabIndex = 4;
-            this.btnTim.Text = "Search";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.panel12);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(797, 94);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(417, 180);
-            this.panel8.TabIndex = 6;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.nud_Drink_Price);
-            this.panel12.Controls.Add(this.label4);
-            this.panel12.Location = new System.Drawing.Point(0, 117);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(249, 51);
-            this.panel12.TabIndex = 2;
-            // 
-            // nud_Drink_Price
-            // 
-            this.nud_Drink_Price.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nud_Drink_Price.Location = new System.Drawing.Point(83, 15);
-            this.nud_Drink_Price.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nud_Drink_Price.Name = "nud_Drink_Price";
-            this.nud_Drink_Price.Size = new System.Drawing.Size(162, 20);
-            this.nud_Drink_Price.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Price";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.txb_Drink_Name);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Location = new System.Drawing.Point(0, 60);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(249, 51);
-            this.panel10.TabIndex = 1;
-            // 
-            // txb_Drink_Name
-            // 
-            this.txb_Drink_Name.Location = new System.Drawing.Point(83, 15);
-            this.txb_Drink_Name.Name = "txb_Drink_Name";
-            this.txb_Drink_Name.Size = new System.Drawing.Size(162, 20);
-            this.txb_Drink_Name.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Drink Name:";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.txb_Drink_ID);
-            this.panel9.Controls.Add(this.label1);
-            this.panel9.Location = new System.Drawing.Point(2, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(249, 51);
-            this.panel9.TabIndex = 0;
-            // 
-            // txb_Drink_ID
-            // 
-            this.txb_Drink_ID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_Drink_ID.Location = new System.Drawing.Point(80, 14);
-            this.txb_Drink_ID.Name = "txb_Drink_ID";
-            this.txb_Drink_ID.ReadOnly = true;
-            this.txb_Drink_ID.Size = new System.Drawing.Size(162, 20);
-            this.txb_Drink_ID.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btn_Drink_New);
-            this.panel6.Controls.Add(this.btn_Drink_Refresh);
-            this.panel6.Controls.Add(this.btn_Drink_Update);
-            this.panel6.Controls.Add(this.btn_Drink_Delete);
-            this.panel6.Controls.Add(this.btn_Drink_Add);
-            this.panel6.Location = new System.Drawing.Point(797, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(417, 37);
-            this.panel6.TabIndex = 3;
-            // 
-            // btn_Drink_New
-            // 
-            this.btn_Drink_New.Location = new System.Drawing.Point(330, 3);
-            this.btn_Drink_New.Name = "btn_Drink_New";
-            this.btn_Drink_New.Size = new System.Drawing.Size(79, 31);
-            this.btn_Drink_New.TabIndex = 4;
-            this.btn_Drink_New.Text = "New";
-            this.btn_Drink_New.UseVisualStyleBackColor = true;
-            this.btn_Drink_New.Click += new System.EventHandler(this.btnNewDrinkClick);
-            // 
-            // btn_Drink_Refresh
-            // 
-            this.btn_Drink_Refresh.Location = new System.Drawing.Point(250, 3);
-            this.btn_Drink_Refresh.Name = "btn_Drink_Refresh";
-            this.btn_Drink_Refresh.Size = new System.Drawing.Size(79, 31);
-            this.btn_Drink_Refresh.TabIndex = 3;
-            this.btn_Drink_Refresh.Text = "Refresh";
-            this.btn_Drink_Refresh.UseVisualStyleBackColor = true;
-            this.btn_Drink_Refresh.Click += new System.EventHandler(this.btnRefreshClicked);
-            // 
-            // btn_Drink_Update
-            // 
-            this.btn_Drink_Update.Location = new System.Drawing.Point(170, 3);
-            this.btn_Drink_Update.Name = "btn_Drink_Update";
-            this.btn_Drink_Update.Size = new System.Drawing.Size(79, 31);
-            this.btn_Drink_Update.TabIndex = 2;
-            this.btn_Drink_Update.Text = "Update";
-            this.btn_Drink_Update.UseVisualStyleBackColor = true;
-            this.btn_Drink_Update.Click += new System.EventHandler(this.btnEditDrinkClick);
-            // 
-            // btn_Drink_Delete
-            // 
-            this.btn_Drink_Delete.Location = new System.Drawing.Point(90, 3);
-            this.btn_Drink_Delete.Name = "btn_Drink_Delete";
-            this.btn_Drink_Delete.Size = new System.Drawing.Size(79, 31);
-            this.btn_Drink_Delete.TabIndex = 1;
-            this.btn_Drink_Delete.Text = "Delete";
-            this.btn_Drink_Delete.UseVisualStyleBackColor = true;
-            this.btn_Drink_Delete.Click += new System.EventHandler(this.btnDeleteDrinkClick);
-            // 
-            // btn_Drink_Add
-            // 
-            this.btn_Drink_Add.Location = new System.Drawing.Point(10, 3);
-            this.btn_Drink_Add.Name = "btn_Drink_Add";
-            this.btn_Drink_Add.Size = new System.Drawing.Size(79, 31);
-            this.btn_Drink_Add.TabIndex = 0;
-            this.btn_Drink_Add.Text = "Add";
-            this.btn_Drink_Add.UseVisualStyleBackColor = true;
-            this.btn_Drink_Add.Click += new System.EventHandler(this.btnAddDrinkClick);
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.dtgvCF);
-            this.panel20.Location = new System.Drawing.Point(3, 55);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(760, 560);
-            this.panel20.TabIndex = 4;
-            // 
-            // dtgvCF
-            // 
-            this.dtgvCF.AllowUserToResizeColumns = false;
-            this.dtgvCF.AllowUserToResizeRows = false;
-            this.dtgvCF.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvCF.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dtgvCF.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvCF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgvCF.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtgvCF.Location = new System.Drawing.Point(7, 3);
-            this.dtgvCF.Name = "dtgvCF";
-            this.dtgvCF.Size = new System.Drawing.Size(750, 550);
-            this.dtgvCF.TabIndex = 1;
             // 
             // tpDoanhThu
             // 
@@ -996,7 +747,7 @@ namespace QuanLiChuoiCF
             this.tab.Controls.Add(this.tpBranch);
             this.tab.Controls.Add(this.tbAccount);
             this.tab.Controls.Add(this.tpEmployee);
-            this.tab.Controls.Add(this.tpGood);
+            this.tab.Controls.Add(this.tpInfoOfMaterial);
             this.tab.Controls.Add(this.tpBill);
             this.tab.Controls.Add(this.tpSupplier);
             this.tab.Location = new System.Drawing.Point(12, 12);
@@ -1195,7 +946,7 @@ namespace QuanLiChuoiCF
             // 
             // txb_Employee_IDOfEmPloyee
             // 
-            this.txb_Employee_IDOfEmPloyee.Location = new System.Drawing.Point(100, 90);
+            this.txb_Employee_IDOfEmPloyee.Location = new System.Drawing.Point(100, 15);
             this.txb_Employee_IDOfEmPloyee.Name = "txb_Employee_IDOfEmPloyee";
             this.txb_Employee_IDOfEmPloyee.ReadOnly = true;
             this.txb_Employee_IDOfEmPloyee.Size = new System.Drawing.Size(295, 20);
@@ -1203,14 +954,14 @@ namespace QuanLiChuoiCF
             // 
             // txb_Employee_LastName
             // 
-            this.txb_Employee_LastName.Location = new System.Drawing.Point(100, 50);
+            this.txb_Employee_LastName.Location = new System.Drawing.Point(100, 88);
             this.txb_Employee_LastName.Name = "txb_Employee_LastName";
             this.txb_Employee_LastName.Size = new System.Drawing.Size(295, 20);
             this.txb_Employee_LastName.TabIndex = 1;
             // 
             // txb_Employee_FirstName
             // 
-            this.txb_Employee_FirstName.Location = new System.Drawing.Point(100, 10);
+            this.txb_Employee_FirstName.Location = new System.Drawing.Point(100, 52);
             this.txb_Employee_FirstName.Name = "txb_Employee_FirstName";
             this.txb_Employee_FirstName.Size = new System.Drawing.Size(295, 20);
             this.txb_Employee_FirstName.TabIndex = 0;
@@ -1245,7 +996,7 @@ namespace QuanLiChuoiCF
             // lbLastName
             // 
             this.lbLastName.AutoSize = true;
-            this.lbLastName.Location = new System.Drawing.Point(10, 54);
+            this.lbLastName.Location = new System.Drawing.Point(10, 92);
             this.lbLastName.Name = "lbLastName";
             this.lbLastName.Size = new System.Drawing.Size(61, 13);
             this.lbLastName.TabIndex = 8;
@@ -1254,7 +1005,7 @@ namespace QuanLiChuoiCF
             // lbIDOfEmployee
             // 
             this.lbIDOfEmployee.AutoSize = true;
-            this.lbIDOfEmployee.Location = new System.Drawing.Point(10, 94);
+            this.lbIDOfEmployee.Location = new System.Drawing.Point(10, 19);
             this.lbIDOfEmployee.Name = "lbIDOfEmployee";
             this.lbIDOfEmployee.Size = new System.Drawing.Size(82, 13);
             this.lbIDOfEmployee.TabIndex = 7;
@@ -1317,7 +1068,7 @@ namespace QuanLiChuoiCF
             // lbFirstName
             // 
             this.lbFirstName.AutoSize = true;
-            this.lbFirstName.Location = new System.Drawing.Point(10, 16);
+            this.lbFirstName.Location = new System.Drawing.Point(10, 58);
             this.lbFirstName.Name = "lbFirstName";
             this.lbFirstName.Size = new System.Drawing.Size(60, 13);
             this.lbFirstName.TabIndex = 0;
@@ -1330,14 +1081,15 @@ namespace QuanLiChuoiCF
             this.panel19.Controls.Add(this.btnUpdateEmployee);
             this.panel19.Controls.Add(this.btnDelete);
             this.panel19.Controls.Add(this.btnAddEmployee);
-            this.panel19.Location = new System.Drawing.Point(800, 5);
+            this.panel19.Location = new System.Drawing.Point(800, 10);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(430, 39);
+            this.panel19.Size = new System.Drawing.Size(430, 40);
             this.panel19.TabIndex = 1;
+            this.panel19.Paint += new System.Windows.Forms.PaintEventHandler(this.panel19_Paint);
             // 
             // btnNewEmployee
             // 
-            this.btnNewEmployee.Location = new System.Drawing.Point(330, 3);
+            this.btnNewEmployee.Location = new System.Drawing.Point(330, 5);
             this.btnNewEmployee.Name = "btnNewEmployee";
             this.btnNewEmployee.Size = new System.Drawing.Size(75, 31);
             this.btnNewEmployee.TabIndex = 4;
@@ -1347,7 +1099,7 @@ namespace QuanLiChuoiCF
             // 
             // btnRefreshEmployeesList
             // 
-            this.btnRefreshEmployeesList.Location = new System.Drawing.Point(250, 3);
+            this.btnRefreshEmployeesList.Location = new System.Drawing.Point(250, 5);
             this.btnRefreshEmployeesList.Name = "btnRefreshEmployeesList";
             this.btnRefreshEmployeesList.Size = new System.Drawing.Size(79, 31);
             this.btnRefreshEmployeesList.TabIndex = 3;
@@ -1357,7 +1109,7 @@ namespace QuanLiChuoiCF
             // 
             // btnUpdateEmployee
             // 
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(170, 3);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(170, 5);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(79, 31);
             this.btnUpdateEmployee.TabIndex = 2;
@@ -1367,7 +1119,7 @@ namespace QuanLiChuoiCF
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(90, 3);
+            this.btnDelete.Location = new System.Drawing.Point(90, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 31);
             this.btnDelete.TabIndex = 1;
@@ -1377,7 +1129,7 @@ namespace QuanLiChuoiCF
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(10, 3);
+            this.btnAddEmployee.Location = new System.Drawing.Point(10, 5);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(79, 31);
             this.btnAddEmployee.TabIndex = 0;
@@ -1407,25 +1159,24 @@ namespace QuanLiChuoiCF
             this.dtgvEmployees.Size = new System.Drawing.Size(750, 550);
             this.dtgvEmployees.TabIndex = 1;
             // 
-            // tpGood
+            // tpInfoOfMaterial
             // 
-            this.tpGood.Controls.Add(this.panel15);
-            this.tpGood.Controls.Add(this.panel17);
-            this.tpGood.Controls.Add(this.panel18);
-            this.tpGood.Controls.Add(this.panel22);
-            this.tpGood.Controls.Add(this.label8);
-            this.tpGood.Location = new System.Drawing.Point(4, 22);
-            this.tpGood.Name = "tpGood";
-            this.tpGood.Size = new System.Drawing.Size(1241, 640);
-            this.tpGood.TabIndex = 5;
-            this.tpGood.Text = "Good";
-            this.tpGood.UseVisualStyleBackColor = true;
-            //this.tpGood.Click += new System.EventHandler(this.tpGood_Click);
+            this.tpInfoOfMaterial.Controls.Add(this.panel15);
+            this.tpInfoOfMaterial.Controls.Add(this.panel17);
+            this.tpInfoOfMaterial.Controls.Add(this.panel18);
+            this.tpInfoOfMaterial.Controls.Add(this.panel22);
+            this.tpInfoOfMaterial.Controls.Add(this.lb_InforOfMaterial_Notify);
+            this.tpInfoOfMaterial.Location = new System.Drawing.Point(4, 22);
+            this.tpInfoOfMaterial.Name = "tpInfoOfMaterial";
+            this.tpInfoOfMaterial.Size = new System.Drawing.Size(1241, 640);
+            this.tpInfoOfMaterial.TabIndex = 5;
+            this.tpInfoOfMaterial.Text = "InfoOfMaterial";
+            this.tpInfoOfMaterial.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.textBox3);
-            this.panel15.Controls.Add(this.button1);
+            this.panel15.Controls.Add(this.btn_InfoOfMaterial_Search);
             this.panel15.Location = new System.Drawing.Point(9, 10);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(436, 39);
@@ -1438,205 +1189,216 @@ namespace QuanLiChuoiCF
             this.textBox3.Size = new System.Drawing.Size(342, 20);
             this.textBox3.TabIndex = 5;
             // 
-            // button1
+            // btn_InfoOfMaterial_Search
             // 
-            this.button1.Location = new System.Drawing.Point(351, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Search.Location = new System.Drawing.Point(351, 3);
+            this.btn_InfoOfMaterial_Search.Name = "btn_InfoOfMaterial_Search";
+            this.btn_InfoOfMaterial_Search.Size = new System.Drawing.Size(79, 31);
+            this.btn_InfoOfMaterial_Search.TabIndex = 4;
+            this.btn_InfoOfMaterial_Search.Text = "Search";
+            this.btn_InfoOfMaterial_Search.UseVisualStyleBackColor = true;
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.dtgvGoods);
+            this.panel17.Controls.Add(this.dtgvInfoOfMaterial);
             this.panel17.Location = new System.Drawing.Point(10, 50);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(767, 564);
             this.panel17.TabIndex = 17;
             // 
-            // dtgvGoods
+            // dtgvInfoOfMaterial
             // 
-            this.dtgvGoods.AllowUserToResizeColumns = false;
-            this.dtgvGoods.AllowUserToResizeRows = false;
-            this.dtgvGoods.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvGoods.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dtgvGoods.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgvGoods.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dtgvGoods.Location = new System.Drawing.Point(1, 5);
-            this.dtgvGoods.Name = "dtgvGoods";
-            this.dtgvGoods.Size = new System.Drawing.Size(763, 555);
-            this.dtgvGoods.TabIndex = 1;
+            this.dtgvInfoOfMaterial.AllowUserToResizeColumns = false;
+            this.dtgvInfoOfMaterial.AllowUserToResizeRows = false;
+            this.dtgvInfoOfMaterial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvInfoOfMaterial.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgvInfoOfMaterial.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvInfoOfMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvInfoOfMaterial.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtgvInfoOfMaterial.Location = new System.Drawing.Point(1, 5);
+            this.dtgvInfoOfMaterial.Name = "dtgvInfoOfMaterial";
+            this.dtgvInfoOfMaterial.Size = new System.Drawing.Size(763, 555);
+            this.dtgvInfoOfMaterial.TabIndex = 1;
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.txb_Good_Price);
-            this.panel18.Controls.Add(this.txb_Good_Unit);
-            this.panel18.Controls.Add(this.lb_Good_Price);
-            this.panel18.Controls.Add(this.lb_Good_Unit);
-            this.panel18.Controls.Add(this.txb_Good_ID);
-            this.panel18.Controls.Add(this.lb_Good_ID);
-            this.panel18.Controls.Add(this.txb_Good_Name);
-            this.panel18.Controls.Add(this.txb_Good_Amount);
-            this.panel18.Controls.Add(this.lb_Good_Name);
-            this.panel18.Controls.Add(this.lb_Good_Amount);
+            this.panel18.Controls.Add(this.cbb_InforOfMaterial_Supplier);
+            this.panel18.Controls.Add(this.nud_InforOfMaterial_Price);
+            this.panel18.Controls.Add(this.lb_InfoOfMaterial_Supplier);
+            this.panel18.Controls.Add(this.txb_InforOfMaterial_Unit);
+            this.panel18.Controls.Add(this.lb_InfoOfMaterial_Price);
+            this.panel18.Controls.Add(this.lb_InfoOfMaterial_Unit);
+            this.panel18.Controls.Add(this.txb_InforOfMaterial_ID);
+            this.panel18.Controls.Add(this.lb_InfoOfMaterial_ID);
+            this.panel18.Controls.Add(this.txb_InforOfMaterial_Name);
+            this.panel18.Controls.Add(this.lb_InfoOfMaterial_Name);
             this.panel18.Location = new System.Drawing.Point(800, 90);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(432, 299);
+            this.panel18.Size = new System.Drawing.Size(432, 216);
             this.panel18.TabIndex = 0;
             // 
-            // txb_Good_Price
+            // cbb_InforOfMaterial_Supplier
             // 
-            this.txb_Good_Price.Location = new System.Drawing.Point(120, 180);
-            this.txb_Good_Price.Name = "txb_Good_Price";
-            this.txb_Good_Price.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Price.TabIndex = 4;
+            this.cbb_InforOfMaterial_Supplier.FormattingEnabled = true;
+            this.cbb_InforOfMaterial_Supplier.Location = new System.Drawing.Point(90, 172);
+            this.cbb_InforOfMaterial_Supplier.Name = "cbb_InforOfMaterial_Supplier";
+            this.cbb_InforOfMaterial_Supplier.Size = new System.Drawing.Size(320, 21);
+            this.cbb_InforOfMaterial_Supplier.TabIndex = 4;
             // 
-            // txb_Good_Unit
+            // nud_InforOfMaterial_Price
             // 
-            this.txb_Good_Unit.Location = new System.Drawing.Point(120, 140);
-            this.txb_Good_Unit.Name = "txb_Good_Unit";
-            this.txb_Good_Unit.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Unit.TabIndex = 3;
+            this.nud_InforOfMaterial_Price.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nud_InforOfMaterial_Price.Location = new System.Drawing.Point(90, 134);
+            this.nud_InforOfMaterial_Price.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nud_InforOfMaterial_Price.Name = "nud_InforOfMaterial_Price";
+            this.nud_InforOfMaterial_Price.Size = new System.Drawing.Size(160, 20);
+            this.nud_InforOfMaterial_Price.TabIndex = 3;
+            this.nud_InforOfMaterial_Price.Value = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             // 
-            // lb_Good_Price
+            // lb_InfoOfMaterial_Supplier
             // 
-            this.lb_Good_Price.AutoSize = true;
-            this.lb_Good_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_Good_Price.Location = new System.Drawing.Point(36, 183);
-            this.lb_Good_Price.Name = "lb_Good_Price";
-            this.lb_Good_Price.Size = new System.Drawing.Size(40, 13);
-            this.lb_Good_Price.TabIndex = 4;
-            this.lb_Good_Price.Text = "Price:";
+            this.lb_InfoOfMaterial_Supplier.AutoSize = true;
+            this.lb_InfoOfMaterial_Supplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_InfoOfMaterial_Supplier.Location = new System.Drawing.Point(7, 180);
+            this.lb_InfoOfMaterial_Supplier.Name = "lb_InfoOfMaterial_Supplier";
+            this.lb_InfoOfMaterial_Supplier.Size = new System.Drawing.Size(57, 13);
+            this.lb_InfoOfMaterial_Supplier.TabIndex = 5;
+            this.lb_InfoOfMaterial_Supplier.Text = "Supplier:";
             // 
-            // lb_Good_Unit
+            // txb_InforOfMaterial_Unit
             // 
-            this.lb_Good_Unit.AutoSize = true;
-            this.lb_Good_Unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lb_Good_Unit.Location = new System.Drawing.Point(36, 143);
-            this.lb_Good_Unit.Name = "lb_Good_Unit";
-            this.lb_Good_Unit.Size = new System.Drawing.Size(34, 13);
-            this.lb_Good_Unit.TabIndex = 3;
-            this.lb_Good_Unit.Text = "Unit:";
+            this.txb_InforOfMaterial_Unit.Location = new System.Drawing.Point(90, 94);
+            this.txb_InforOfMaterial_Unit.Name = "txb_InforOfMaterial_Unit";
+            this.txb_InforOfMaterial_Unit.Size = new System.Drawing.Size(320, 20);
+            this.txb_InforOfMaterial_Unit.TabIndex = 2;
             // 
-            // txb_Good_ID
+            // lb_InfoOfMaterial_Price
             // 
-            this.txb_Good_ID.Location = new System.Drawing.Point(121, 20);
-            this.txb_Good_ID.Name = "txb_Good_ID";
-            this.txb_Good_ID.ReadOnly = true;
-            this.txb_Good_ID.Size = new System.Drawing.Size(100, 20);
-            this.txb_Good_ID.TabIndex = 0;
+            this.lb_InfoOfMaterial_Price.AutoSize = true;
+            this.lb_InfoOfMaterial_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_InfoOfMaterial_Price.Location = new System.Drawing.Point(7, 141);
+            this.lb_InfoOfMaterial_Price.Name = "lb_InfoOfMaterial_Price";
+            this.lb_InfoOfMaterial_Price.Size = new System.Drawing.Size(40, 13);
+            this.lb_InfoOfMaterial_Price.TabIndex = 4;
+            this.lb_InfoOfMaterial_Price.Text = "Price:";
             // 
-            // lb_Good_ID
+            // lb_InfoOfMaterial_Unit
             // 
-            this.lb_Good_ID.AutoSize = true;
-            this.lb_Good_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Good_ID.Location = new System.Drawing.Point(36, 22);
-            this.lb_Good_ID.Name = "lb_Good_ID";
-            this.lb_Good_ID.Size = new System.Drawing.Size(24, 13);
-            this.lb_Good_ID.TabIndex = 0;
-            this.lb_Good_ID.Text = "ID:";
+            this.lb_InfoOfMaterial_Unit.AutoSize = true;
+            this.lb_InfoOfMaterial_Unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_InfoOfMaterial_Unit.Location = new System.Drawing.Point(7, 101);
+            this.lb_InfoOfMaterial_Unit.Name = "lb_InfoOfMaterial_Unit";
+            this.lb_InfoOfMaterial_Unit.Size = new System.Drawing.Size(34, 13);
+            this.lb_InfoOfMaterial_Unit.TabIndex = 3;
+            this.lb_InfoOfMaterial_Unit.Text = "Unit:";
             // 
-            // txb_Good_Name
+            // txb_InforOfMaterial_ID
             // 
-            this.txb_Good_Name.Location = new System.Drawing.Point(120, 60);
-            this.txb_Good_Name.Name = "txb_Good_Name";
-            this.txb_Good_Name.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Name.TabIndex = 1;
+            this.txb_InforOfMaterial_ID.Location = new System.Drawing.Point(90, 11);
+            this.txb_InforOfMaterial_ID.Name = "txb_InforOfMaterial_ID";
+            this.txb_InforOfMaterial_ID.ReadOnly = true;
+            this.txb_InforOfMaterial_ID.Size = new System.Drawing.Size(100, 20);
+            this.txb_InforOfMaterial_ID.TabIndex = 0;
             // 
-            // txb_Good_Amount
+            // lb_InfoOfMaterial_ID
             // 
-            this.txb_Good_Amount.Location = new System.Drawing.Point(120, 100);
-            this.txb_Good_Amount.Name = "txb_Good_Amount";
-            this.txb_Good_Amount.Size = new System.Drawing.Size(300, 20);
-            this.txb_Good_Amount.TabIndex = 2;
+            this.lb_InfoOfMaterial_ID.AutoSize = true;
+            this.lb_InfoOfMaterial_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_InfoOfMaterial_ID.Location = new System.Drawing.Point(7, 18);
+            this.lb_InfoOfMaterial_ID.Name = "lb_InfoOfMaterial_ID";
+            this.lb_InfoOfMaterial_ID.Size = new System.Drawing.Size(24, 13);
+            this.lb_InfoOfMaterial_ID.TabIndex = 0;
+            this.lb_InfoOfMaterial_ID.Text = "ID:";
             // 
-            // lb_Good_Name
+            // txb_InforOfMaterial_Name
             // 
-            this.lb_Good_Name.AutoSize = true;
-            this.lb_Good_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Good_Name.Location = new System.Drawing.Point(36, 63);
-            this.lb_Good_Name.Name = "lb_Good_Name";
-            this.lb_Good_Name.Size = new System.Drawing.Size(43, 13);
-            this.lb_Good_Name.TabIndex = 0;
-            this.lb_Good_Name.Text = "Name:";
+            this.txb_InforOfMaterial_Name.Location = new System.Drawing.Point(90, 52);
+            this.txb_InforOfMaterial_Name.Name = "txb_InforOfMaterial_Name";
+            this.txb_InforOfMaterial_Name.Size = new System.Drawing.Size(320, 20);
+            this.txb_InforOfMaterial_Name.TabIndex = 1;
             // 
-            // lb_Good_Amount
+            // lb_InfoOfMaterial_Name
             // 
-            this.lb_Good_Amount.AutoSize = true;
-            this.lb_Good_Amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Good_Amount.Location = new System.Drawing.Point(36, 103);
-            this.lb_Good_Amount.Name = "lb_Good_Amount";
-            this.lb_Good_Amount.Size = new System.Drawing.Size(53, 13);
-            this.lb_Good_Amount.TabIndex = 0;
-            this.lb_Good_Amount.Text = "Amount:";
+            this.lb_InfoOfMaterial_Name.AutoSize = true;
+            this.lb_InfoOfMaterial_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_InfoOfMaterial_Name.Location = new System.Drawing.Point(7, 59);
+            this.lb_InfoOfMaterial_Name.Name = "lb_InfoOfMaterial_Name";
+            this.lb_InfoOfMaterial_Name.Size = new System.Drawing.Size(43, 13);
+            this.lb_InfoOfMaterial_Name.TabIndex = 0;
+            this.lb_InfoOfMaterial_Name.Text = "Name:";
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.btn_Good_New);
-            this.panel22.Controls.Add(this.btn_Good_Refresh);
-            this.panel22.Controls.Add(this.btn_Good_Update);
-            this.panel22.Controls.Add(this.btn_Good_Delete);
-            this.panel22.Controls.Add(this.btn_Good_Add);
+            this.panel22.Controls.Add(this.btn_InfoOfMaterial_Add);
+            this.panel22.Controls.Add(this.btn_InfoOfMaterial_New);
+            this.panel22.Controls.Add(this.btn_InfoOfMaterial_Refresh);
+            this.panel22.Controls.Add(this.btn_InfoOfMaterial_Update);
+            this.panel22.Controls.Add(this.btn_InfoOfMaterial_Delete);
             this.panel22.Location = new System.Drawing.Point(800, 10);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(432, 37);
+            this.panel22.Size = new System.Drawing.Size(430, 40);
             this.panel22.TabIndex = 1;
             // 
-            // btn_Good_New
+            // btn_InfoOfMaterial_New
             // 
-            this.btn_Good_New.Location = new System.Drawing.Point(331, 3);
-            this.btn_Good_New.Name = "btn_Good_New";
-            this.btn_Good_New.Size = new System.Drawing.Size(80, 30);
-            this.btn_Good_New.TabIndex = 4;
-            this.btn_Good_New.Text = "New";
-            this.btn_Good_New.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_New.Location = new System.Drawing.Point(10, 5);
+            this.btn_InfoOfMaterial_New.Name = "btn_InfoOfMaterial_New";
+            this.btn_InfoOfMaterial_New.Size = new System.Drawing.Size(80, 30);
+            this.btn_InfoOfMaterial_New.TabIndex = 4;
+            this.btn_InfoOfMaterial_New.Text = "New";
+            this.btn_InfoOfMaterial_New.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_New.Click += new System.EventHandler(this.btn_InfoOfMaterial_New_Click);
             // 
-            // btn_Good_Refresh
+            // btn_InfoOfMaterial_Refresh
             // 
-            this.btn_Good_Refresh.Location = new System.Drawing.Point(250, 3);
-            this.btn_Good_Refresh.Name = "btn_Good_Refresh";
-            this.btn_Good_Refresh.Size = new System.Drawing.Size(80, 30);
-            this.btn_Good_Refresh.TabIndex = 3;
-            this.btn_Good_Refresh.Text = "Refresh";
-            this.btn_Good_Refresh.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Refresh.Location = new System.Drawing.Point(330, 5);
+            this.btn_InfoOfMaterial_Refresh.Name = "btn_InfoOfMaterial_Refresh";
+            this.btn_InfoOfMaterial_Refresh.Size = new System.Drawing.Size(80, 30);
+            this.btn_InfoOfMaterial_Refresh.TabIndex = 3;
+            this.btn_InfoOfMaterial_Refresh.Text = "Refresh";
+            this.btn_InfoOfMaterial_Refresh.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Refresh.Click += new System.EventHandler(this.btn_InfoOfMaterial_Refresh_Click);
             // 
-            // btn_Good_Update
+            // btn_InfoOfMaterial_Update
             // 
-            this.btn_Good_Update.Location = new System.Drawing.Point(170, 3);
-            this.btn_Good_Update.Name = "btn_Good_Update";
-            this.btn_Good_Update.Size = new System.Drawing.Size(80, 30);
-            this.btn_Good_Update.TabIndex = 2;
-            this.btn_Good_Update.Text = "Update";
-            this.btn_Good_Update.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Update.Location = new System.Drawing.Point(170, 5);
+            this.btn_InfoOfMaterial_Update.Name = "btn_InfoOfMaterial_Update";
+            this.btn_InfoOfMaterial_Update.Size = new System.Drawing.Size(80, 30);
+            this.btn_InfoOfMaterial_Update.TabIndex = 2;
+            this.btn_InfoOfMaterial_Update.Text = "Update";
+            this.btn_InfoOfMaterial_Update.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Update.Click += new System.EventHandler(this.btn_InfoOfMaterial_Update_Click);
             // 
-            // btn_Good_Delete
+            // btn_InfoOfMaterial_Delete
             // 
-            this.btn_Good_Delete.Location = new System.Drawing.Point(90, 3);
-            this.btn_Good_Delete.Name = "btn_Good_Delete";
-            this.btn_Good_Delete.Size = new System.Drawing.Size(80, 30);
-            this.btn_Good_Delete.TabIndex = 1;
-            this.btn_Good_Delete.Text = "Delete";
-            this.btn_Good_Delete.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Delete.Location = new System.Drawing.Point(250, 5);
+            this.btn_InfoOfMaterial_Delete.Name = "btn_InfoOfMaterial_Delete";
+            this.btn_InfoOfMaterial_Delete.Size = new System.Drawing.Size(80, 30);
+            this.btn_InfoOfMaterial_Delete.TabIndex = 1;
+            this.btn_InfoOfMaterial_Delete.Text = "Delete";
+            this.btn_InfoOfMaterial_Delete.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Delete.Click += new System.EventHandler(this.btn_InfoOfMaterial_Delete_Click);
             // 
-            // btn_Good_Add
+            // lb_InforOfMaterial_Notify
             // 
-            this.btn_Good_Add.Location = new System.Drawing.Point(8, 3);
-            this.btn_Good_Add.Name = "btn_Good_Add";
-            this.btn_Good_Add.Size = new System.Drawing.Size(80, 30);
-            this.btn_Good_Add.TabIndex = 0;
-            this.btn_Good_Add.Text = "Add";
-            this.btn_Good_Add.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(805, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "notify: ";
+            this.lb_InforOfMaterial_Notify.AutoSize = true;
+            this.lb_InforOfMaterial_Notify.Location = new System.Drawing.Point(805, 64);
+            this.lb_InforOfMaterial_Notify.Name = "lb_InforOfMaterial_Notify";
+            this.lb_InforOfMaterial_Notify.Size = new System.Drawing.Size(70, 13);
+            this.lb_InforOfMaterial_Notify.TabIndex = 16;
+            this.lb_InforOfMaterial_Notify.Text = "NOTIFY~~~ ";
             // 
             // tpBill
             // 
@@ -1649,6 +1411,200 @@ namespace QuanLiChuoiCF
             this.tpBill.Text = "Bill";
             this.tpBill.UseVisualStyleBackColor = true;
             // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.panel25);
+            this.panel23.Controls.Add(this.panel26);
+            this.panel23.Controls.Add(this.panel28);
+            this.panel23.Controls.Add(this.panel29);
+            this.panel23.Controls.Add(this.lb_Bill_Notify);
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1238, 640);
+            this.panel23.TabIndex = 0;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.textBox4);
+            this.panel25.Controls.Add(this.button2);
+            this.panel25.Location = new System.Drawing.Point(8, 18);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(436, 39);
+            this.panel25.TabIndex = 2;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(3, 9);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(342, 20);
+            this.textBox4.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(351, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 31);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.dtgvBill);
+            this.panel26.Location = new System.Drawing.Point(9, 58);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(767, 564);
+            this.panel26.TabIndex = 22;
+            // 
+            // dtgvBill
+            // 
+            this.dtgvBill.AllowUserToResizeColumns = false;
+            this.dtgvBill.AllowUserToResizeRows = false;
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgvBill.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvBill.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtgvBill.Location = new System.Drawing.Point(1, 5);
+            this.dtgvBill.Name = "dtgvBill";
+            this.dtgvBill.Size = new System.Drawing.Size(763, 555);
+            this.dtgvBill.TabIndex = 3;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.cbb_Bill_IDofBranch);
+            this.panel28.Controls.Add(this.nud_Bill_TotalAmount);
+            this.panel28.Controls.Add(this.dtp_Bill_DateCheckIn);
+            this.panel28.Controls.Add(this.lb_Bill_TotalAmount);
+            this.panel28.Controls.Add(this.txb_Bill_IDofBill);
+            this.panel28.Controls.Add(this.lb_Bill_IDofBill);
+            this.panel28.Controls.Add(this.lb_Bill_IDofBranch);
+            this.panel28.Controls.Add(this.lb_Bill_DateCheckIn);
+            this.panel28.Location = new System.Drawing.Point(800, 98);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(432, 171);
+            this.panel28.TabIndex = 0;
+            // 
+            // lb_Bill_TotalAmount
+            // 
+            this.lb_Bill_TotalAmount.AutoSize = true;
+            this.lb_Bill_TotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lb_Bill_TotalAmount.Location = new System.Drawing.Point(8, 141);
+            this.lb_Bill_TotalAmount.Name = "lb_Bill_TotalAmount";
+            this.lb_Bill_TotalAmount.Size = new System.Drawing.Size(86, 13);
+            this.lb_Bill_TotalAmount.TabIndex = 3;
+            this.lb_Bill_TotalAmount.Text = "Total Amount:";
+            // 
+            // txb_Bill_IDofBill
+            // 
+            this.txb_Bill_IDofBill.Location = new System.Drawing.Point(101, 13);
+            this.txb_Bill_IDofBill.Name = "txb_Bill_IDofBill";
+            this.txb_Bill_IDofBill.ReadOnly = true;
+            this.txb_Bill_IDofBill.Size = new System.Drawing.Size(150, 20);
+            this.txb_Bill_IDofBill.TabIndex = 0;
+            // 
+            // lb_Bill_IDofBill
+            // 
+            this.lb_Bill_IDofBill.AutoSize = true;
+            this.lb_Bill_IDofBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Bill_IDofBill.Location = new System.Drawing.Point(8, 20);
+            this.lb_Bill_IDofBill.Name = "lb_Bill_IDofBill";
+            this.lb_Bill_IDofBill.Size = new System.Drawing.Size(60, 13);
+            this.lb_Bill_IDofBill.TabIndex = 0;
+            this.lb_Bill_IDofBill.Text = "ID of Bill:";
+            // 
+            // lb_Bill_IDofBranch
+            // 
+            this.lb_Bill_IDofBranch.AutoSize = true;
+            this.lb_Bill_IDofBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Bill_IDofBranch.Location = new System.Drawing.Point(8, 61);
+            this.lb_Bill_IDofBranch.Name = "lb_Bill_IDofBranch";
+            this.lb_Bill_IDofBranch.Size = new System.Drawing.Size(83, 13);
+            this.lb_Bill_IDofBranch.TabIndex = 0;
+            this.lb_Bill_IDofBranch.Text = "ID of Branch:";
+            // 
+            // lb_Bill_DateCheckIn
+            // 
+            this.lb_Bill_DateCheckIn.AutoSize = true;
+            this.lb_Bill_DateCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Bill_DateCheckIn.Location = new System.Drawing.Point(8, 101);
+            this.lb_Bill_DateCheckIn.Name = "lb_Bill_DateCheckIn";
+            this.lb_Bill_DateCheckIn.Size = new System.Drawing.Size(93, 13);
+            this.lb_Bill_DateCheckIn.TabIndex = 0;
+            this.lb_Bill_DateCheckIn.Text = "Date Check In:";
+            this.lb_Bill_DateCheckIn.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.btn_New);
+            this.panel29.Controls.Add(this.button4);
+            this.panel29.Controls.Add(this.button7);
+            this.panel29.Controls.Add(this.button5);
+            this.panel29.Controls.Add(this.button6);
+            this.panel29.Location = new System.Drawing.Point(800, 10);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(430, 40);
+            this.panel29.TabIndex = 1;
+            // 
+            // btn_New
+            // 
+            this.btn_New.Location = new System.Drawing.Point(10, 5);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(80, 30);
+            this.btn_New.TabIndex = 0;
+            this.btn_New.Text = "New";
+            this.btn_New.UseVisualStyleBackColor = true;
+            this.btn_New.Click += new System.EventHandler(this.btn_Bill_NewClick);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(330, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 30);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Refresh";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btn_Bill_RefreshClick);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(170, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 30);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btn_Bill_UpdateClick);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(250, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 30);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Delete";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btn_Bill_DeleteClick);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(90, 5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(80, 30);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Add";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btn_Bill_AddClick);
+            // 
+            // lb_Bill_Notify
+            // 
+            this.lb_Bill_Notify.AutoSize = true;
+            this.lb_Bill_Notify.Location = new System.Drawing.Point(804, 72);
+            this.lb_Bill_Notify.Name = "lb_Bill_Notify";
+            this.lb_Bill_Notify.Size = new System.Drawing.Size(38, 13);
+            this.lb_Bill_Notify.TabIndex = 21;
+            this.lb_Bill_Notify.Text = "notify: ";
+            // 
             // tpSupplier
             // 
             this.tpSupplier.Controls.Add(this.panel30);
@@ -1659,18 +1615,6 @@ namespace QuanLiChuoiCF
             this.tpSupplier.TabIndex = 7;
             this.tpSupplier.Text = "Supplier";
             this.tpSupplier.UseVisualStyleBackColor = true;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.panel25);
-            this.panel23.Controls.Add(this.panel26);
-            this.panel23.Controls.Add(this.panel28);
-            this.panel23.Controls.Add(this.panel29);
-            this.panel23.Controls.Add(this.label11);
-            this.panel23.Location = new System.Drawing.Point(0, 0);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1238, 640);
-            this.panel23.TabIndex = 0;
             // 
             // panel30
             // 
@@ -1683,6 +1627,79 @@ namespace QuanLiChuoiCF
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(1241, 637);
             this.panel30.TabIndex = 0;
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.dtgv_Supplier_Mterial);
+            this.panel37.Location = new System.Drawing.Point(800, 265);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(432, 355);
+            this.panel37.TabIndex = 24;
+            // 
+            // dtgv_Supplier_Mterial
+            // 
+            this.dtgv_Supplier_Mterial.AllowUserToOrderColumns = true;
+            this.dtgv_Supplier_Mterial.AutoGenerateColumns = false;
+            this.dtgv_Supplier_Mterial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtgv_Supplier_Mterial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Mterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Supplier_Mterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDOfMaterialDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.unitDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dtgv_Supplier_Mterial.DataSource = this.goodsBindingSource;
+            this.dtgv_Supplier_Mterial.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Mterial.Location = new System.Drawing.Point(3, 4);
+            this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
+            this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
+            this.dtgv_Supplier_Mterial.TabIndex = 0;
+            // 
+            // iDOfMaterialDataGridViewTextBoxColumn
+            // 
+            this.iDOfMaterialDataGridViewTextBoxColumn.DataPropertyName = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn.HeaderText = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn.Name = "iDOfMaterialDataGridViewTextBoxColumn";
+            this.iDOfMaterialDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
+            // 
+            // quanLiChuoiCFDataSet
+            // 
+            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
+            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel31
             // 
@@ -1737,6 +1754,35 @@ namespace QuanLiChuoiCF
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(763, 555);
             this.dataGridView3.TabIndex = 1;
+            // 
+            // iDOfSupplierDataGridViewTextBoxColumn
+            // 
+            this.iDOfSupplierDataGridViewTextBoxColumn.DataPropertyName = "IDOfSupplier";
+            this.iDOfSupplierDataGridViewTextBoxColumn.HeaderText = "IDOfSupplier";
+            this.iDOfSupplierDataGridViewTextBoxColumn.Name = "iDOfSupplierDataGridViewTextBoxColumn";
+            // 
+            // iDOfMaterialDataGridViewTextBoxColumn1
+            // 
+            this.iDOfMaterialDataGridViewTextBoxColumn1.DataPropertyName = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn1.HeaderText = "IDOfMaterial";
+            this.iDOfMaterialDataGridViewTextBoxColumn1.Name = "iDOfMaterialDataGridViewTextBoxColumn1";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
+            this.supplierBindingSource.DataSource = this.quanLiChuoiCFDataSet;
             // 
             // panel35
             // 
@@ -1820,332 +1866,263 @@ namespace QuanLiChuoiCF
             this.button11.Text = "Detail";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.textBox4);
-            this.panel25.Controls.Add(this.button2);
-            this.panel25.Location = new System.Drawing.Point(8, 18);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(436, 39);
-            this.panel25.TabIndex = 23;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(3, 9);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(342, 20);
-            this.textBox4.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(351, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.dataGridView2);
-            this.panel26.Location = new System.Drawing.Point(9, 58);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(767, 564);
-            this.panel26.TabIndex = 22;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dataGridView2.Location = new System.Drawing.Point(1, 5);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(763, 555);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.textBox5);
-            this.panel28.Controls.Add(this.textBox6);
-            this.panel28.Controls.Add(this.label3);
-            this.panel28.Controls.Add(this.label5);
-            this.panel28.Controls.Add(this.textBox7);
-            this.panel28.Controls.Add(this.label6);
-            this.panel28.Controls.Add(this.textBox8);
-            this.panel28.Controls.Add(this.textBox9);
-            this.panel28.Controls.Add(this.label9);
-            this.panel28.Controls.Add(this.label10);
-            this.panel28.Location = new System.Drawing.Point(799, 98);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(432, 299);
-            this.panel28.TabIndex = 19;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(120, 180);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(300, 20);
-            this.textBox5.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(120, 140);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(300, 20);
-            this.textBox6.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(36, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Price:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(36, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Unit:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(121, 20);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "ID:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(120, 60);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(300, 20);
-            this.textBox8.TabIndex = 1;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(120, 100);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(300, 20);
-            this.textBox9.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Name:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(36, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Amount:";
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.button3);
-            this.panel29.Controls.Add(this.button4);
-            this.panel29.Controls.Add(this.button5);
-            this.panel29.Controls.Add(this.button6);
-            this.panel29.Controls.Add(this.button7);
-            this.panel29.Location = new System.Drawing.Point(799, 18);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(432, 37);
-            this.panel29.TabIndex = 20;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(331, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "New";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(250, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Refresh";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(170, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 30);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(90, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 30);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(8, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(80, 30);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(804, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 13);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "notify: ";
-            // 
-            // panel37
-            // 
-            this.panel37.Controls.Add(this.dtgv_Supplier_Mterial);
-            this.panel37.Location = new System.Drawing.Point(800, 265);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(432, 355);
-            this.panel37.TabIndex = 24;
-            // 
-            // dtgv_Supplier_Mterial
-            // 
-            this.dtgv_Supplier_Mterial.AllowUserToOrderColumns = true;
-            this.dtgv_Supplier_Mterial.AutoGenerateColumns = false;
-            this.dtgv_Supplier_Mterial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dtgv_Supplier_Mterial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgv_Supplier_Mterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Supplier_Mterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDOfMaterialDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.unitDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dtgv_Supplier_Mterial.DataSource = this.goodsBindingSource;
-            this.dtgv_Supplier_Mterial.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgv_Supplier_Mterial.Location = new System.Drawing.Point(3, 4);
-            this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
-            this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
-            this.dtgv_Supplier_Mterial.TabIndex = 0;
-            //this.dtgv_Supplier_Mterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Supplier_Mterial_CellContentClick);
-            // 
-            // quanLiChuoiCFDataSet
-            // 
-            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
-            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // goodsBindingSource
-            // 
-            this.goodsBindingSource.DataMember = "Goods";
-            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
-            // 
             // goodsTableAdapter
             // 
             this.goodsTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDOfMaterialDataGridViewTextBoxColumn
-            // 
-            this.iDOfMaterialDataGridViewTextBoxColumn.DataPropertyName = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn.HeaderText = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn.Name = "iDOfMaterialDataGridViewTextBoxColumn";
-            this.iDOfMaterialDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.quanLiChuoiCFDataSet;
             // 
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
-            // iDOfSupplierDataGridViewTextBoxColumn
+            // btn_InfoOfMaterial_Add
             // 
-            this.iDOfSupplierDataGridViewTextBoxColumn.DataPropertyName = "IDOfSupplier";
-            this.iDOfSupplierDataGridViewTextBoxColumn.HeaderText = "IDOfSupplier";
-            this.iDOfSupplierDataGridViewTextBoxColumn.Name = "iDOfSupplierDataGridViewTextBoxColumn";
+            this.btn_InfoOfMaterial_Add.Location = new System.Drawing.Point(90, 5);
+            this.btn_InfoOfMaterial_Add.Name = "btn_InfoOfMaterial_Add";
+            this.btn_InfoOfMaterial_Add.Size = new System.Drawing.Size(80, 30);
+            this.btn_InfoOfMaterial_Add.TabIndex = 5;
+            this.btn_InfoOfMaterial_Add.Text = "Add";
+            this.btn_InfoOfMaterial_Add.UseVisualStyleBackColor = true;
+            this.btn_InfoOfMaterial_Add.Click += new System.EventHandler(this.btn_InforOfMaterial_Add_Click);
             // 
-            // iDOfMaterialDataGridViewTextBoxColumn1
+            // tpDrink
             // 
-            this.iDOfMaterialDataGridViewTextBoxColumn1.DataPropertyName = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn1.HeaderText = "IDOfMaterial";
-            this.iDOfMaterialDataGridViewTextBoxColumn1.Name = "iDOfMaterialDataGridViewTextBoxColumn1";
+            this.tpDrink.BackColor = System.Drawing.Color.Transparent;
+            this.tpDrink.Controls.Add(this.lb_Drink_Notify);
+            this.tpDrink.Controls.Add(this.panel7);
+            this.tpDrink.Controls.Add(this.panel8);
+            this.tpDrink.Controls.Add(this.panel6);
+            this.tpDrink.Controls.Add(this.panel20);
+            this.tpDrink.Location = new System.Drawing.Point(4, 22);
+            this.tpDrink.Name = "tpDrink";
+            this.tpDrink.Size = new System.Drawing.Size(1241, 640);
+            this.tpDrink.TabIndex = 0;
+            this.tpDrink.Text = "Drink";
             // 
-            // nameDataGridViewTextBoxColumn1
+            // lb_Drink_Notify
             // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.lb_Drink_Notify.AutoSize = true;
+            this.lb_Drink_Notify.Location = new System.Drawing.Point(804, 63);
+            this.lb_Drink_Notify.Name = "lb_Drink_Notify";
+            this.lb_Drink_Notify.Size = new System.Drawing.Size(67, 13);
+            this.lb_Drink_Notify.TabIndex = 13;
+            this.lb_Drink_Notify.Text = "NOTIFY~~~";
             // 
-            // addressDataGridViewTextBoxColumn
+            // panel7
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.panel7.Controls.Add(this.tbSearchCF);
+            this.panel7.Controls.Add(this.btnTim);
+            this.panel7.Location = new System.Drawing.Point(10, 10);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(447, 39);
+            this.panel7.TabIndex = 12;
+            // 
+            // tbSearchCF
+            // 
+            this.tbSearchCF.Location = new System.Drawing.Point(10, 9);
+            this.tbSearchCF.Name = "tbSearchCF";
+            this.tbSearchCF.Size = new System.Drawing.Size(288, 20);
+            this.tbSearchCF.TabIndex = 5;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(304, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(79, 31);
+            this.btnTim.TabIndex = 4;
+            this.btnTim.Text = "Search";
+            this.btnTim.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.txb_Drink_Name);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Controls.Add(this.nud_Drink_Price);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.txb_Drink_ID);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Location = new System.Drawing.Point(797, 94);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(417, 180);
+            this.panel8.TabIndex = 11;
+            // 
+            // nud_Drink_Price
+            // 
+            this.nud_Drink_Price.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nud_Drink_Price.Location = new System.Drawing.Point(93, 98);
+            this.nud_Drink_Price.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nud_Drink_Price.Name = "nud_Drink_Price";
+            this.nud_Drink_Price.Size = new System.Drawing.Size(319, 20);
+            this.nud_Drink_Price.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Price";
+            // 
+            // txb_Drink_Name
+            // 
+            this.txb_Drink_Name.Location = new System.Drawing.Point(93, 55);
+            this.txb_Drink_Name.Name = "txb_Drink_Name";
+            this.txb_Drink_Name.Size = new System.Drawing.Size(319, 20);
+            this.txb_Drink_Name.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Drink Name:";
+            // 
+            // txb_Drink_ID
+            // 
+            this.txb_Drink_ID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_Drink_ID.Location = new System.Drawing.Point(93, 13);
+            this.txb_Drink_ID.Name = "txb_Drink_ID";
+            this.txb_Drink_ID.ReadOnly = true;
+            this.txb_Drink_ID.Size = new System.Drawing.Size(159, 20);
+            this.txb_Drink_ID.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID:";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btn_Drink_New);
+            this.panel6.Controls.Add(this.btn_Drink_Refresh);
+            this.panel6.Controls.Add(this.btn_Drink_Update);
+            this.panel6.Controls.Add(this.btn_Drink_Delete);
+            this.panel6.Controls.Add(this.btn_Drink_Add);
+            this.panel6.Location = new System.Drawing.Point(800, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(430, 40);
+            this.panel6.TabIndex = 9;
+            // 
+            // btn_Drink_New
+            // 
+            this.btn_Drink_New.Location = new System.Drawing.Point(10, 5);
+            this.btn_Drink_New.Name = "btn_Drink_New";
+            this.btn_Drink_New.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_New.TabIndex = 4;
+            this.btn_Drink_New.Text = "New";
+            this.btn_Drink_New.UseVisualStyleBackColor = true;
+            // 
+            // btn_Drink_Refresh
+            // 
+            this.btn_Drink_Refresh.Location = new System.Drawing.Point(330, 5);
+            this.btn_Drink_Refresh.Name = "btn_Drink_Refresh";
+            this.btn_Drink_Refresh.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Refresh.TabIndex = 3;
+            this.btn_Drink_Refresh.Text = "Refresh";
+            this.btn_Drink_Refresh.UseVisualStyleBackColor = true;
+            // 
+            // btn_Drink_Update
+            // 
+            this.btn_Drink_Update.Location = new System.Drawing.Point(170, 5);
+            this.btn_Drink_Update.Name = "btn_Drink_Update";
+            this.btn_Drink_Update.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Update.TabIndex = 2;
+            this.btn_Drink_Update.Text = "Update";
+            this.btn_Drink_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Drink_Delete
+            // 
+            this.btn_Drink_Delete.Location = new System.Drawing.Point(250, 5);
+            this.btn_Drink_Delete.Name = "btn_Drink_Delete";
+            this.btn_Drink_Delete.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Delete.TabIndex = 1;
+            this.btn_Drink_Delete.Text = "Delete";
+            this.btn_Drink_Delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_Drink_Add
+            // 
+            this.btn_Drink_Add.Location = new System.Drawing.Point(90, 5);
+            this.btn_Drink_Add.Name = "btn_Drink_Add";
+            this.btn_Drink_Add.Size = new System.Drawing.Size(79, 31);
+            this.btn_Drink_Add.TabIndex = 0;
+            this.btn_Drink_Add.Text = "Add";
+            this.btn_Drink_Add.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.dtgvCF);
+            this.panel20.Location = new System.Drawing.Point(3, 55);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(760, 560);
+            this.panel20.TabIndex = 10;
+            // 
+            // dtgvCF
+            // 
+            this.dtgvCF.AllowUserToResizeColumns = false;
+            this.dtgvCF.AllowUserToResizeRows = false;
+            this.dtgvCF.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCF.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgvCF.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvCF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvCF.GridColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dtgvCF.Location = new System.Drawing.Point(7, 3);
+            this.dtgvCF.Name = "dtgvCF";
+            this.dtgvCF.Size = new System.Drawing.Size(750, 550);
+            this.dtgvCF.TabIndex = 1;
+            // 
+            // dtp_Bill_DateCheckIn
+            // 
+            this.dtp_Bill_DateCheckIn.Location = new System.Drawing.Point(101, 94);
+            this.dtp_Bill_DateCheckIn.Name = "dtp_Bill_DateCheckIn";
+            this.dtp_Bill_DateCheckIn.Size = new System.Drawing.Size(310, 20);
+            this.dtp_Bill_DateCheckIn.TabIndex = 2;
+            // 
+            // nud_Bill_TotalAmount
+            // 
+            this.nud_Bill_TotalAmount.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nud_Bill_TotalAmount.Location = new System.Drawing.Point(100, 134);
+            this.nud_Bill_TotalAmount.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nud_Bill_TotalAmount.Name = "nud_Bill_TotalAmount";
+            this.nud_Bill_TotalAmount.Size = new System.Drawing.Size(151, 20);
+            this.nud_Bill_TotalAmount.TabIndex = 3;
+            this.nud_Bill_TotalAmount.Value = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            // 
+            // cbb_Bill_IDofBranch
+            // 
+            this.cbb_Bill_IDofBranch.FormattingEnabled = true;
+            this.cbb_Bill_IDofBranch.Location = new System.Drawing.Point(100, 53);
+            this.cbb_Bill_IDofBranch.Name = "cbb_Bill_IDofBranch";
+            this.cbb_Bill_IDofBranch.Size = new System.Drawing.Size(311, 21);
+            this.cbb_Bill_IDofBranch.TabIndex = 1;
             // 
             // fAdmin
             // 
@@ -2155,7 +2132,6 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.tab);
             this.Name = "fAdmin";
             this.Text = "Admin";
-            //this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tbAccount.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2174,22 +2150,6 @@ namespace QuanLiChuoiCF
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel24.ResumeLayout(false);
-            this.tpDrink.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCF)).EndInit();
             this.tpDoanhThu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -2207,39 +2167,51 @@ namespace QuanLiChuoiCF
             this.panel19.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployees)).EndInit();
-            this.tpGood.ResumeLayout(false);
-            this.tpGood.PerformLayout();
+            this.tpInfoOfMaterial.ResumeLayout(false);
+            this.tpInfoOfMaterial.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInfoOfMaterial)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_InforOfMaterial_Price)).EndInit();
             this.panel22.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
-            this.tpSupplier.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.tpSupplier.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
+            this.panel37.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel34.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.panel35.ResumeLayout(false);
             this.panel35.PerformLayout();
             this.panel36.ResumeLayout(false);
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.panel29.ResumeLayout(false);
-            this.panel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            this.tpDrink.ResumeLayout(false);
+            this.tpDrink.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Drink_Price)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Bill_TotalAmount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2272,28 +2244,6 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button btnUpdateBranch;
         private System.Windows.Forms.Button btnDeleteBranch;
         private System.Windows.Forms.Button btnAddBranch;
-        private System.Windows.Forms.TabPage tpDrink;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox tbSearchCF;
-        private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.NumericUpDown nud_Drink_Price;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txb_Drink_Name;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txb_Drink_ID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btn_Drink_Refresh;
-        private System.Windows.Forms.Button btn_Drink_Update;
-        private System.Windows.Forms.Button btn_Drink_Delete;
-        private System.Windows.Forms.Button btn_Drink_Add;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.DataGridView dtgvCF;
         private System.Windows.Forms.TabPage tpDoanhThu;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -2354,32 +2304,26 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.ComboBox cbb_Account_ID;
         private System.Windows.Forms.Button btn_Account_ChangePassword;
         private System.Windows.Forms.Label labelUserID;
-        private System.Windows.Forms.TabPage tpGood;
+        private System.Windows.Forms.TabPage tpInfoOfMaterial;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_Search;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.DataGridView dtgvGoods;
+        private System.Windows.Forms.DataGridView dtgvInfoOfMaterial;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox txb_Good_Price;
-        private System.Windows.Forms.TextBox txb_Good_Unit;
-        private System.Windows.Forms.Label lb_Good_Price;
-        private System.Windows.Forms.Label lb_Good_Unit;
-        private System.Windows.Forms.TextBox txb_Good_ID;
-        private System.Windows.Forms.Label lb_Good_ID;
-        private System.Windows.Forms.TextBox txb_Good_Name;
-        private System.Windows.Forms.TextBox txb_Good_Amount;
-        private System.Windows.Forms.Label lb_Good_Name;
-        private System.Windows.Forms.Label lb_Good_Amount;
+        private System.Windows.Forms.TextBox txb_InforOfMaterial_Unit;
+        private System.Windows.Forms.Label lb_InfoOfMaterial_Price;
+        private System.Windows.Forms.Label lb_InfoOfMaterial_Unit;
+        private System.Windows.Forms.TextBox txb_InforOfMaterial_ID;
+        private System.Windows.Forms.Label lb_InfoOfMaterial_ID;
+        private System.Windows.Forms.TextBox txb_InforOfMaterial_Name;
+        private System.Windows.Forms.Label lb_InfoOfMaterial_Name;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Button btn_Good_New;
-        private System.Windows.Forms.Button btn_Good_Refresh;
-        private System.Windows.Forms.Button btn_Good_Update;
-        private System.Windows.Forms.Button btn_Good_Delete;
-        private System.Windows.Forms.Button btn_Good_Add;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btn_Drink_New;
-        private System.Windows.Forms.Label lb_Drink_Notify;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_New;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_Refresh;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_Update;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_Delete;
+        private System.Windows.Forms.Label lb_InforOfMaterial_Notify;
         private System.Windows.Forms.TabPage tpBill;
         private System.Windows.Forms.TabPage tpSupplier;
         private System.Windows.Forms.Panel panel23;
@@ -2402,25 +2346,20 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lb_Bill_TotalAmount;
+        private System.Windows.Forms.TextBox txb_Bill_IDofBill;
+        private System.Windows.Forms.Label lb_Bill_IDofBill;
+        private System.Windows.Forms.Label lb_Bill_IDofBranch;
+        private System.Windows.Forms.Label lb_Bill_DateCheckIn;
         private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lb_Bill_Notify;
         private System.Windows.Forms.Panel panel37;
         private System.Windows.Forms.DataGridView dtgv_Supplier_Mterial;
         private QuanLiChuoiCFDataSet quanLiChuoiCFDataSet;
@@ -2437,5 +2376,32 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.DataGridViewTextBoxColumn iDOfMaterialDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lb_InfoOfMaterial_Supplier;
+        private System.Windows.Forms.ComboBox cbb_InforOfMaterial_Supplier;
+        private System.Windows.Forms.NumericUpDown nud_InforOfMaterial_Price;
+        private System.Windows.Forms.Button btn_InfoOfMaterial_Add;
+        private System.Windows.Forms.TabPage tpDrink;
+        private System.Windows.Forms.Label lb_Drink_Notify;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox tbSearchCF;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txb_Drink_Name;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown nud_Drink_Price;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txb_Drink_ID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_Drink_New;
+        private System.Windows.Forms.Button btn_Drink_Refresh;
+        private System.Windows.Forms.Button btn_Drink_Update;
+        private System.Windows.Forms.Button btn_Drink_Delete;
+        private System.Windows.Forms.Button btn_Drink_Add;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.DataGridView dtgvCF;
+        private System.Windows.Forms.NumericUpDown nud_Bill_TotalAmount;
+        private System.Windows.Forms.DateTimePicker dtp_Bill_DateCheckIn;
+        private System.Windows.Forms.ComboBox cbb_Bill_IDofBranch;
     }
 }

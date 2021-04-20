@@ -15,16 +15,19 @@ namespace QuanLiChuoiCF
 {
     public partial class fAdmin : Form
     {
-        BindingSource drinks = new BindingSource();
-        BindingSource branches = new BindingSource();
+        public static BindingSource drinks = new BindingSource();
+        public static BindingSource branches = new BindingSource();
         public static BindingSource accounts = new BindingSource();
         public static BindingSource employees = new BindingSource();
-        BindingSource goods = new BindingSource();
-        string lastIDDrink;
-        string lastIDBranch;
-        string lastIDAccount;
+        public static BindingSource infoOfMaterials = new BindingSource();
+        public static BindingSource suppliers = new BindingSource();
+        public static BindingSource bills = new BindingSource();
+        public static string lastIDDrink;
+        public static string lastIDBranch;
+        public static string lastIDAccount;
         public static string lastIDEmployees;
-        string lastIDGood;
+        public static string lastIDInfoOfMaterial;
+        public static string lastIDBill;
 
         public string LastID { get => lastIDDrink; set => lastIDDrink = value; }
 
@@ -39,20 +42,21 @@ namespace QuanLiChuoiCF
             dtgvBranches.DataSource = branches;
             dtgvAccount.DataSource = accounts;
             dtgvEmployees.DataSource = employees;
-            dtgvGoods.DataSource = goods;
+            dtgvInfoOfMaterial.DataSource = infoOfMaterials;
 
             LoadDrinks();
             LoadBranches();
             LoadEmployees();
             LoadAccounts();
-            LoadGoods();
+            LoadInfoOfMaterial();
+            LoadBill();
 
             AddDrinkBinding();
             AddBranchBinding();
             AddEmployeeBinding();
             AddAccountBinding();
-            AddGoodBinding();
-
+            AddInfoOfMaterialBinding();
+            AddBillBinding();
         }
 
         #region loadAndBinding
@@ -62,7 +66,7 @@ namespace QuanLiChuoiCF
             drinks.DataSource = data;
             Drink[] arr = data.ToArray();
             if (arr.Length > 0) 
-            { 
+            {
                 lastIDDrink = arr[arr.Length - 1].ID; 
             }
             else
@@ -91,11 +95,8 @@ namespace QuanLiChuoiCF
             List<Employee> data = EmployeeDAO.Instance.GetEmployees();
             employees.DataSource = data;
             Employee[] arr = data.ToArray();
-            if(arr.Length>0)lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
-
-            UpdateCbbSexualInTabEmployee();
-            UpdateCbbShiftInTabEmployee();
-            UpdateCbbBranchInTabEmployee();
+            if(arr.Length>0) lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
+                    else lastIDEmployees = "NV01";
         }
 
         void LoadAccounts()
@@ -104,24 +105,29 @@ namespace QuanLiChuoiCF
             accounts.DataSource = data;
             Account[] arr = data.ToArray();
             if(arr.Length>0)lastIDAccount = arr[arr.Length - 1].Id;
-
-            UpdateCbbAccountTypeInTabEmployee();
-            UpdateCbbAccountIdInTabAccount();
         }
 
-        void LoadGoods()
+        void LoadInfoOfMaterial()
         {
-            List<MaterialInWarehouse> data = WarehouseMaterialDAO.Instance.GetMaterials();
-            goods.DataSource = data;
-            MaterialInWarehouse[] arr = data.ToArray();
-            if (arr.Length > 0) lastIDGood = arr[arr.Length - 1].IDOfMaterial;
+            List<InforOfMaterial> data = InforOfMaterialDAO.Instance.GetInfoOfMaterials();
+            infoOfMaterials.DataSource = data;
+            InforOfMaterial[] arr = data.ToArray();
+            if (arr.Length > 0) lastIDInfoOfMaterial = arr[arr.Length - 1].IDOfMaterial;
+        }
+
+        void LoadBill()
+        {
+            List<Bill> data = BillDAO.Instance.GetBills();
+            bills.DataSource = data;
+            Bill[] arr = data.ToArray();
+            if (arr.Length > 0) lastIDBill = arr[arr.Length - 1].IDOfBill;
         }
 
         void AddDrinkBinding()
         {
             txb_Drink_ID.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txb_Drink_Name.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Name", true, DataSourceUpdateMode.Never));
-            nud_Drink_Price.DataBindings.Add(new Binding("Text", dtgvCF.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            nud_Drink_Price.DataBindings.Add(new Binding("Value", dtgvCF.DataSource, "Price", true, DataSourceUpdateMode.Never));
         }
 
         void AddBranchBinding()
@@ -137,30 +143,38 @@ namespace QuanLiChuoiCF
             txb_Employee_LastName.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "LastName", true, DataSourceUpdateMode.Never));
             txb_Employee_IDOfEmPloyee.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "IDOfEmployee", true, DataSourceUpdateMode.Never));
             txb_Employee_PhoneNumber.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "PhoneNumber", true, DataSourceUpdateMode.Never));
-            cbb_Employee_Sexual.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Sexual", true, DataSourceUpdateMode.Never));
+            cbb_Employee_Sexual.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "Sexual", true, DataSourceUpdateMode.Never));
             txb_Employee_Address.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Address", true, DataSourceUpdateMode.Never));
-            dtp_Employee_DayIn.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "DayIn", true, DataSourceUpdateMode.Never));
-            cbb_Employee_Shift.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Shift", true, DataSourceUpdateMode.Never));
-            nud_Employee_DayOff.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "DayOff", true, DataSourceUpdateMode.Never));
-            nud_Employee_Bonus.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Bonus", true, DataSourceUpdateMode.Never));
-            nud_Employee_Salary.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Salary", true, DataSourceUpdateMode.Never));
-            cbb_Employee_IDOfBranch.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "IDOfBranch", true, DataSourceUpdateMode.Never));
+            dtp_Employee_DayIn.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "DayIn", true, DataSourceUpdateMode.Never));
+            cbb_Employee_Shift.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "Shift", true, DataSourceUpdateMode.Never));
+            nud_Employee_DayOff.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "DayOff", true, DataSourceUpdateMode.Never));
+            nud_Employee_Bonus.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "Bonus", true, DataSourceUpdateMode.Never));
+            nud_Employee_Salary.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "Salary", true, DataSourceUpdateMode.Never));
+            cbb_Employee_IDOfBranch.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "IDOfBranch", true, DataSourceUpdateMode.Never));
         }
 
         void AddAccountBinding()
         {
-            cbb_Account_ID.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            cbb_Account_ID.DataBindings.Add(new Binding("SelectedItem", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txb_Account_UserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
-            cbb_Account_AccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+            cbb_Account_AccountType.DataBindings.Add(new Binding("SelectedItem", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
         }
 
-        void AddGoodBinding()
+        void AddInfoOfMaterialBinding()
         {
-            txb_Good_ID.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "IDOfMaterial", true, DataSourceUpdateMode.Never));
-            txb_Good_Name.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Name", true, DataSourceUpdateMode.Never));
-            txb_Good_Amount.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Amount", true, DataSourceUpdateMode.Never));
-            txb_Good_Unit.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Unit", true, DataSourceUpdateMode.Never));
-            txb_Good_Price.DataBindings.Add(new Binding("Text", dtgvGoods.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            txb_InforOfMaterial_ID.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "IDOfMaterial", true, DataSourceUpdateMode.Never));
+            txb_InforOfMaterial_Name.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txb_InforOfMaterial_Unit.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "Unit", true, DataSourceUpdateMode.Never));
+            nud_InforOfMaterial_Price.DataBindings.Add(new Binding("Value", dtgvInfoOfMaterial.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            cbb_InforOfMaterial_Supplier.DataBindings.Add(new Binding("SelectedItem", dtgvInfoOfMaterial.DataSource, "IDOfSupplier", true, DataSourceUpdateMode.Never));
+        }
+
+        void AddBillBinding()
+        {
+            txb_Bill_IDofBill.DataBindings.Add(new Binding("Text", dtgvBill.DataSource, "IDOfBill", true, DataSourceUpdateMode.Never));
+            cbb_Bill_IDofBranch.DataBindings.Add(new Binding("SelectedItem", dtgvBill.DataSource, "IDOfBranch", true, DataSourceUpdateMode.Never));
+            dtp_Bill_DateCheckIn.DataBindings.Add(new Binding("Value", dtgvBill.DataSource, "DateCheckIn", true, DataSourceUpdateMode.Never));
+            nud_Bill_TotalAmount.DataBindings.Add(new Binding("Value", dtgvBill.DataSource, "TotalAmount", true, DataSourceUpdateMode.Never));
         }
 
         #endregion
@@ -196,19 +210,23 @@ namespace QuanLiChuoiCF
                 case "Money":
                     break;
                 case "Drink":
-                    LoadDrinks();
                     break;
                 case "Branch":
-                    LoadBranches();
                     break;
                 case "Account":
-                    LoadAccounts();
+                    UpdateCbbAccountTypeInTabEmployee();
+                    UpdateCbbAccountIdInTabAccount();
                     break;
                 case "Employee":
-                    LoadEmployees();
+                    UpdateCbbSexualInTabEmployee();
+                    UpdateCbbShiftInTabEmployee();
+                    UpdateCbbBranchInTabEmployee();
                     break;
-                case "Good":
-                    LoadGoods();
+                case "InfoOfMaterial":
+                    UpdateCbbSupplierInTabInforOfMaterial();
+                    break;
+                case "Bill":
+                    UpdateCbbBranchInTabBill();
                     break;
 
             }
@@ -328,7 +346,6 @@ namespace QuanLiChuoiCF
             nud_Drink_Price.Value = 10000;
         }
         #endregion
-
 
         #region accountEvents
         private void btnAddAccountClick(object sender, EventArgs e)
@@ -623,8 +640,199 @@ namespace QuanLiChuoiCF
         }
         #endregion
 
-        #region GoodEvent
+        #region InforOfMaterialEvent
+        private void btn_InfoOfMaterial_Delete_Click(object sender, EventArgs e)
+        {
+            string iD = txb_InforOfMaterial_ID.Text;
+            if (InforOfMaterialDAO.Instance.DeleteInfoOfMaterial(iD))
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Information of material was deleted successfully";
+                LoadInfoOfMaterial();
+            }
+            else
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: failed to delete";
+            }
+        }
 
+        private void btn_InfoOfMaterial_Update_Click(object sender, EventArgs e)
+        {
+            string iD = txb_InforOfMaterial_ID.Text;
+            string name = txb_InforOfMaterial_Name.Text;
+            if (name == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Name can't be empty";
+                return;
+            }
+            string unit = txb_InforOfMaterial_Unit.Text;
+            if (unit == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: unit can't be empty";
+                return;
+            }
+            int price = int.Parse(nud_InforOfMaterial_Price.Text);
+            if (price < 1000)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Price can't be lower than 1000VND";
+                return;
+            }
+            string supplier = cbb_InforOfMaterial_Supplier.Text;
+            if (InforOfMaterialDAO.Instance.UpdateInfoOfMaterial(iD, name, unit, price, supplier))
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Information of material was updated successfully";
+                LoadInfoOfMaterial();
+            }
+            else
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: failed to update";
+            }
+        }
+
+        private void btn_InfoOfMaterial_Refresh_Click(object sender, EventArgs e)
+        {
+            LoadInfoOfMaterial();
+        }
+
+        private void btn_InfoOfMaterial_New_Click(object sender, EventArgs e)
+        {
+            GenIDOfInforOfMaterial();
+            txb_InforOfMaterial_Name.Text = "";
+            txb_InforOfMaterial_Unit.Text = "";
+            nud_InforOfMaterial_Price.Value = 100000;
+            cbb_InforOfMaterial_Supplier.SelectedItem = cbb_InforOfMaterial_Supplier.Items[0];
+        }
+
+        private void btn_InforOfMaterial_Add_Click(object sender, EventArgs e)
+        {
+            string iD = txb_InforOfMaterial_ID.Text;
+            foreach (InforOfMaterial item in infoOfMaterials)
+            {
+                if (iD == item.IDOfMaterial)
+                {
+                    lb_InforOfMaterial_Notify.Text = "WARNING: ID was existed in database, please press new for new ID";
+                    return;
+                }
+            }
+            string name = txb_InforOfMaterial_Name.Text;
+            if (name == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Name can't be empty";
+                return;
+            }
+            string unit = txb_InforOfMaterial_Unit.Text;
+            if (unit == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: unit can't be empty";
+                return;
+            }
+            int price = int.Parse(nud_InforOfMaterial_Price.Text);
+            if (price < 1000)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Price can't be lower than 1000VND";
+                return;
+            }
+            string supplier = cbb_InforOfMaterial_Supplier.Text;
+            if (InforOfMaterialDAO.Instance.AddInfoOfMaterial(iD, name, unit, price, supplier))
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: InforOfMaterial was added successfully";
+            }
+            else
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: failed to added";
+            }
+        }
+        #endregion
+
+        #region BillEvent
+
+        private void btn_Bill_NewClick(object sender, EventArgs e)
+        {
+            GenIDOfBill();
+            cbb_Bill_IDofBranch.SelectedItem = cbb_Bill_IDofBranch.Items[0];
+            dtp_Bill_DateCheckIn.Value = DateTime.Now;
+            nud_Bill_TotalAmount.Value = 100000;
+        }
+
+        private void btn_Bill_AddClick(object sender, EventArgs e)
+        {
+            string iDOfBill = txb_Bill_IDofBill.Text;
+            foreach(Bill item in bills)
+            {
+                if(iDOfBill == item.IDOfBill)
+                {
+                    lb_Bill_Notify.Text = "WARNING: ID was existed in database, please press new for new ID";
+                    return;
+                }
+            }
+            string iDOfBranch = cbb_Bill_IDofBranch.SelectedItem.ToString();
+            if(iDOfBranch == "")
+            {
+                lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
+                return;
+            }
+            DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
+            int totalAmount = (int)nud_Bill_TotalAmount.Value;
+            if(totalAmount < 1000)
+            {
+                lb_Bill_Notify.Text = "WARNING: Total amount can't be lower than 1000";
+                return;
+            }
+            if (BillDAO.Instance.AddBill(iDOfBill, iDOfBranch, dateCheckIn, totalAmount))
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Bill was added Successfully";
+                LoadBill();
+            }
+            else
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Failed to added bill";
+            }
+        }
+
+        private void btn_Bill_UpdateClick(object sender, EventArgs e)
+        {
+            string iDOfBill = txb_Bill_IDofBill.Text;
+            string iDOfBranch = cbb_Bill_IDofBranch.SelectedItem.ToString();
+            if (iDOfBranch == "")
+            {
+                lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
+                return;
+            }
+            DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
+            int totalAmount = (int)nud_Bill_TotalAmount.Value;
+            if (totalAmount < 1000)
+            {
+                lb_Bill_Notify.Text = "WARNING: Total amount can't be lower than 1000";
+                return;
+            }
+            if (BillDAO.Instance.UpdateBill(iDOfBill, iDOfBranch, dateCheckIn, totalAmount))
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Bill was updated Successfully";
+                LoadBill();
+            }
+            else
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Failed to update bill";
+            }
+        }
+
+        private void btn_Bill_DeleteClick(object sender, EventArgs e)
+        {
+            string iDOfBill = txb_Bill_IDofBill.Text;
+            if (BillDAO.Instance.DeleteBill(iDOfBill))
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Bill was deleted Successfully";
+                LoadBill();
+            }
+            else
+            {
+                lb_Bill_Notify.Text = "NOTIFY: Failed to delete bill";
+            }
+        }
+
+        private void btn_Bill_RefreshClick(object sender, EventArgs e)
+        {
+            LoadBill();
+        }
         #endregion
 
         #endregion
@@ -718,5 +926,67 @@ namespace QuanLiChuoiCF
                 cbb_Account_ID.Items.Add(employee.IDOfEmployee);
             }
         }
+
+        private void UpdateCbbSupplierInTabInforOfMaterial()
+        {
+            cbb_InforOfMaterial_Supplier.Items.Clear();
+            foreach(Supplier supplier in suppliers)
+            {
+                cbb_InforOfMaterial_Supplier.Items.Add(supplier.IDOfSupplier);
+            }
+        }
+
+        private void GenIDOfInforOfMaterial()
+        {
+            int id_int = int.Parse(lastIDInfoOfMaterial.Substring(2));
+            string ID;
+            if (id_int < 10)
+            {
+                ID = "MA0" + id_int.ToString();
+            }
+            else
+            {
+                ID = "MA" + id_int.ToString();
+            }
+            txb_InforOfMaterial_ID.Text = ID;
+        }
+
+        private void UpdateCbbBranchInTabBill()
+        {
+            cbb_Bill_IDofBranch.Items.Clear();
+            foreach(Branch branch in branches)
+            {
+                cbb_Bill_IDofBranch.Items.Add(branch.Id);
+            }
+        }
+
+        private void GenIDOfBill()
+        {
+            int id_int = int.Parse(lastIDBill.Substring(2));
+            string ID;
+            if (id_int < 10)
+            {
+                ID = "BI0" + id_int.ToString();
+            }
+            else
+            {
+                ID = "BI" + id_int.ToString();
+            }
+            txb_Bill_IDofBill.Text = ID;
+        }
+
+
+        //vùng click nhầm :)))))
+
+        private void panel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
