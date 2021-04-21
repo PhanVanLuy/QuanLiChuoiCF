@@ -19,7 +19,7 @@ namespace QuanLiChuoiCF.DTO
         public Bill( DataRow row)
         {
             this.IDOfBill = ((string)row["IDOfBill"]).Trim();
-            this.IDOfBranch = ((string)row[" IDOfbranch"]).Trim();
+            this.IDOfBranch = ((string)row["IDOfbranch"]).Trim();
             this.DateCheckIn = (DateTime)row["DateCheckIn"];
             this.TotalAmount = (int)float.Parse(row["TotalAmount"].ToString().Trim());
         }
