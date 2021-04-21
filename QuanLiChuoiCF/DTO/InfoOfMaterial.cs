@@ -26,7 +26,7 @@ namespace QuanLiChuoiCF.DTO
             this.IDOfMaterial = row["IDOfMaterial"].ToString().Trim();
             this.Name = row["Name"].ToString().Trim();
             this.Unit = row["Unit"].ToString().Trim();
-            this.Price = (int)row["Price"];
+            this.Price = (int)float.Parse(row["Price"].ToString());
             this.IDOfSupplier = row["IDOfSupplier"].ToString().Trim();
         }
 

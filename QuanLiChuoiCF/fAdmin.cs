@@ -96,6 +96,20 @@ namespace QuanLiChuoiCF
             }
 
         }
+        void LoadMaterialByIDOfSupplier()
+        {
+            List<InfoOfMaterial> listInfoMaterial = InfoOfMaterialDAO.Instance.GetInfoOfMaterialDAOs();
+            string ID = txt_Supplier_ID.Text;
+            List<InfoOfMaterial> listMaterialByIDOfSupplier = new List<InfoOfMaterial>();
+            foreach (InfoOfMaterial item in listInfoMaterial)
+            {
+                if (item.IDOfSupplier == ID)
+                {
+                    listMaterialByIDOfSupplier.Add(item);
+                }
+            }
+            dtgv_Supplier_Material.DataSource = listMaterialByIDOfSupplier;
+        }
         void LoadDrinks()
         {
             List<Drink> data = DrinkDAO.Instance.GetListDrinks();
@@ -852,6 +866,11 @@ namespace QuanLiChuoiCF
             }    
 
 
+        }
+
+        private void dtgvSupplier_Click(object sender, EventArgs e)
+        {
+            LoadMaterialByIDOfSupplier();
         }
     }
 }

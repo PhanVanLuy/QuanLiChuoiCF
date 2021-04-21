@@ -192,13 +192,12 @@ namespace QuanLiChuoiCF
             this.tpSupplier = new System.Windows.Forms.TabPage();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel36 = new System.Windows.Forms.Panel();
+            this.btn_Supplier_Add = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btn_Supplier_Update = new System.Windows.Forms.Button();
             this.btn_Supplier_Delete = new System.Windows.Forms.Button();
             this.panel37 = new System.Windows.Forms.Panel();
-            this.dtgv_Supplier_Mterial = new System.Windows.Forms.DataGridView();
-            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
+            this.dtgv_Supplier_Material = new System.Windows.Forms.DataGridView();
             this.panel31 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -211,10 +210,11 @@ namespace QuanLiChuoiCF
             this.txt_Supplier_Address = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
             this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
-            this.btn_Supplier_Add = new System.Windows.Forms.Button();
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -270,13 +270,13 @@ namespace QuanLiChuoiCF
             this.panel30.SuspendLayout();
             this.panel36.SuspendLayout();
             this.panel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Material)).BeginInit();
             this.panel31.SuspendLayout();
             this.panel34.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSupplier)).BeginInit();
             this.panel35.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1904,6 +1904,16 @@ namespace QuanLiChuoiCF
             this.panel36.Size = new System.Drawing.Size(420, 37);
             this.panel36.TabIndex = 21;
             // 
+            // btn_Supplier_Add
+            // 
+            this.btn_Supplier_Add.Location = new System.Drawing.Point(131, 3);
+            this.btn_Supplier_Add.Name = "btn_Supplier_Add";
+            this.btn_Supplier_Add.Size = new System.Drawing.Size(80, 30);
+            this.btn_Supplier_Add.TabIndex = 4;
+            this.btn_Supplier_Add.Text = "Add";
+            this.btn_Supplier_Add.UseVisualStyleBackColor = true;
+            this.btn_Supplier_Add.Click += new System.EventHandler(this.button9_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(45, 3);
@@ -1936,33 +1946,23 @@ namespace QuanLiChuoiCF
             // 
             // panel37
             // 
-            this.panel37.Controls.Add(this.dtgv_Supplier_Mterial);
+            this.panel37.Controls.Add(this.dtgv_Supplier_Material);
             this.panel37.Location = new System.Drawing.Point(800, 265);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(432, 355);
             this.panel37.TabIndex = 24;
             // 
-            // dtgv_Supplier_Mterial
+            // dtgv_Supplier_Material
             // 
-            this.dtgv_Supplier_Mterial.AllowUserToOrderColumns = true;
-            this.dtgv_Supplier_Mterial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dtgv_Supplier_Mterial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgv_Supplier_Mterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Supplier_Mterial.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgv_Supplier_Mterial.Location = new System.Drawing.Point(3, 4);
-            this.dtgv_Supplier_Mterial.Name = "dtgv_Supplier_Mterial";
-            this.dtgv_Supplier_Mterial.Size = new System.Drawing.Size(417, 348);
-            this.dtgv_Supplier_Mterial.TabIndex = 0;
-            // 
-            // goodsBindingSource
-            // 
-            this.goodsBindingSource.DataMember = "Goods";
-            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
-            // 
-            // quanLiChuoiCFDataSet
-            // 
-            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
-            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtgv_Supplier_Material.AllowUserToOrderColumns = true;
+            this.dtgv_Supplier_Material.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtgv_Supplier_Material.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Material.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Supplier_Material.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv_Supplier_Material.Location = new System.Drawing.Point(3, 4);
+            this.dtgv_Supplier_Material.Name = "dtgv_Supplier_Material";
+            this.dtgv_Supplier_Material.Size = new System.Drawing.Size(417, 348);
+            this.dtgv_Supplier_Material.TabIndex = 0;
             // 
             // panel31
             // 
@@ -2010,6 +2010,7 @@ namespace QuanLiChuoiCF
             this.dtgvSupplier.Name = "dtgvSupplier";
             this.dtgvSupplier.Size = new System.Drawing.Size(763, 555);
             this.dtgvSupplier.TabIndex = 1;
+            this.dtgvSupplier.Click += new System.EventHandler(this.dtgvSupplier_Click);
             // 
             // panel35
             // 
@@ -2076,6 +2077,16 @@ namespace QuanLiChuoiCF
             this.label16.TabIndex = 0;
             this.label16.Text = "Address:";
             // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.quanLiChuoiCFDataSet;
+            // 
+            // quanLiChuoiCFDataSet
+            // 
+            this.quanLiChuoiCFDataSet.DataSetName = "QuanLiChuoiCFDataSet";
+            this.quanLiChuoiCFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // supplierBindingSource
             // 
             this.supplierBindingSource.DataMember = "Supplier";
@@ -2088,16 +2099,6 @@ namespace QuanLiChuoiCF
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_Supplier_Add
-            // 
-            this.btn_Supplier_Add.Location = new System.Drawing.Point(131, 3);
-            this.btn_Supplier_Add.Name = "btn_Supplier_Add";
-            this.btn_Supplier_Add.Size = new System.Drawing.Size(80, 30);
-            this.btn_Supplier_Add.TabIndex = 4;
-            this.btn_Supplier_Add.Text = "Add";
-            this.btn_Supplier_Add.UseVisualStyleBackColor = true;
-            this.btn_Supplier_Add.Click += new System.EventHandler(this.button9_Click);
             // 
             // fAdmin
             // 
@@ -2181,15 +2182,15 @@ namespace QuanLiChuoiCF
             this.panel30.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
             this.panel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Mterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Supplier_Material)).EndInit();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel34.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSupplier)).EndInit();
             this.panel35.ResumeLayout(false);
             this.panel35.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -2371,7 +2372,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel37;
-        private System.Windows.Forms.DataGridView dtgv_Supplier_Mterial;
+        private System.Windows.Forms.DataGridView dtgv_Supplier_Material;
         private QuanLiChuoiCFDataSet quanLiChuoiCFDataSet;
         private System.Windows.Forms.BindingSource goodsBindingSource;
         private QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter goodsTableAdapter;
