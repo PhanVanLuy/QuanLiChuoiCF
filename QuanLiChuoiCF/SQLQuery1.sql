@@ -30,4 +30,5 @@
 
 	select dr.Name, de.count, dr.Price, dr.Price*de.count from dbo.DetailOfBill as de, dbo.Bill as bi, dbo.Drink as dr
 	where de.IDOfBill=bi.IDOfBill and de.IDOfDrink =Dr.IDOfDrink and dr.IDOfDrink='DU01' and bi.IDOfBranch='CN09'
-	select Branch.IDOfBranch from dbo.Branch, dbo.Employee, dbo.Account where Branch.IDOfBranch=Employee.IDOfBranch and Employee.IDOfEmloyee='NV01      '
+	select Branch.IDOfBranch from dbo.Branch, dbo.Employee, dbo.Account where Branch.IDOfBranch=Employee.IDOfBranch and Employee.IDOfEmloyee='NV01    
+	select * from dbo.InfoOfMaterial  '
