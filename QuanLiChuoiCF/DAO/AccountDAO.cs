@@ -23,9 +23,9 @@ namespace QuanLiChuoiCF.DAO
             return result.Rows.Count > 0;
         }
 
-        public Account GetAccountByID(string id)
+        public Account GetAccountByUsername(string username)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from dbo.account where ID = N'" + id + "'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from dbo.account where Username = '" + username + "'");
 
             if (data!=null)
             {
@@ -38,7 +38,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Account> GetAccounts()
         {
             List<Account> accounts = new List<Account>();
-            string query = "select * from dbo.Account ORDER BY ID;";
+            string query = "select * from dbo.Account ORDER BY Username";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -47,27 +47,27 @@ namespace QuanLiChuoiCF.DAO
             return accounts;
         }
 
-        public bool AddAccount(string id, string displayName, string password, int type)
+        public bool AddAccount(string username, string iDOfEmployee, string password, int type)
         {
-            string query = string.Format("insert dbo.Account(ID, DisplayName, Password, Type)values(N'{0}', N'{1}', N'{2}', {3})", id, displayName, password, type);
+            string query = string.Format("insert dbo.Account(Username, IDOfEmployee, Password, Type)values(N'{0}', N'{1}', N'{2}', {3})", username, iDOfEmployee, password, type);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public bool UpdateAccount(string id, string displayName, int type)
+        public bool UpdateAccount(string username, string iDOfEmployee, int type)
         {
-            string query = string.Format("update dbo.Account set DisplayName = N'{1}', Type = {2} where ID = N'{0}'", id, displayName, type);
+            string query = string.Format("update dbo.Account set IDOfEmployee = '{1}', Type = {2} where Username = '{0}'", username, iDOfEmployee, type);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public bool DeleteAccount(string id)
+        public bool DeleteAccount(string username)
         {
-            string query = string.Format("delete dbo.Account where ID = N'{0}'", id);
+            string query = string.Format("delete dbo.Account where Username = N'{0}'", username);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public bool ChangePassword(string id, string password)
+        public bool ChangePassword(string username, string password)
         {
-            string query = string.Format("update dbo.Account set Password = N'{0}' where ID = N'{1}'", password, id);
+            string query = string.Format("update dbo.Account set Password = N'{0}' where ID = N'{1}'", password, username);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 

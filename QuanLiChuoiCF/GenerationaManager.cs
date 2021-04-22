@@ -141,7 +141,9 @@ namespace QuanLiChuoiCF
             f.InsertDrink += f_InsertDrink;
             f.DeleteDrink += f_DeleteDrink;
             f.UpdateDrink += f_UpdateDrink;
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)

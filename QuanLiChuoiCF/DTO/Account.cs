@@ -9,31 +9,31 @@ namespace QuanLiChuoiCF.DTO
 {
     public class Account
     {
-        private Account(string id, string displayName, string password, int type)
+        private Account(string username, string iDOfEmployee, string password, int type)
         {
-            this.id = id;
-            this.displayName = displayName;
-            this.password = password;
-            this.type = type;
+            this.Username = username;
+            this.IDOfEmployee = iDOfEmployee;
+            this.Password = password;
+            this.Type = type;
         }
 
         public Account() { }
 
         public Account(DataRow row)
         {
-            this.id = ((string)row["ID"]).Trim();
-            this.displayName = ((string)row["DisplayName"]).Trim();
-            this.password = ((string)row["Password"]).Trim(); ;
-            this.type = (int)row["Type"];
+            this.Username = ((string)row["Username"]).Trim();
+            this.IDOfEmployee = ((string)row["IDOfEmployee"]).Trim();
+            this.Password = ((string)row["Password"]).Trim(); ;
+            this.Type = (int)row["Type"];
         }
 
-        private string id;
-        private string displayName;
+        private string username;
+        private string iDOfEmployee;
         private string password;
         private int type;
 
-        public string Id { get => id; set => id = value; }
-        public string DisplayName { get => displayName; set => displayName = value; }
+        public string Username { get => username; set => username = value; }
+        public string IDOfEmployee { get => iDOfEmployee; set => iDOfEmployee = value; }
         public string Password { get => password; set => password = value; }
         public int Type { get => type; set => type = value; }
     }

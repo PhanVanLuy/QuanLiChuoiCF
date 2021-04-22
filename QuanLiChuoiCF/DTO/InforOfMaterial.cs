@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLiChuoiCF.DTO
 {
-    class InforOfMaterial
+    public class InforOfMaterial
     {
         public InforOfMaterial() { }
 

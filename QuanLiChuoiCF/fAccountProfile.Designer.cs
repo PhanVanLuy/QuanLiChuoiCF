@@ -30,9 +30,9 @@ namespace QuanLiChuoiCF
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txbID = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbUserName = new System.Windows.Forms.TextBox();
+            this.txbIDOfEmployee = new System.Windows.Forms.TextBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,20 +55,20 @@ namespace QuanLiChuoiCF
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txbID);
+            this.panel2.Controls.Add(this.txbUsername);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(415, 63);
             this.panel2.TabIndex = 1;
             // 
-            // txbID
+            // txbUsername
             // 
-            this.txbID.Location = new System.Drawing.Point(167, 15);
-            this.txbID.Name = "txbID";
-            this.txbID.ReadOnly = true;
-            this.txbID.Size = new System.Drawing.Size(242, 20);
-            this.txbID.TabIndex = 1;
+            this.txbUsername.Location = new System.Drawing.Point(167, 15);
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.ReadOnly = true;
+            this.txbUsername.Size = new System.Drawing.Size(242, 20);
+            this.txbUsername.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,16 +76,16 @@ namespace QuanLiChuoiCF
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 15);
+            this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
+            this.label1.Text = "Username:";
             // 
-            // txbUserName
+            // txbIDOfEmployee
             // 
-            this.txbUserName.Location = new System.Drawing.Point(167, 15);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(242, 20);
-            this.txbUserName.TabIndex = 1;
+            this.txbIDOfEmployee.Location = new System.Drawing.Point(167, 15);
+            this.txbIDOfEmployee.Name = "txbIDOfEmployee";
+            this.txbIDOfEmployee.Size = new System.Drawing.Size(242, 20);
+            this.txbIDOfEmployee.TabIndex = 1;
             // 
             // labelUserName
             // 
@@ -93,13 +93,13 @@ namespace QuanLiChuoiCF
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserName.Location = new System.Drawing.Point(12, 18);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(75, 15);
+            this.labelUserName.Size = new System.Drawing.Size(108, 15);
             this.labelUserName.TabIndex = 0;
-            this.labelUserName.Text = "UserName";
+            this.labelUserName.Text = "ID of Employee:";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txbUserName);
+            this.panel1.Controls.Add(this.txbIDOfEmployee);
             this.panel1.Controls.Add(this.labelUserName);
             this.panel1.Location = new System.Drawing.Point(12, 81);
             this.panel1.Name = "panel1";
@@ -237,9 +237,9 @@ namespace QuanLiChuoiCF
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbUserName;
+        private System.Windows.Forms.TextBox txbIDOfEmployee;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;

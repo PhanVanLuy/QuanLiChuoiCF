@@ -95,6 +95,12 @@
     <Compile Include="fChangePassword.Designer.cs">
       <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="fDetailOfBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDetailOfBill.Designer.cs">
+      <DependentUpon>fDetailOfBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fChangePassword.resx">
       <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDetailOfBill.resx">
+      <DependentUpon>fDetailOfBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>

@@ -51,7 +51,7 @@ namespace QuanLiChuoiCF
                 lbNotify.Text = "Confirm new password is wrong";
                 return;
             }
-            if (AccountDAO.Instance.ChangePassword(account.Id, newPassword))
+            if (AccountDAO.Instance.ChangePassword(account.Username, newPassword))
             {
                 this.Close();
             }

@@ -15,6 +15,8 @@ namespace QuanLiChuoiCF.DTO
             this.Name = name;
             this.Price = price;
         }
+
+        public Drink() { }
       
         public Drink(DataRow row )   
         {

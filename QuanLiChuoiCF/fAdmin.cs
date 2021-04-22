@@ -10,25 +10,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace QuanLiChuoiCF
 {
     public partial class fAdmin : Form
     {
-        public static BindingSource drinks = new BindingSource();
-        public static BindingSource branches = new BindingSource();
-        public static BindingSource accounts = new BindingSource();
-        public static BindingSource employees = new BindingSource();
-        public static BindingSource infoOfMaterials = new BindingSource();
-        public static BindingSource suppliers = new BindingSource();
-        public static BindingSource bills = new BindingSource();
+        public static List<Drink> drinks = new List<Drink>();
+        public static List<Branch> branches = new List<Branch>();
+        public static List<Account> accounts = new List<Account>();
+        public static List<Employee> employees = new List<Employee>();
+        public static List<InforOfMaterial> infoOfMaterials = new List<InforOfMaterial>();
+        public static List<Supplier> suppliers = new List<Supplier>();
+        public static List<Bill> bills = new List<Bill>();
+        public static List<MaterialInWarehouse> materialInWarehouses = new List<MaterialInWarehouse>();
         public static string lastIDDrink;
         public static string lastIDBranch;
-        public static string lastIDAccount;
         public static string lastIDEmployees;
         public static string lastIDInfoOfMaterial;
         public static string lastIDBill;
         public static string lastIDSupplier;
+        public static string lastIDMaterialInWarehouse;
 
         public fAdmin()
         {
@@ -37,14 +39,6 @@ namespace QuanLiChuoiCF
         }
         void LoadAndBinding()
         {
-            dtgvCF.DataSource = drinks;
-            dtgvBranches.DataSource = branches;
-            dtgvAccount.DataSource = accounts;
-            dtgvEmployees.DataSource = employees;
-            dtgvInfoOfMaterial.DataSource = infoOfMaterials;
-            dtgvBill.DataSource = bills;
-            dtgvSupplier.DataSource = suppliers;
-
             LoadBranches();
             LoadSupplier();
             LoadDrinks();
@@ -52,6 +46,7 @@ namespace QuanLiChuoiCF
             LoadAccounts();
             LoadInfoOfMaterial();
             LoadBill();
+            LoadMaterialInWarehouse();
 
             AddDrinkBinding();
             AddBranchBinding();
@@ -60,24 +55,127 @@ namespace QuanLiChuoiCF
             AddInfoOfMaterialBinding();
             AddBillBinding();
             AddSupplierBinding();
+            AddMaterialInWarehouseBinding();
+
+
+            cbb_Drink_SortBy.Items.Add("ID");
+            cbb_Drink_SortBy.Items.Add("Drink Name");
+            cbb_Drink_SortBy.Items.Add("Price");
+
+            cbb_Drink_SearchBy.Items.Add("ID");
+            cbb_Drink_SearchBy.Items.Add("Drink Name");
+            cbb_Drink_SearchBy.Items.Add("Price");
+            cbb_Drink_SearchBy.SelectedItem = cbb_Drink_SearchBy.Items[0];
+
+            cbb_Branch_SortBy.Items.Add("ID");
+            cbb_Branch_SortBy.Items.Add("Branch Name");
+            cbb_Branch_SortBy.Items.Add("Manager");
+
+            cbb_Branch_SearchBy.Items.Add("ID");
+            cbb_Branch_SearchBy.Items.Add("Branch Name");
+            cbb_Branch_SearchBy.Items.Add("Manager");
+            cbb_Branch_SearchBy.SelectedItem = cbb_Branch_SearchBy.Items[0];
+
+            cbb_Account_SortBy.Items.Add("User Name");
+            cbb_Account_SortBy.Items.Add("ID of Employee");
+            cbb_Account_SortBy.Items.Add("Type");
+
+            cbb_Account_SearchBy.Items.Add("User Name");
+            cbb_Account_SearchBy.Items.Add("ID of Employee");
+            cbb_Account_SearchBy.Items.Add("Type");
+            cbb_Account_SearchBy.SelectedItem = cbb_Account_SearchBy.Items[0];
+
+            cbb_Employee_SortBy.Items.Add("ID of Employee");
+            cbb_Employee_SortBy.Items.Add("First Name");
+            cbb_Employee_SortBy.Items.Add("Last Name");
+            cbb_Employee_SortBy.Items.Add("Phone Number");
+            cbb_Employee_SortBy.Items.Add("Sexual");
+            cbb_Employee_SortBy.Items.Add("Address");
+            cbb_Employee_SortBy.Items.Add("Day In");
+            cbb_Employee_SortBy.Items.Add("Day Off");
+            cbb_Employee_SortBy.Items.Add("Shift");
+            cbb_Employee_SortBy.Items.Add("Bonus");
+            cbb_Employee_SortBy.Items.Add("Salary");
+            cbb_Employee_SortBy.Items.Add("ID of Branch");
+
+            cbb_Employee_SearchBy.Items.Add("ID of Employee");
+            cbb_Employee_SearchBy.Items.Add("First Name");
+            cbb_Employee_SearchBy.Items.Add("Last Name");
+            cbb_Employee_SearchBy.Items.Add("Phone Number");
+            cbb_Employee_SearchBy.Items.Add("Sexual");
+            cbb_Employee_SearchBy.Items.Add("Address");
+            cbb_Employee_SearchBy.Items.Add("Day In");
+            cbb_Employee_SearchBy.Items.Add("Day Off");
+            cbb_Employee_SearchBy.Items.Add("Shift");
+            cbb_Employee_SearchBy.Items.Add("Bonus");
+            cbb_Employee_SearchBy.Items.Add("Salary");
+            cbb_Employee_SearchBy.Items.Add("ID of Branch");
+            cbb_Employee_SearchBy.SelectedItem = cbb_Employee_SearchBy.Items[0];
+
+            cbb_InfoOfMaterial_SortBy.Items.Add("ID of Material");
+            cbb_InfoOfMaterial_SortBy.Items.Add("Name");
+            cbb_InfoOfMaterial_SortBy.Items.Add("Unit");
+            cbb_InfoOfMaterial_SortBy.Items.Add("Price");
+            cbb_InfoOfMaterial_SortBy.Items.Add("ID of Supplier");
+
+            cbb_InfoOfMaterial_SearchBy.Items.Add("ID of Material");
+            cbb_InfoOfMaterial_SearchBy.Items.Add("Name");
+            cbb_InfoOfMaterial_SearchBy.Items.Add("Unit");
+            cbb_InfoOfMaterial_SearchBy.Items.Add("Price");
+            cbb_InfoOfMaterial_SearchBy.Items.Add("ID of Supplier");
+            cbb_InfoOfMaterial_SearchBy.SelectedItem = cbb_InfoOfMaterial_SearchBy.Items[0];
+
+            cbb_Bill_SortBy.Items.Add("ID of Bill");
+            cbb_Bill_SortBy.Items.Add("ID of Branch");
+            cbb_Bill_SortBy.Items.Add("Day Check In");
+            cbb_Bill_SortBy.Items.Add("Total Amount");
+
+            cbb_Bill_SearchBy.Items.Add("ID of Bill");
+            cbb_Bill_SearchBy.Items.Add("ID of Branch");
+            cbb_Bill_SearchBy.Items.Add("Day Check In");
+            cbb_Bill_SearchBy.Items.Add("Total Amount");
+            cbb_Bill_SearchBy.SelectedItem = cbb_Bill_SearchBy.Items[0];
+
+            cbb_Supplier_SortBy.Items.Add("ID of Supplier");
+            cbb_Supplier_SortBy.Items.Add("Name");
+            cbb_Supplier_SortBy.Items.Add("Address");
+
+            cbb_Supplier_SearchBy.Items.Add("ID of Supplier");
+            cbb_Supplier_SearchBy.Items.Add("Name");
+            cbb_Supplier_SearchBy.Items.Add("Address");
+            cbb_Supplier_SearchBy.SelectedItem = cbb_Supplier_SearchBy.Items[0];
+
+            cbb_Warehouse_SortBy.Items.Add("ID of Import Material");
+            cbb_Warehouse_SortBy.Items.Add("ID of Material");
+            cbb_Warehouse_SortBy.Items.Add("Amount");
+            cbb_Warehouse_SortBy.Items.Add("Amount Left");
+            cbb_Warehouse_SortBy.Items.Add("Date Added");
+            cbb_Warehouse_SortBy.Items.Add("Expiry Date");
+
+            cbb_Warehouse_SearchBy.Items.Add("ID of Import Material");
+            cbb_Warehouse_SearchBy.Items.Add("ID of Material");
+            cbb_Warehouse_SearchBy.Items.Add("Amount");
+            cbb_Warehouse_SearchBy.Items.Add("Amount Left");
+            cbb_Warehouse_SearchBy.Items.Add("Date Added");
+            cbb_Warehouse_SearchBy.Items.Add("Expiry Date");
+            cbb_Warehouse_SearchBy.SelectedItem = cbb_Warehouse_SearchBy.Items[0];
         }
 
         #region loadAndBinding
 
         void LoadSupplier()
         {
-            List<Supplier> data = SupplierDAO.Instance.GetSuppliers();
-            suppliers.DataSource = data;
-            Supplier[] arr = data.ToArray();
+            suppliers = SupplierDAO.Instance.GetSuppliers();
+            dtgvSupplier.DataSource = suppliers;
+            Supplier[] arr = suppliers.ToArray();
             if (arr.Length > 0)
             {
                 lastIDSupplier = arr[arr.Length - 1].IDOfSupplier;
             }
             else
             {
-                lastIDSupplier = "SP01";
+                lastIDSupplier = "SP00";
             }
-
         }
         void LoadMaterialByIDOfSupplier()
         {
@@ -96,65 +194,83 @@ namespace QuanLiChuoiCF
 
         void LoadDrinks()
         {
-            List<Drink> data = DrinkDAO.Instance.GetDrinks();
-            drinks.DataSource = data;
-            Drink[] arr = data.ToArray();
-            if (arr.Length > 0) 
+            drinks = DrinkDAO.Instance.GetDrinks();
+            dtgvCF.DataSource = drinks;
+            Drink[] arr = drinks.ToArray();
+            if (arr.Length > 0)
             {
                 lastIDDrink = arr[arr.Length - 1].ID; 
             }
             else
             {
-                lastIDDrink = "DU01";
+                lastIDDrink = "DR00";
             }
         }
 
         void LoadBranches()
         {
-            List<Branch> data = BranchDAO.Instance.GetBranches();
-            branches.DataSource = data;
-            Branch[] arr = data.ToArray();
+            branches = BranchDAO.Instance.GetBranches();
+            dtgvBranches.DataSource = branches;
+            Branch[] arr = branches.ToArray();
             if (arr.Length > 0)
             {
                 lastIDBranch = arr[arr.Length - 1].Id;
             }
             else
             {
-                lastIDBranch = "CN01";
+                lastIDBranch = "BR00";
             }
         }
 
         void LoadEmployees()
         {
-            List<Employee> data = EmployeeDAO.Instance.GetEmployees();
-            employees.DataSource = data;
-            Employee[] arr = data.ToArray();
+            employees = EmployeeDAO.Instance.GetEmployees();
+            dtgvEmployees.DataSource = employees;
+            Employee[] arr = employees.ToArray();
             if(arr.Length>0) lastIDEmployees = arr[arr.Length - 1].IDOfEmployee;
-                    else lastIDEmployees = "NV01";
+                    else lastIDEmployees = "EM00";
         }
 
         void LoadAccounts()
         {
-            List<Account> data = AccountDAO.Instance.GetAccounts();
-            accounts.DataSource = data;
-            Account[] arr = data.ToArray();
-            if(arr.Length>0)lastIDAccount = arr[arr.Length - 1].Id;
+            accounts = AccountDAO.Instance.GetAccounts();
+            dtgvAccount.DataSource = accounts;
         }
 
         void LoadInfoOfMaterial()
         {
-            List<InforOfMaterial> data = InforOfMaterialDAO.Instance.GetInfoOfMaterials();
-            infoOfMaterials.DataSource = data;
-            InforOfMaterial[] arr = data.ToArray();
+            infoOfMaterials = InforOfMaterialDAO.Instance.GetInfoOfMaterials();
+            dtgvInfoOfMaterial.DataSource = infoOfMaterials;
+            InforOfMaterial[] arr = infoOfMaterials.ToArray();
             if (arr.Length > 0) lastIDInfoOfMaterial = arr[arr.Length - 1].IDOfMaterial;
+            else
+            {
+                lastIDInfoOfMaterial = "IM00";
+            }
         }
 
         void LoadBill()
         {
-            List<Bill> data = BillDAO.Instance.GetBills();
-            bills.DataSource = data;
-            Bill[] arr = data.ToArray();
+            bills = BillDAO.Instance.GetBills();
+            dtgvBill.DataSource = bills;
+            Bill[] arr = bills.ToArray();
             if (arr.Length > 0) lastIDBill = arr[arr.Length - 1].IDOfBill;
+            else
+            {
+                lastIDBill = "BI00";
+            }
+        }
+
+        void LoadMaterialInWarehouse()
+        {
+            materialInWarehouses = WarehouseMaterialDAO.Instance.GetMaterials();
+            dtgvWarehouse.DataSource = materialInWarehouses;
+            MaterialInWarehouse[] arr = materialInWarehouses.ToArray();
+            if (arr.Length > 0) lastIDMaterialInWarehouse = arr[arr.Length - 1].IDOfImportMaterial;
+            else
+            {
+                lastIDMaterialInWarehouse = "WM00";
+            }
         }
 
         void AddDrinkBinding()
@@ -177,21 +293,21 @@ namespace QuanLiChuoiCF
             txb_Employee_LastName.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "LastName", true, DataSourceUpdateMode.Never));
             txb_Employee_IDOfEmPloyee.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "IDOfEmployee", true, DataSourceUpdateMode.Never));
             txb_Employee_PhoneNumber.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "PhoneNumber", true, DataSourceUpdateMode.Never));
-            cbb_Employee_Sexual.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "Sexual", true, DataSourceUpdateMode.Never));
+            cbb_Employee_Sexual.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Sexual", true, DataSourceUpdateMode.Never));
             txb_Employee_Address.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Address", true, DataSourceUpdateMode.Never));
             dtp_Employee_DayIn.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "DayIn", true, DataSourceUpdateMode.Never));
-            cbb_Employee_Shift.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "Shift", true, DataSourceUpdateMode.Never));
+            cbb_Employee_Shift.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "Shift", true, DataSourceUpdateMode.Never));
             nud_Employee_DayOff.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "DayOff", true, DataSourceUpdateMode.Never));
             nud_Employee_Bonus.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "Bonus", true, DataSourceUpdateMode.Never));
             nud_Employee_Salary.DataBindings.Add(new Binding("Value", dtgvEmployees.DataSource, "Salary", true, DataSourceUpdateMode.Never));
-            cbb_Employee_IDOfBranch.DataBindings.Add(new Binding("SelectedItem", dtgvEmployees.DataSource, "IDOfBranch", true, DataSourceUpdateMode.Never));
+            cbb_Employee_IDOfBranch.DataBindings.Add(new Binding("Text", dtgvEmployees.DataSource, "IDOfBranch", true, DataSourceUpdateMode.Never));
         }
 
         void AddAccountBinding()
         {
-            cbb_Account_ID.DataBindings.Add(new Binding("SelectedItem", dtgvAccount.DataSource, "ID", true, DataSourceUpdateMode.Never));
-            txb_Account_UserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
-            cbb_Account_AccountType.DataBindings.Add(new Binding("SelectedItem", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+            txb_Account_Username.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Username", true, DataSourceUpdateMode.Never));
+            cbb_Account_IDOfEmployee.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "IDOfEmployee", true, DataSourceUpdateMode.Never));
+            cbb_Account_AccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
         }
 
         void AddInfoOfMaterialBinding()
@@ -200,7 +316,7 @@ namespace QuanLiChuoiCF
             txb_InforOfMaterial_Name.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "Name", true, DataSourceUpdateMode.Never));
             txb_InforOfMaterial_Unit.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "Unit", true, DataSourceUpdateMode.Never));
             nud_InforOfMaterial_Price.DataBindings.Add(new Binding("Value", dtgvInfoOfMaterial.DataSource, "Price", true, DataSourceUpdateMode.Never));
-            cbb_InforOfMaterial_Supplier.DataBindings.Add(new Binding("SelectedItem", dtgvInfoOfMaterial.DataSource, "IDOfSupplier", true, DataSourceUpdateMode.Never));
+            cbb_InforOfMaterial_Supplier.DataBindings.Add(new Binding("Text", dtgvInfoOfMaterial.DataSource, "IDOfSupplier", true, DataSourceUpdateMode.Never));
         }
 
         void AddBillBinding()
@@ -216,6 +332,16 @@ namespace QuanLiChuoiCF
             txt_Supplier_Address.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "Address", true, DataSourceUpdateMode.Never));
             txt_Supplier_ID.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "IDOfSupplier", true, DataSourceUpdateMode.Never));
             txt_Supplier_Name.DataBindings.Add(new Binding("Text", dtgvSupplier.DataSource, "Name", true, DataSourceUpdateMode.Never));
+        }
+
+        void AddMaterialInWarehouseBinding()
+        {
+            txb_Warehouse_IDOfImportMaterial.DataBindings.Add(new Binding("Text", dtgvWarehouse.DataSource, "IDOfImportMaterial", true, DataSourceUpdateMode.Never));
+            cbb_Warehouse_IDOfMaterial.DataBindings.Add(new Binding("SelectedItem", dtgvWarehouse.DataSource, "IDOfMaterial", true, DataSourceUpdateMode.Never));
+            nud_Warehouse_Amount.DataBindings.Add(new Binding("Value", dtgvWarehouse.DataSource, "Amount", true, DataSourceUpdateMode.Never));
+            nud_Warehouse_AmountLeft.DataBindings.Add(new Binding("Value", dtgvWarehouse.DataSource, "AmountLeft", true, DataSourceUpdateMode.Never));
+            dtp_Warehouse_DateImport.DataBindings.Add(new Binding("Value", dtgvWarehouse.DataSource, "dateAdded", true, DataSourceUpdateMode.Never));
+            dtp_Warehouse_ExpiryDate.DataBindings.Add(new Binding("Value", dtgvWarehouse.DataSource, "ExpiryDate", true, DataSourceUpdateMode.Never));
         }
 
         #endregion
@@ -275,9 +401,27 @@ namespace QuanLiChuoiCF
 
             }
         }
-        
+
         #region eventsDrink
-        private void btnAddDrinkClick(object sender, EventArgs e)
+
+        private void tbSearchCF_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Drink_Search.Text;
+            switch (cbb_Drink_SearchBy.Text)
+            {
+                case "ID":
+                    dtgvCF.DataSource = drinks.FindAll(item => item.ID.Contains(searchingText));
+                    break;
+                case "Drink Name":
+                    dtgvCF.DataSource = drinks.FindAll(item => item.Name.Contains(searchingText));
+                    break;
+                case "Price":
+                    dtgvCF.DataSource = drinks.FindAll(item => item.Price.ToString().Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void btn_Drink_AddClick(object sender, EventArgs e)
         {
             string id = txb_Drink_ID.Text;
             foreach(Drink item in drinks)
@@ -293,6 +437,7 @@ namespace QuanLiChuoiCF
             if(name == "")
             {
                 lb_Drink_Notify.Text = "NOTIFY: Name can't be empty";
+                txb_Drink_Name.Focus();
                 return;
             }
 
@@ -300,29 +445,32 @@ namespace QuanLiChuoiCF
             if (price == 0)
             {
                 lb_Drink_Notify.Text = "NOTIFY: Price can't be lower than 0";
+                nud_Drink_Price.Focus();
                 return;
             }
 
             if (DrinkDAO.Instance.AddDrink(id, name, price))
             {
-                MessageBox.Show("Drink Was Added Successfully");
+                lb_Drink_Notify.Text = "NOTIFY: Drink was added Successfully";
                 LoadDrinks();
+                newDrink();
                 if (insertDrink != null)
                     insertDrink(this, new EventArgs());
             }
             else
             {
-                MessageBox.Show("Failed To Added Drink");
+                lb_Drink_Notify.Text = "NOTIFY: Failed to add Drink";
             }
         }
 
-        private void btnEditDrinkClick(object sender, EventArgs e)
+        private void btn_Drink_UpdateClick(object sender, EventArgs e)
         {
             string id = txb_Drink_ID.Text;
             string name = txb_Drink_Name.Text.Trim();
             if (name == "")
             {
                 lb_Drink_Notify.Text = "NOTIFY: Name can't be  empty";
+                txb_Drink_Name.Focus();
                 return;
             }
 
@@ -330,6 +478,7 @@ namespace QuanLiChuoiCF
             if (price == 0)
             {
                 lb_Drink_Notify.Text = "NOTIFY: Price can't be lower than 0";
+                nud_Drink_Price.Focus();
                 return;
             }
             if (MessageBox.Show("Are you sure you want to update this drink", "Update Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
@@ -338,18 +487,18 @@ namespace QuanLiChuoiCF
             }
             if (DrinkDAO.Instance.UpdateDrink(id, name, price))
             {
-                MessageBox.Show("Drink Was Updated Successfully");
+                lb_Drink_Notify.Text = "NOTIFY: Drink was updated Successfully";
                 LoadDrinks();
                 if (updateDrink != null)
                     updateDrink(this, new EventArgs());
             }
             else
             {
-                MessageBox.Show("Failed To Update Drink");
+                lb_Drink_Notify.Text = "NOTIFY: Failed to update Drink";
             }
         }
 
-        private void btnDeleteDrinkClick(object sender, EventArgs e)
+        private void btn_Drink_DeleteCLick(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete this drink", "Delete Drink", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
@@ -358,55 +507,91 @@ namespace QuanLiChuoiCF
             string id = txb_Drink_ID.Text;
             if (DrinkDAO.Instance.DeleteDrink(id))
             {
-                MessageBox.Show("Drink Was Deleted Successfully", "DELETE");
+                lb_Drink_Notify.Text = "NOTIFY: Drink was deleted Successfully"; 
                 LoadDrinks();
                 if (deleteDrink != null)
                     deleteDrink(this, new EventArgs());
             }
             else
             {
-                MessageBox.Show("Failed To Delete Drink");
+                lb_Drink_Notify.Text = "Failed To Delete Drink";
             }
-        }
-        private void btnShowClicked(object sender, EventArgs e)
-        {
-            LoadDrinks();
         }
 
-        private void btnNewDrinkClick(object sender, EventArgs e)
+        private void bnt_Drink_NewClick(object sender, EventArgs e)
         {
-            int lastIDrink_int = Int16.Parse(lastIDDrink.Substring(2)) + 1;
-            string id;
-            if (lastIDrink_int < 10)
-            {
-                id = "DU0" + lastIDrink_int.ToString();
-            }
-            else
-            {
-                id = "DU" + lastIDrink_int.ToString();
-            }
-            txb_Drink_ID.Text = id;
-            txb_Drink_Name.Text = "";
-            nud_Drink_Price.Value = 10000;
+            newDrink();
         }
+
+        private void cbb_Drink_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Drink_SortBy.Text)
+            {
+                case "ID":
+                    drinks = drinks.OrderBy(o => o.ID).ToList();
+                    break;
+                case "Drink Name":
+                    drinks = drinks.OrderBy(o => o.Name).ToList();
+                    break;
+                case "Price":
+                    drinks = drinks.OrderBy(o => o.Price).ToList();
+                    break;
+            }
+            dtgvCF.DataSource = drinks;
+        }
+
         #endregion
 
         #region accountEvents
-        private void btnAddAccountClick(object sender, EventArgs e)
+
+        private void txb_Account_Search_TextChanged(object sender, EventArgs e)
         {
-            fNewAccount f = new fNewAccount();
-            f.ShowDialog();
-            LoadAccounts();
+            string searchingText = txb_Account_Search.Text;
+            switch (cbb_Account_SearchBy.Text)
+            {
+                case "User Name":
+                    dtgvAccount.DataSource = accounts.FindAll(item => item.Username.Contains(searchingText));
+                    break;
+                case "ID of Employee":
+                    dtgvAccount.DataSource = accounts.FindAll(item => item.IDOfEmployee.Contains(searchingText));
+                    break;
+                case "Type":
+                    dtgvAccount.DataSource = accounts.FindAll(item => item.Type.ToString().Contains(searchingText));
+                    break;
+            }
+            dtgvAccount.DataSource = accounts;
+        }
+
+        private void cbb_Account_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Account_SortBy.Text)
+            {
+                case "User Name":
+                    accounts = accounts.OrderBy(o => o.Username).ToList();
+                    break;
+                case "ID of Employee":
+                    accounts = accounts.OrderBy(o => o.IDOfEmployee).ToList();
+                    break;
+                case "Type":
+                    accounts = accounts.OrderBy(o => o.Type).ToList();
+                    break;
+            }
+            dtgvAccount.DataSource = accounts;
         }
 
         private void btnDeleteAccountClick(object sender, EventArgs e)
         {
+            string username = txb_Account_Username.Text;
+            if(username == "")
+            {
+                lb_Account_Notify.Text = "NOTIFY: Username can't be empty";
+                txb_Account_Username.Focus();
+            }
             if (MessageBox.Show("Are you sure you want to delete this Account", "Delete Account", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            string id = cbb_Account_ID.Text;
-            if (AccountDAO.Instance.DeleteAccount(id))
+            if (AccountDAO.Instance.DeleteAccount(username))
             {
                 lb_Account_Notify.Text = "Account was deleted Successfully";
                 LoadAccounts();
@@ -419,14 +604,20 @@ namespace QuanLiChuoiCF
 
         private void btnUpdateAccountClick(object sender, EventArgs e)
         {
+            string username = txb_Account_Username.Text;
+            if(username == "")
+            {
+                lb_Employee_Notify.Text = "NOTIFY: Username can't be empty";
+                txb_Account_Username.Focus();
+                return;
+            }
+            string iDOfEmployee = cbb_Account_IDOfEmployee.Text;
+            int type = int.Parse(cbb_Account_AccountType.Text);
             if (MessageBox.Show("Are you sure you want to update this Account", "Update Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            string id = cbb_Account_ID.Text;
-            string displayName = txb_Account_UserName.Text;
-            int type = int.Parse(cbb_Account_AccountType.Text);
-            if (AccountDAO.Instance.UpdateAccount(id, displayName, type))
+            if (AccountDAO.Instance.UpdateAccount(username, iDOfEmployee, type))
             {
                 lb_Account_Notify.Text = "NOTIFY: Account was updated Successfully";
                 LoadAccounts();
@@ -440,81 +631,141 @@ namespace QuanLiChuoiCF
 
         private void btn_Account_ChangePasswordClick(object sender, EventArgs e)
         {
-            Account account = new Account();
             foreach(Account item in accounts)
             {
-                if(item.Id == cbb_Account_ID.Text)
+                if(item.Username == txb_Account_Username.Text)
                 {
-                    account = item;
+                    fChangePassword f = new fChangePassword(item);
+                    f.ShowDialog();
+                    LoadAccounts();
                     break;
                 }
             }
-            fChangePassword f = new fChangePassword(account);
-            f.ShowDialog();
-            LoadAccounts();
+            
         }
 
         private void btnAccountNewClick(object sender, EventArgs e)
         {
-            cbb_Account_ID.SelectedItem = cbb_Account_ID.Items[0];
-            txb_Account_UserName.Text = "";
-            cbb_Account_AccountType.SelectedItem = cbb_Account_AccountType.Items[0];
-        }
-
-        private void btnRefreshAccountsClick(object sender, EventArgs e)
-        {
+            fNewAccount f = new fNewAccount();
+            f.ShowDialog();
             LoadAccounts();
         }
 
         #endregion
 
-        #region noUse
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-        
-        private void tpDanhMuc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefreshClicked(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
         #region EmployeesEvent
+
+
+        private void txb_Employee_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Account_Search.Text;
+            switch (cbb_Employee_SearchBy.Text)
+            {
+                case "ID of Employee":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.IDOfEmployee.Contains(searchingText));
+                    break;
+                case "First Name":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.FirstName.Contains(searchingText));
+                    break;
+                case "Last Name":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.LastName.Contains(searchingText));
+                    break;
+                case "Phone Number":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.PhoneNumber.Contains(searchingText));
+                    break;
+                case "Sexual":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.Sexual.Contains(searchingText));
+                    break;
+                case "Address":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.Address.Contains(searchingText));
+                    break;
+                case "Day In":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.DayIn.ToString().Contains(searchingText));
+                    break;
+                case "Day Off":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.DayOff.ToString().Contains(searchingText));
+                    break;
+                case "Shift":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.Shift.Contains(searchingText));
+                    break;
+                case "Bonus":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.Bonus.ToString().Contains(searchingText));
+                    break;
+                case "Salary":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.Salary.ToString().Contains(searchingText));
+                    break;
+                case "ID of Branch":
+                    dtgvEmployees.DataSource = employees.FindAll(o => o.IDOfBranch.ToString().Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void cbb_Employee_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Employee_SortBy.Text)
+            {
+                case "ID of Employee":
+                    employees = employees.OrderBy(o => o.IDOfEmployee).ToList();
+                    break;
+                case "First Name":
+                    employees = employees.OrderBy(o => o.FirstName).ToList();
+                    break;
+                case "Last Name":
+                    employees = employees.OrderBy(o => o.LastName).ToList();
+                    break;
+                case "Phone Number":
+                    employees = employees.OrderBy(o => o.PhoneNumber).ToList();
+                    break;
+                case "Sexual":
+                    employees = employees.OrderBy(o => o.Sexual).ToList();
+                    break;
+                case "Address":
+                    employees = employees.OrderBy(o => o.Address).ToList();
+                    break;
+                case "Day In":
+                    employees = employees.OrderBy(o => o.DayIn).ToList();
+                    break;
+                case "Day Off":
+                    employees = employees.OrderBy(o => o.DayOff).ToList();
+                    break;
+                case "Shift":
+                    employees = employees.OrderBy(o => o.Shift).ToList();
+                    break;
+                case "Bonus":
+                    employees = employees.OrderBy(o => o.Bonus).ToList();
+                    break;
+                case "Salary":
+                    employees = employees.OrderBy(o => o.Salary).ToList();
+                    break;
+                case "ID of Branch":
+                    employees = employees.OrderBy(o => o.IDOfBranch).ToList();
+                    break;
+            }
+            dtgvEmployees.DataSource = employees;
+        }
+
         private void btnAddEmployeeClick(object sender, EventArgs e)
         {
-            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
+            string id = txb_Employee_IDOfEmPloyee.Text;
             string firstName = txb_Employee_FirstName.Text.Trim();
             if (firstName == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: First Name can't be empty";
+                txb_Employee_FirstName.Focus();
                 return;
             }
             string lastName = txb_Employee_LastName.Text.Trim();
             if (lastName == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Last Name can't be empty";
+                txb_Employee_LastName.Focus();
                 return;
             }
             string phoneNumber = txb_Employee_PhoneNumber.Text.Trim();
             if (phoneNumber == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Phone Number can't be empty";
+                txb_Employee_PhoneNumber.Focus();
                 return;
             }
             string sexual = cbb_Employee_Sexual.SelectedItem.ToString();
@@ -522,6 +773,7 @@ namespace QuanLiChuoiCF
             if (address == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Address can't be empty";
+                txb_Employee_Address.Focus();
                 return;
             }
             DateTime dayIn = dtp_Employee_DayIn.Value;
@@ -529,16 +781,24 @@ namespace QuanLiChuoiCF
             int dayOff = (int)nud_Employee_DayOff.Value;
             if (dayOff <= 0)
             {
-                lb_InforOfMaterial_Notify.Text = "NOTIFY: Day Off can't be empty";
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Day Off must be greater than 0";
+                nud_Employee_DayOff.Focus();
                 return;
             }
             int bonus = (int)nud_Employee_Bonus.Value;
             if (bonus <= 0)
             {
-                lb_InforOfMaterial_Notify.Text = "NOTIFY: Bonus can't be empty";
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Bonus must be greater than 0";
+                nud_Employee_Bonus.Focus();
                 return;
             }
             int salary = (int)nud_Employee_Salary.Value;
+            if(salary <= 0)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Salary must be greater than 0";
+                nud_Employee_Salary.Focus();
+                return;
+            }
 
             string iDOfBranch = cbb_Employee_IDOfBranch.SelectedItem.ToString();
             if (EmployeeDAO.Instance.AddEmployee(firstName, lastName, id, phoneNumber, sexual, address,
@@ -561,7 +821,7 @@ namespace QuanLiChuoiCF
             {
                 return;
             }
-            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
+            string id = txb_Employee_IDOfEmPloyee.Text;
             if(EmployeeDAO.Instance.DeleteEmployee(id))
             {
                 lb_Employee_Notify.Text = "NOTIFY: Employee was deleted Successfully";
@@ -575,21 +835,63 @@ namespace QuanLiChuoiCF
 
         private void btnUpdateEmployeeClick(object sender, EventArgs e)
         {
+            string id = txb_Employee_IDOfEmPloyee.Text;
+            string firstName = txb_Employee_FirstName.Text.Trim();
+            if (firstName == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: First Name can't be empty";
+                txb_Employee_FirstName.Focus();
+                return;
+            }
+            string lastName = txb_Employee_LastName.Text.Trim();
+            if (lastName == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Last Name can't be empty";
+                txb_Employee_LastName.Focus();
+                return;
+            }
+            string phoneNumber = txb_Employee_PhoneNumber.Text.Trim();
+            if (phoneNumber == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Phone Number can't be empty";
+                txb_Employee_PhoneNumber.Focus();
+                return;
+            }
+            string sexual = cbb_Employee_Sexual.SelectedItem.ToString();
+            string address = txb_Employee_Address.Text.Trim();
+            if (address == "")
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Address can't be empty";
+                txb_Employee_Address.Focus();
+                return;
+            }
+            DateTime dayIn = dtp_Employee_DayIn.Value;
+            string shift = cbb_Employee_Shift.SelectedItem.ToString();
+            int dayOff = (int)nud_Employee_DayOff.Value;
+            if (dayOff <= 0)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Day Off must be greater than 0";
+                nud_Employee_DayOff.Focus();
+                return;
+            }
+            int bonus = (int)nud_Employee_Bonus.Value;
+            if (bonus <= 0)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Bonus must be greater than 0";
+                nud_Employee_Bonus.Focus();
+                return;
+            }
+            int salary = (int)nud_Employee_Salary.Value;
+            if (salary <= 0)
+            {
+                lb_InforOfMaterial_Notify.Text = "NOTIFY: Salary must be greater than 0";
+                nud_Employee_Salary.Focus();
+                return;
+            }
             if (MessageBox.Show("Are you sure you want to update this Employee", "Update Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) != System.Windows.Forms.DialogResult.Yes)
             {
                 return;
             }
-            string firstName = txb_Employee_FirstName.Text.Trim();
-            string lastName = txb_Employee_LastName.Text.Trim();
-            string id = txb_Employee_IDOfEmPloyee.Text.Trim();
-            string phoneNumber = txb_Employee_PhoneNumber.Text.Trim();
-            string sexual = cbb_Employee_Sexual.SelectedItem.ToString();
-            string address = txb_Employee_Address.Text.Trim();
-            DateTime dayIn = dtp_Employee_DayIn.Value;
-            string shift = cbb_Employee_Shift.SelectedItem.ToString();
-            int dayOff = (int)nud_Employee_DayOff.Value;
-            int bonus = (int)nud_Employee_Bonus.Value;
-            int salary = (int)nud_Employee_Salary.Value;
             string iDOfBranch = cbb_Employee_IDOfBranch.SelectedItem.ToString();
             if (EmployeeDAO.Instance.UpdateEmployee(firstName, lastName, id, phoneNumber, sexual, address, dayIn, 
                 shift, dayOff, bonus, salary, iDOfBranch))
@@ -601,11 +903,6 @@ namespace QuanLiChuoiCF
             {
                 lb_Employee_Notify.Text = "NOTIFY: Failed to update Employee";
             }
-        }
-
-        private void btnRefreshEmployeesClick(object sender, EventArgs e)
-        {
-            LoadEmployees();
         }
 
         private void btnNewEmployeeClick(object sender, EventArgs e)
@@ -620,14 +917,33 @@ namespace QuanLiChuoiCF
         #endregion
 
         #region BranchEvents
+
+        private void txb_Branch_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Branch_Search.Text;
+            switch (cbb_Branch_SearchBy.Text)
+            {
+                case "ID":
+                    dtgvBranches.DataSource = branches.FindAll(item => item.Id.Contains(searchingText));
+                    break;
+                case "Branch Name":
+                    dtgvBranches.DataSource = branches.FindAll(item => item.Id.Contains(searchingText));
+                    break;
+                case "Manager":
+                    dtgvBranches.DataSource = branches.FindAll(item => item.Id.Contains(searchingText));
+                    break;
+            }
+        }
+
         private void btnAddBranchClick(object sender, EventArgs e)
         {
-            string branchId = txb_branch_ID.Text.Trim();
+            string branchId = txb_branch_ID.Text;
             foreach(Branch item in branches)
             {
                 if(branchId == item.Id)
                 {
                     lb_Branch_Notify.Text = "Can not added";
+                    txb_branch_ID.Focus();
                     return;
                 }
             }
@@ -635,24 +951,26 @@ namespace QuanLiChuoiCF
             if(branchName == "")
             {
                 lb_Branch_Notify.Text = "Name can't be empty";
+                txb_branch_Name.Focus();
                 return;
             }
             string manager = txb_branch_Manager.Text.Trim();
             if(manager == "")
             {
                 lb_Branch_Notify.Text = "Manager can't be empty";
+                txb_branch_Manager.Focus();
                 return;
             }
             if (BranchDAO.Instance.AddBranch(branchId, branchName, manager))
             {
                 lb_Branch_Notify.Text = "Branch Was Added Successfully";
                 LoadBranches();
-                newBrand();
+                newBranch();
             }
             else
             {
                 lb_Branch_Notify.Text = "Failed To Added Branch";
-                newBrand();
+                newBranch();
             }
         }
 
@@ -711,11 +1029,75 @@ namespace QuanLiChuoiCF
 
         private void btnNewBranchClick(object sender, EventArgs e)
         {
-            newBrand();
+            newBranch();
+        }
+
+        private void cbb_Branch_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Branch_SortBy.Text)
+            {
+                case "ID":
+                    branches = branches.OrderBy(o => o.Id).ToList();
+                    break;
+                case "Branch Name":
+                    branches = branches.OrderBy(o => o.Name).ToList();
+                    break;
+                case "Manager":
+                    branches = branches.OrderBy(o => o.Manager).ToList();
+                    break;
+            }
+            dtgvBranches.DataSource = branches;
         }
         #endregion
 
         #region InforOfMaterialEvent
+
+        private void txb_InfoOfMaterial_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_InfoOfMaterial_Search.Text;
+            switch (cbb_InfoOfMaterial_SearchBy.Text)
+            {
+                case "ID of Material":
+                    dtgvInfoOfMaterial.DataSource = infoOfMaterials.FindAll(o => o.IDOfMaterial.Contains(searchingText));
+                    break;
+                case "Name":
+                    dtgvInfoOfMaterial.DataSource = infoOfMaterials.FindAll(o => o.Name.Contains(searchingText));
+                    break;
+                case "Unit":
+                    dtgvInfoOfMaterial.DataSource = infoOfMaterials.FindAll(o => o.Unit.Contains(searchingText));
+                    break;
+                case "Price":
+                    dtgvInfoOfMaterial.DataSource = infoOfMaterials.FindAll(o => o.Price.ToString().Contains(searchingText));
+                    break;
+                case "ID of Supplier":
+                    dtgvInfoOfMaterial.DataSource = infoOfMaterials.FindAll(o => o.IDOfSupplier.Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void cbb_InfoOfMaterial_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_InfoOfMaterial_SortBy.Text)
+            {
+                case "ID of Material":
+                    infoOfMaterials = infoOfMaterials.OrderBy(o => o.IDOfMaterial).ToList();
+                    break;
+                case "Name":
+                    infoOfMaterials = infoOfMaterials.OrderBy(o => o.Name).ToList();
+                    break;
+                case "Unit":
+                    infoOfMaterials = infoOfMaterials.OrderBy(o => o.Unit).ToList();
+                    break;
+                case "Price":
+                    infoOfMaterials = infoOfMaterials.OrderBy(o => o.Price).ToList();
+                    break;
+                case "ID of Supplier":
+                    infoOfMaterials = infoOfMaterials.OrderBy(o => o.IDOfSupplier).ToList();
+                    break;
+            }
+            dtgvInfoOfMaterial.DataSource = infoOfMaterials;
+        }
+
         private void btn_InfoOfMaterial_Delete_Click(object sender, EventArgs e)
         {
             string iD = txb_InforOfMaterial_ID.Text;
@@ -737,18 +1119,21 @@ namespace QuanLiChuoiCF
             if (name == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Name can't be empty";
+                txb_InforOfMaterial_Name.Focus();
                 return;
             }
             string unit = txb_InforOfMaterial_Unit.Text;
             if (unit == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: unit can't be empty";
+                txb_InforOfMaterial_Unit.Focus();
                 return;
             }
             int price = int.Parse(nud_InforOfMaterial_Price.Text);
             if (price < 1000)
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Price can't be lower than 1000VND";
+                nud_InforOfMaterial_Price.Focus();
                 return;
             }
             string supplier = cbb_InforOfMaterial_Supplier.Text;
@@ -763,18 +1148,9 @@ namespace QuanLiChuoiCF
             }
         }
 
-        private void btn_InfoOfMaterial_Refresh_Click(object sender, EventArgs e)
-        {
-            LoadInfoOfMaterial();
-        }
-
         private void btn_InfoOfMaterial_New_Click(object sender, EventArgs e)
         {
-            GenIDOfInforOfMaterial();
-            txb_InforOfMaterial_Name.Text = "";
-            txb_InforOfMaterial_Unit.Text = "";
-            nud_InforOfMaterial_Price.Value = 100000;
-            cbb_InforOfMaterial_Supplier.SelectedItem = cbb_InforOfMaterial_Supplier.Items[0];
+            newInforOfMaterial();
         }
 
         private void btn_InforOfMaterial_Add_Click(object sender, EventArgs e)
@@ -792,18 +1168,21 @@ namespace QuanLiChuoiCF
             if (name == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Name can't be empty";
+                txb_InforOfMaterial_Name.Focus();
                 return;
             }
             string unit = txb_InforOfMaterial_Unit.Text;
             if (unit == "")
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: unit can't be empty";
+                txb_InforOfMaterial_Unit.Focus();
                 return;
             }
             int price = int.Parse(nud_InforOfMaterial_Price.Text);
             if (price < 1000)
             {
                 lb_InforOfMaterial_Notify.Text = "NOTIFY: Price can't be lower than 1000VND";
+                nud_InforOfMaterial_Price.Focus();
                 return;
             }
             string supplier = cbb_InforOfMaterial_Supplier.Text;
@@ -820,12 +1199,49 @@ namespace QuanLiChuoiCF
 
         #region BillEvent
 
+        private void txb_Bill_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Bill_Search.Text;
+            switch (cbb_Bill_SearchBy.Text)
+            {
+                case "ID of Bill":
+                    dtgvBill.DataSource = bills.FindAll(o => o.IDOfBill.Contains(searchingText));
+                    break;
+                case "ID of Branch":
+                    dtgvBill.DataSource = bills.FindAll(o => o.IDOfBranch.Contains(searchingText));
+                    break;
+                case "Day Check In":
+                    dtgvBill.DataSource = bills.FindAll(o => o.DateCheckIn.ToString().Contains(searchingText));
+                    break;
+                case "Total Amount":
+                    dtgvBill.DataSource = bills.FindAll(o => o.TotalAmount.ToString().Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void cbb_Bill_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Bill_SortBy.Text)
+            {
+                case "ID of Bill":
+                    bills = bills.OrderBy(o => o.IDOfBill).ToList();
+                    break;
+                case "ID of Branch":
+                    bills = bills.OrderBy(o => o.IDOfBranch).ToList();
+                    break;
+                case "Day Check In":
+                    bills = bills.OrderBy(o => o.DateCheckIn).ToList();
+                    break;
+                case "Total Amount":
+                    bills = bills.OrderBy(o => o.TotalAmount).ToList();
+                    break;
+            }
+            dtgvBill.DataSource = bills;
+        }
+
         private void btn_Bill_NewClick(object sender, EventArgs e)
         {
-            GenIDOfBill();
-            cbb_Bill_IDofBranch.SelectedItem = cbb_Bill_IDofBranch.Items[0];
-            dtp_Bill_DateCheckIn.Value = DateTime.Now;
-            nud_Bill_TotalAmount.Value = 100000;
+            newBill();
         }
 
         private void btn_Bill_AddClick(object sender, EventArgs e)
@@ -836,6 +1252,7 @@ namespace QuanLiChuoiCF
                 if(iDOfBill == item.IDOfBill)
                 {
                     lb_Bill_Notify.Text = "WARNING: ID was existed in database, please press new for new ID";
+                    btn_Bill_New.Focus();
                     return;
                 }
             }
@@ -843,6 +1260,7 @@ namespace QuanLiChuoiCF
             if(iDOfBranch == "")
             {
                 lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
+                cbb_Bill_IDofBranch.Focus();
                 return;
             }
             DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
@@ -850,12 +1268,14 @@ namespace QuanLiChuoiCF
             if(totalAmount < 1000)
             {
                 lb_Bill_Notify.Text = "WARNING: Total amount can't be lower than 1000";
+                nud_Bill_TotalAmount.Focus();
                 return;
             }
             if (BillDAO.Instance.AddBill(iDOfBill, iDOfBranch, dateCheckIn, totalAmount))
             {
                 lb_Bill_Notify.Text = "NOTIFY: Bill was added Successfully";
                 LoadBill();
+                newBill();
             }
             else
             {
@@ -904,13 +1324,50 @@ namespace QuanLiChuoiCF
             }
         }
 
-        private void btn_Bill_RefreshClick(object sender, EventArgs e)
+        private void btn_Bill_DetailOfBillClick(object sender, EventArgs e)
         {
-            LoadBill();
+            fDetailOfBill f = new fDetailOfBill(txb_Bill_IDofBill.Text);
+            f.ShowDialog();
         }
+
         #endregion
 
         #region SupplierEvent
+
+        private void txb_Supplier_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Account_Search.Text;
+            switch (cbb_Supplier_SearchBy.Text)
+            {
+                case "ID of Supplier":
+                    dtgvSupplier.DataSource = suppliers.FindAll(o => o.IDOfSupplier.Contains(searchingText));
+                    break;
+                case "Name":
+                    dtgvSupplier.DataSource = suppliers.FindAll(o => o.Name.Contains(searchingText));
+                    break;
+                case "Address":
+                    dtgvSupplier.DataSource = suppliers.FindAll(o => o.Address.Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void cbb_Supplier_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Supplier_SortBy.Text)
+            {
+                case "ID of Supplier":
+                    suppliers = suppliers.OrderBy(o => o.IDOfSupplier).ToList();
+                    break;
+                case "Name":
+                    suppliers = suppliers.OrderBy(o => o.Name).ToList();
+                    break;
+                case "Address":
+                    suppliers = suppliers.OrderBy(o => o.Address).ToList();
+                    break;
+            }
+            dtgvBill.DataSource = suppliers;
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             string Address = txt_Supplier_Address.Text;
@@ -1004,42 +1461,169 @@ namespace QuanLiChuoiCF
         }
         #endregion
 
-        #endregion
+        #region Warehouse
 
-        private void newBrand()
+        private void txb_Warehouse_Search_TextChanged(object sender, EventArgs e)
         {
-            int lastIDBranch_int = Int16.Parse(lastIDBranch.Substring(2)) + 1;
-            string id;
-            if (lastIDBranch_int < 10)
+            string searchingText = txb_Account_Search.Text;
+            switch (cbb_Warehouse_SearchBy.Text)
             {
-                id = "CN0" + lastIDBranch_int.ToString();
+                case "ID of Import Material":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.IDOfImportMaterial.Contains(searchingText));
+                    break;
+                case "ID of Material":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.IDOfMaterial.Contains(searchingText));
+                    break;
+                case "Amount":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.Amount.ToString().Contains(searchingText));
+                    break;
+                case "AmountLeft":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.AmountLeft.ToString().Contains(searchingText));
+                    break;
+                case "Date Added":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.DateAdded.ToString().Contains(searchingText));
+                    break;
+                case "Expiry Date":
+                    dtgvInfoOfMaterial.DataSource = materialInWarehouses.FindAll(o => o.ExpiryDate.ToString().Contains(searchingText));
+                    break;
+            }
+        }
+
+        private void cbb_Warehouse_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Warehouse_SortBy.Text)
+            {
+                case "ID of Import Material":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.IDOfImportMaterial).ToList();
+                    break;
+                case "ID of Material":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.IDOfMaterial).ToList();
+                    break;
+                case "Amount":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.Amount).ToList();
+                    break;
+                case "AmountLeft":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.AmountLeft).ToList();
+                    break;
+                case "Date Added":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.DateAdded).ToList();
+                    break;
+                case "Expiry Date":
+                    materialInWarehouses = materialInWarehouses.OrderBy(o => o.ExpiryDate).ToList();
+                    break;
+            }
+            dtgvBill.DataSource = materialInWarehouses;
+        }
+
+        private void btn_Warehouse_NewClick(object sender, EventArgs e)
+        {
+            txb_Warehouse_IDOfImportMaterial.Text = getIDIncrea(lastIDMaterialInWarehouse);
+            cbb_Warehouse_IDOfMaterial.SelectedItem = cbb_Warehouse_IDOfMaterial.Items[0];
+            nud_Warehouse_Amount.Value = 0;
+            nud_Warehouse_AmountLeft.Value = 0;
+            dtp_Warehouse_DateImport.Value = DateTime.Now;
+            dtp_Warehouse_ExpiryDate.Value = DateTime.Now;
+        }
+
+        private void btn_Warehouse_AddClick(object sender, EventArgs e)
+        {
+            string iDOfImportMaterial = txb_Warehouse_IDOfImportMaterial.Text;
+            string iDOfMaterial = cbb_Warehouse_IDOfMaterial.Text;
+            int amount = (int)nud_Warehouse_Amount.Value;
+            if (amount <= 0)
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Amount must be greater than 0";
+                nud_Warehouse_Amount.Focus();
+                return;
+            }
+            int amountLeft = (int)nud_Warehouse_AmountLeft.Value;
+            if (amountLeft <= 0)
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Amount left must be greater than 0";
+                nud_Warehouse_AmountLeft.Focus();
+
+                return;
+            }
+            DateTime dateAdded = dtp_Warehouse_DateImport.Value;
+            DateTime expiryDate = dtp_Warehouse_ExpiryDate.Value;
+            if (WarehouseMaterialDAO.Instance.AddMaterial(iDOfImportMaterial, iDOfMaterial, amount, amountLeft, dateAdded, expiryDate))
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Material was added Successfully";
             }
             else
             {
-        
-                id = "CN" + lastIDBranch_int.ToString();
+                lb_Warehouse_Notify.Text = "NOTIFY: Failed to add Material";
             }
-            txb_branch_ID.Text = id;
+        }
+
+        private void btn_Warehouse_DeleteClick(object sender, EventArgs e)
+        {
+            string iDOfImportMaterial = txb_Warehouse_IDOfImportMaterial.Text;
+            if (WarehouseMaterialDAO.Instance.DeleteMaterial(iDOfImportMaterial))
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Material was deleted Successfully";
+            }
+            else
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Failed to delete Material";
+            }
+        }
+
+        private void btn_Warehouse_UpdateClick(object sender, EventArgs e)
+        {
+            string iDOfImportMaterial = txb_Warehouse_IDOfImportMaterial.Text;
+            string iDOfMaterial = cbb_Warehouse_IDOfMaterial.Text;
+            int amount = (int)nud_Warehouse_Amount.Value;
+            if (amount <= 0)
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Amount must be greater than 0";
+                nud_Warehouse_Amount.Focus();
+                return;
+            }
+            int amountLeft = (int)nud_Warehouse_AmountLeft.Value;
+            if (amountLeft <= 0)
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Amount left must be greater than 0";
+                nud_Warehouse_AmountLeft.Focus();
+
+                return;
+            }
+            DateTime dateAdded = dtp_Warehouse_DateImport.Value;
+            DateTime expiryDate = dtp_Warehouse_ExpiryDate.Value;
+            if (WarehouseMaterialDAO.Instance.UpdateMaterial(iDOfImportMaterial, iDOfMaterial, amount, amountLeft, dateAdded, expiryDate))
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Material was updated Successfully";
+            }
+            else
+            {
+                lb_Warehouse_Notify.Text = "NOTIFY: Failed to update Material";
+            }
+        }
+        #endregion
+
+        #endregion
+
+        private void newDrink()
+        {
+            txb_Drink_ID.Text = getIDIncrea(lastIDDrink);
+            txb_Drink_Name.Text = "";
+            nud_Drink_Price.Value = 20000;
+            txb_Drink_Name.Focus();
+        }
+
+        private void newBranch()
+        {
+            txb_branch_ID.Text = getIDIncrea(lastIDBranch);
             txb_branch_Name.Text = "";
             txb_branch_Manager.Text = "";
+            txb_branch_Name.Focus();
         }
 
         private void newEmployee()
         {
-            int lastIDEmployee_int = Int16.Parse(lastIDEmployees.Substring(2)) + 1;
-            string id;
-            if (lastIDEmployee_int < 10)
-            {
-                id = "NV0" + lastIDEmployee_int.ToString();
-            }
-            else
-            {
-                id = "NV" + lastIDEmployee_int.ToString();
-            }
-
+            txb_Employee_IDOfEmPloyee.Text = getIDIncrea(lastIDEmployees);
             txb_Employee_FirstName.Text = "";
             txb_Employee_LastName.Text = "";
-            txb_Employee_IDOfEmPloyee.Text = id;
             txb_Employee_PhoneNumber.Text = "";
             cbb_Employee_Sexual.SelectedItem = cbb_Employee_Sexual.Items[0];
             txb_Employee_Address.Text = "";
@@ -1049,7 +1633,27 @@ namespace QuanLiChuoiCF
             nud_Employee_Bonus.Value = 100000;
             nud_Employee_Salary.Value = 5000000;
             cbb_Employee_IDOfBranch.SelectedItem = cbb_Employee_IDOfBranch.Items[0];
+            txb_Employee_FirstName.Focus();
+        }
 
+        private void newInforOfMaterial()
+        {
+            txb_InforOfMaterial_ID.Text = getIDIncrea(lastIDInfoOfMaterial);
+            txb_InforOfMaterial_Name.Text = "";
+            txb_InforOfMaterial_Unit.Text = "";
+            nud_InforOfMaterial_Price.Value = 100000;
+            cbb_InforOfMaterial_Supplier.SelectedItem = cbb_InforOfMaterial_Supplier.Items[0];
+            txb_InforOfMaterial_Name.Focus();
+        }
+
+
+        private void newBill()
+        {
+            txb_Bill_IDofBill.Text = getIDIncrea(lastIDBill);
+            cbb_Bill_IDofBranch.SelectedItem = cbb_Bill_IDofBranch.Items[0];
+            dtp_Bill_DateCheckIn.Value = DateTime.Now;
+            nud_Bill_TotalAmount.Value = 100000;
+            cbb_Bill_IDofBranch.Focus();
         }
 
         private void UpdateCbbBranchInTabEmployee()
@@ -1089,10 +1693,10 @@ namespace QuanLiChuoiCF
 
         private void UpdateCbbAccountIdInTabAccount()
         {
-            cbb_Account_ID.Items.Clear();
+            cbb_Account_IDOfEmployee.Items.Clear();
             foreach(Employee employee in employees)
             {
-                cbb_Account_ID.Items.Add(employee.IDOfEmployee);
+                cbb_Account_IDOfEmployee.Items.Add(employee.IDOfEmployee);
             }
         }
 
@@ -1105,21 +1709,6 @@ namespace QuanLiChuoiCF
             }
         }
 
-        private void GenIDOfInforOfMaterial()
-        {
-            int id_int = int.Parse(lastIDInfoOfMaterial.Substring(2));
-            string ID;
-            if (id_int < 10)
-            {
-                ID = "MA0" + id_int.ToString();
-            }
-            else
-            {
-                ID = "MA" + id_int.ToString();
-            }
-            txb_InforOfMaterial_ID.Text = ID;
-        }
-
         private void UpdateCbbBranchInTabBill()
         {
             cbb_Bill_IDofBranch.Items.Clear();
@@ -1127,21 +1716,6 @@ namespace QuanLiChuoiCF
             {
                 cbb_Bill_IDofBranch.Items.Add(branch.Id);
             }
-        }
-
-        private void GenIDOfBill()
-        {
-            int id_int = int.Parse(lastIDBill.Substring(2));
-            string ID;
-            if (id_int < 10)
-            {
-                ID = "BI0" + id_int.ToString();
-            }
-            else
-            {
-                ID = "BI" + id_int.ToString();
-            }
-            txb_Bill_IDofBill.Text = ID;
         }
 
         public string getIDIncrea(string ID)
@@ -1177,6 +1751,34 @@ namespace QuanLiChuoiCF
         {
 
         }
+
+        #region noUse
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpDanhMuc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefreshClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
 
     }
 }

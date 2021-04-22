@@ -28,54 +28,60 @@ namespace QuanLiChuoiCF
 
             foreach(Employee employee in fAdmin.employees)
             {
-                cbbID.Items.Add(employee.IDOfEmployee);
+                cbbIDOfEmployee.Items.Add(employee.IDOfEmployee);
             }
-            if(cbbID.Items.Count>0)cbbID.SelectedItem = cbbID.Items[0];
+            if(cbbIDOfEmployee.Items.Count>0)cbbIDOfEmployee.SelectedItem = cbbIDOfEmployee.Items[0];
         }
 
         private void btnOkClick(object sender, EventArgs e)
         {
-            string id = cbbID.SelectedItem.ToString().Trim();
-            if(id == "")
+            string username = txbUserName.Text;
+            if(username == "")
             {
-                lbNotify.Text = "ID can't be empty";
+                lbNotify.Text = "NOTIFY: Username can't be empty";
+                txbUserName.Focus();
                 return;
             }
             foreach(Account item in fAdmin.accounts)
             {
-                if(id == item.Id)
+                if(username == item.Username)
                 {
-                    lbNotify.Text = "ID was be used";
+                    lbNotify.Text = "NOTIFY: Username was be used";
+                    txbUserName.Focus();
                     return;
                 }
             }
-            string userName = txbUserName.Text;
-            if(userName == "")
-            {
-                lbNotify.Text = "UserName can't be empty";
-                return;
-            }
+            string iDOfEmployee = cbbIDOfEmployee.Text;
             string password = txbPassword.Text;
             if(password == "")
             {
-                lbNotify.Text = "Password can't be empty";
+                lbNotify.Text = "NOTIFY: Password can't be empty";
+                txbPassword.Focus();
                 return;
             }
             string confirmPassword = txbConfirmPassword.Text;
             if(confirmPassword == "")
             {
-                lbNotify.Text = "Confirm password can't be empty";
+                lbNotify.Text = "NOTIFY: Confirm password can't be empty";
+                txbConfirmPassword.Focus();
                 return;
             }
             if(confirmPassword != password)
             {
-                lbNotify.Text = "Confirm password is wrong";
+                lbNotify.Text = "NOTIFY: Confirm password is wrong";
+                txbConfirmPassword.Focus();
                 return;
             }
             int type = int.Parse(cbbType.Text);
-            if(AccountDAO.Instance.AddAccount(id,userName,password, type))
+            if(AccountDAO.Instance.AddAccount(username,iDOfEmployee,password, type))
             {
+                lbNotify.Text = "NOTIFY: Account was added Successully";
                 this.Close();
+            }
+            else
+            {
+                lbNotify.Text = "NOTIFY: Failed to add Account";
+                return;
             }
         }
     }

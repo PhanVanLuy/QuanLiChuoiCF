@@ -49,7 +49,7 @@ namespace QuanLiChuoiCF.DAO
 
         public bool DeleteBillExport(string iDOfBillExport)
         {
-            string query = string.Format("delete dbo.BillExport where IDOfBillExport = {0}", iDOfBillExport);
+            string query = string.Format("delete dbo.BillExport where IDOfBillExport = '{0}'", iDOfBillExport);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
     }

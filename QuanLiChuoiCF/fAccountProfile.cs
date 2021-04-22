@@ -23,9 +23,9 @@ namespace QuanLiChuoiCF
 
         public void Load()
         {
-            account = AccountDAO.Instance.GetAccountByID(fLogin.userName);
-            txbID.Text = account.Id;
-            txbUserName.Text = account.DisplayName;
+            account = AccountDAO.Instance.GetAccountByUsername(fLogin.userName);
+            txbUsername.Text = account.Username;
+            txbIDOfEmployee.Text = account.IDOfEmployee;
         }
     }
 }

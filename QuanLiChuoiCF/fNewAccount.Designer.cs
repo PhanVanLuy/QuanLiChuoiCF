@@ -39,7 +39,7 @@ namespace QuanLiChuoiCF
             this.lbConfirmPassword = new System.Windows.Forms.Label();
             this.txbConfirmPassword = new System.Windows.Forms.TextBox();
             this.cbbType = new System.Windows.Forms.ComboBox();
-            this.cbbID = new System.Windows.Forms.ComboBox();
+            this.cbbIDOfEmployee = new System.Windows.Forms.ComboBox();
             this.lbNotify = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -56,16 +56,16 @@ namespace QuanLiChuoiCF
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(61, 23);
+            this.lbID.Location = new System.Drawing.Point(61, 57);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(21, 13);
+            this.lbID.Size = new System.Drawing.Size(82, 13);
             this.lbID.TabIndex = 1;
-            this.lbID.Text = "ID:";
+            this.lbID.Text = "ID of Employee:";
             // 
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Location = new System.Drawing.Point(61, 52);
+            this.lbUserName.Location = new System.Drawing.Point(61, 28);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(63, 13);
             this.lbUserName.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace QuanLiChuoiCF
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(157, 50);
+            this.txbUserName.Location = new System.Drawing.Point(157, 21);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(236, 20);
             this.txbUserName.TabIndex = 1;
@@ -129,13 +129,13 @@ namespace QuanLiChuoiCF
             this.cbbType.Size = new System.Drawing.Size(121, 21);
             this.cbbType.TabIndex = 2;
             // 
-            // cbbID
+            // cbbIDOfEmployee
             // 
-            this.cbbID.FormattingEnabled = true;
-            this.cbbID.Location = new System.Drawing.Point(157, 20);
-            this.cbbID.Name = "cbbID";
-            this.cbbID.Size = new System.Drawing.Size(121, 21);
-            this.cbbID.TabIndex = 10;
+            this.cbbIDOfEmployee.FormattingEnabled = true;
+            this.cbbIDOfEmployee.Location = new System.Drawing.Point(157, 49);
+            this.cbbIDOfEmployee.Name = "cbbIDOfEmployee";
+            this.cbbIDOfEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cbbIDOfEmployee.TabIndex = 10;
             // 
             // lbNotify
             // 
@@ -152,7 +152,7 @@ namespace QuanLiChuoiCF
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 498);
             this.Controls.Add(this.lbNotify);
-            this.Controls.Add(this.cbbID);
+            this.Controls.Add(this.cbbIDOfEmployee);
             this.Controls.Add(this.cbbType);
             this.Controls.Add(this.txbConfirmPassword);
             this.Controls.Add(this.lbConfirmPassword);
@@ -182,7 +182,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Label lbConfirmPassword;
         private System.Windows.Forms.TextBox txbConfirmPassword;
         private System.Windows.Forms.ComboBox cbbType;
-        private System.Windows.Forms.ComboBox cbbID;
+        private System.Windows.Forms.ComboBox cbbIDOfEmployee;
         private System.Windows.Forms.Label lbNotify;
     }
 }

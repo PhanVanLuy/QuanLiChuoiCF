@@ -90,7 +90,7 @@ namespace QuanLiChuoiCF
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(307, 20);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "2560";
+            this.txtPassword.Text = "3105";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
@@ -118,7 +118,7 @@ namespace QuanLiChuoiCF
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(307, 20);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "NV01";
+            this.txtUsername.Text = "minhthong774";
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label1
